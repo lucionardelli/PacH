@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="exit_net" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <name>
+      <text>"choice.pnml" Generater automagically with PacH</text>
+    </name>
+    <page id="page">
+
+      <!-- Places -->
+      <place id="place-0001">
+        <name>
+          <text>HS dim 12   1 x6  -   1 x7   >= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0002">
+        <name>
+          <text>HS dim 12   1 x5  -   1 x6  +   1 x9   >= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0003">
+        <name>
+          <text>HS dim 12   1 x3  -   1 x4  +   1 x8  -   1 x11  >= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0004">
+        <name>
+          <text>HS dim 12   1 x7   >= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0005">
+        <name>
+          <text>HS dim 12   1 x4  -   1 x5  -   1 x9  +   1 x11  >= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0006">
+        <name>
+          <text>HS dim 12   1 x3   >= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0007">
+        <name>
+          <text>HS dim 12   1 x2   >= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0008">
+        <name>
+          <text>HS dim 12   1 x4   >= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0009">
+        <name>
+          <text>HS dim 12   1 x11  >= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0010">
+        <name>
+          <text>HS dim 12   1 x2  -   1 x3  -   1 x8  +   1 x10  >= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0011">
+        <name>
+          <text>HS dim 12   1 x9   >= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0012">
+        <name>
+          <text>HS dim 12   1 x0  -   1 x1   >= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0013">
+        <name>
+          <text>HS dim 12   1 x5   >= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0014">
+        <name>
+          <text>HS dim 12  -   1 x0   +   1 >= 0</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0015">
+        <name>
+          <text>HS dim 12   1 x10  >= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0016">
+        <name>
+          <text>HS dim 12   1 x8   >= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0017">
+        <name>
+          <text>HS dim 12   1 x1  -   1 x2  -   1 x10  >= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <!-- Transitions -->
+      <transition id="SSSTTTAAARRRTTT">
+        <name>
+          <text>SSSTTTAAARRRTTT</text>
+        </name>
+      </transition>
+
+      <transition id="A">
+        <name>
+          <text>A</text>
+        </name>
+      </transition>
+
+      <transition id="C">
+        <name>
+          <text>C</text>
+        </name>
+      </transition>
+
+      <transition id="E">
+        <name>
+          <text>E</text>
+        </name>
+      </transition>
+
+      <transition id="G">
+        <name>
+          <text>G</text>
+        </name>
+      </transition>
+
+      <transition id="I">
+        <name>
+          <text>I</text>
+        </name>
+      </transition>
+
+      <transition id="J">
+        <name>
+          <text>J</text>
+        </name>
+      </transition>
+
+      <transition id="EEENNNDDD">
+        <name>
+          <text>EEENNNDDD</text>
+        </name>
+      </transition>
+
+      <transition id="D">
+        <name>
+          <text>D</text>
+        </name>
+      </transition>
+
+      <transition id="H">
+        <name>
+          <text>H</text>
+        </name>
+      </transition>
+
+      <transition id="B">
+        <name>
+          <text>B</text>
+        </name>
+      </transition>
+
+      <transition id="F">
+        <name>
+          <text>F</text>
+        </name>
+      </transition>
+
+      <!-- Arcs -->
+      <arc id="arc-TJ-P0001" source="J" target="place-0001"></arc>
+      <arc id="arc-P0001-TEEENNNDDD" source="place-0001" target="EEENNNDDD"></arc>
+      <arc id="arc-TI-P0002" source="I" target="place-0002"></arc>
+      <arc id="arc-P0002-TJ" source="place-0002" target="J"></arc>
+      <arc id="arc-TH-P0002" source="H" target="place-0002"></arc>
+      <arc id="arc-TE-P0003" source="E" target="place-0003"></arc>
+      <arc id="arc-P0003-TG" source="place-0003" target="G"></arc>
+      <arc id="arc-TD-P0003" source="D" target="place-0003"></arc>
+      <arc id="arc-P0003-TF" source="place-0003" target="F"></arc>
+      <arc id="arc-TEEENNNDDD-P0004" source="EEENNNDDD" target="place-0004"></arc>
+      <arc id="arc-TG-P0005" source="G" target="place-0005"></arc>
+      <arc id="arc-P0005-TI" source="place-0005" target="I"></arc>
+      <arc id="arc-P0005-TH" source="place-0005" target="H"></arc>
+      <arc id="arc-TF-P0005" source="F" target="place-0005"></arc>
+      <arc id="arc-TE-P0006" source="E" target="place-0006"></arc>
+      <arc id="arc-TC-P0007" source="C" target="place-0007"></arc>
+      <arc id="arc-TG-P0008" source="G" target="place-0008"></arc>
+      <arc id="arc-TF-P0009" source="F" target="place-0009"></arc>
+      <arc id="arc-TC-P0010" source="C" target="place-0010"></arc>
+      <arc id="arc-P0010-TE" source="place-0010" target="E"></arc>
+      <arc id="arc-P0010-TD" source="place-0010" target="D"></arc>
+      <arc id="arc-TB-P0010" source="B" target="place-0010"></arc>
+      <arc id="arc-TH-P0011" source="H" target="place-0011"></arc>
+      <arc id="arc-TSSSTTTAAARRRTTT-P0012" source="SSSTTTAAARRRTTT" target="place-0012"></arc>
+      <arc id="arc-P0012-TA" source="place-0012" target="A"></arc>
+      <arc id="arc-TI-P0013" source="I" target="place-0013"></arc>
+      <arc id="arc-P0014-TSSSTTTAAARRRTTT" source="place-0014" target="SSSTTTAAARRRTTT"></arc>
+      <arc id="arc-TB-P0015" source="B" target="place-0015"></arc>
+      <arc id="arc-TD-P0016" source="D" target="place-0016"></arc>
+      <arc id="arc-TA-P0017" source="A" target="place-0017"></arc>
+      <arc id="arc-P0017-TC" source="place-0017" target="C"></arc>
+      <arc id="arc-P0017-TB" source="place-0017" target="B"></arc>
+    </page>
+  </net>
+</pnml>

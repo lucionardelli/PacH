@@ -1,0 +1,13 @@
+
+Statistic of a42.xes: with negative traces from 
+    benchmark       ->  Iterative SMT Simplification
+    positive        ->  a42.xes
+    negative        ->  
+    complexity      ->  1139
+    exec_time       ->  2015-11-15 20:46:38.135345
+    overall_time    ->  20.00695014
+    details
+        parse_traces    ->  0.108169078827
+        do_projection   ->  0.87357211113
+        convexHull      ->  0.000395059585571
+        shift&rotate    ->  19.0248138905

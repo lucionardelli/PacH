@@ -1,0 +1,14 @@
+
+Statistic of receipt.xes: with negative traces from receipt.negatives.xes
+    benchmark       ->  Matrix SMT Simplification
+    positive        ->  receipt.xes
+    negative        ->  receipt.negatives.xes
+    complexity      ->  624
+    exec_time       ->  2015-11-15 23:32:58.024745
+    overall_time    ->  131.864510775
+    details
+        parse_traces    ->  0.169043064117
+        parse_negatives ->  0.31054186821
+        do_projection   ->  0.226498126984
+        convexHull      ->  0.000518798828125
+        shift&rotate    ->  131.157908916

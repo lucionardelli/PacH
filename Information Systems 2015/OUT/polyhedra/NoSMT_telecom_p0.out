@@ -1,0 +1,13 @@
+
+Statistic of telecom.xes: with negative traces from 
+    benchmark       ->  No SMT Simplification
+    positive        ->  telecom.xes
+    negative        ->  
+    complexity      ->  977
+    exec_time       ->  2015-11-15 20:37:32.853261
+    overall_time    ->  3.24427509308
+    details
+        parse_traces    ->  2.99844408035
+        do_projection   ->  0.241780996323
+        convexHull      ->  0.00404906272888
+        simplify        ->  9.53674316406e-07

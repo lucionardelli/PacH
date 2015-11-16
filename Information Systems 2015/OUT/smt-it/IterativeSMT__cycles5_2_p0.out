@@ -1,0 +1,13 @@
+
+Statistic of cycles5_2.xes: with negative traces from 
+    benchmark       ->  Iterative SMT Simplification
+    positive        ->  cycles5_2.xes
+    negative        ->  
+    complexity      ->  302
+    exec_time       ->  2015-11-15 20:46:28.048119
+    overall_time    ->  3.87696123123
+    details
+        parse_traces    ->  0.0971400737762
+        do_projection   ->  0.355452060699
+        convexHull      ->  0.00462508201599
+        shift&rotate    ->  3.41974401474

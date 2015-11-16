@@ -47,7 +47,7 @@ Points can be a list of lists or a file with the list of lists as the first line
 
 **Usage**:
 
-    Usage: ./qhull <points> [--debug][--verbose]
+    Usage: ./qhull.py <points> [--debug][--verbose]
 
 #####`pach.py`
 
@@ -61,7 +61,7 @@ A wrape up of the elements necesary for:
 
 **Usage**:
 
-    ./pach <LOG_filename> [--debug][--verbose]
+    Usage: ./pach.py <LOG_filename> [--debug][--verbose]
     [--negative <Negative points filename>] [max_coeficient]]
     [--sampling [<number of samplings>] [<sampling size>]]
     [--projection [<max group size>] [<connected model>]]
@@ -124,7 +124,7 @@ Experimental tool to compare all 3 simplifications w.r.t. a unique convex hull r
 
 **Usage**:
 
-    Usage: ./comparator <LOG filename> [--debug]
+    Usage: ./comparator.py <LOG filename> [--debug]
     [--negative <Negative points filename>] [max_coeficient]]
     [--sampling [<number of samplings>] [<sampling size>]]
     [--projection [<max group size>] [<connected model>]]

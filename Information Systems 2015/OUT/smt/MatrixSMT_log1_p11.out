@@ -1,0 +1,13 @@
+
+Statistic of log1.xes: with negative traces from 
+    benchmark       ->  Matrix SMT Simplification
+    positive        ->  log1.xes
+    negative        ->  
+    complexity      ->  2
+    exec_time       ->  2015-11-15 23:20:04.259703
+    overall_time    ->  0.269069910049
+    details
+        parse_traces    ->  0.205765962601
+        do_projection   ->  0.0253179073334
+        convexHull      ->  0.00114798545837
+        shift&rotate    ->  0.036838054657

@@ -1,0 +1,13 @@
+
+Statistic of confDimBlocking.xes: with negative traces from confDimBlocking.negatives.xes
+    benchmark       ->  No SMT Simplification
+    positive        ->  confDimBlocking.xes
+    negative        ->  confDimBlocking.negatives.xes
+    complexity      ->  33
+    exec_time       ->  2015-11-15 20:55:17.785301
+    overall_time    ->  0.143968105316
+    details
+        parse_traces    ->  0.0615088939667
+        parse_negatives ->  0.0745191574097
+        convexHull      ->  0.00786590576172
+        simplify        ->  7.41481781006e-05

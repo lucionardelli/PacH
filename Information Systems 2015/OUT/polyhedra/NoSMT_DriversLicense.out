@@ -1,0 +1,12 @@
+
+Statistic of DriversLicense.xes: with negative traces from 
+    benchmark       ->  No SMT Simplification
+    positive        ->  DriversLicense.xes
+    negative        ->  
+    complexity      ->  25
+    exec_time       ->  2015-11-15 20:36:56.471150
+    overall_time    ->  0.00189113616943
+    details
+        parse_traces    ->  0.000617980957031
+        convexHull      ->  0.0012731552124
+        simplify        ->  0.0

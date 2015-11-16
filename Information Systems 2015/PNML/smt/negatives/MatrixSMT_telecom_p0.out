@@ -1,0 +1,14 @@
+
+Statistic of telecom.xes: with negative traces from telecom.negatives.xes
+    benchmark       ->  Matrix SMT Simplification
+    positive        ->  telecom.xes
+    negative        ->  telecom.negatives.xes
+    complexity      ->  977
+    exec_time       ->  2015-11-16 00:33:49.213713
+    overall_time    ->  178.895025492
+    details
+        parse_traces    ->  2.92154216766
+        parse_negatives ->  2.85143709183
+        do_projection   ->  0.332234144211
+        convexHull      ->  0.0169880390167
+        shift&rotate    ->  172.772824049

@@ -1,0 +1,13 @@
+
+Statistic of log1.xes: with negative traces from 
+    benchmark       ->  Iterative SMT Simplification
+    positive        ->  log1.xes
+    negative        ->  
+    complexity      ->  53
+    exec_time       ->  2015-11-15 20:44:44.956684
+    overall_time    ->  1.43227696419
+    details
+        parse_traces    ->  0.215329885483
+        do_projection   ->  0.0377931594849
+        convexHull      ->  0.00107192993164
+        shift&rotate    ->  1.17808198929

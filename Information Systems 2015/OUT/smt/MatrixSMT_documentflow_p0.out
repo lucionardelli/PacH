@@ -1,0 +1,13 @@
+
+Statistic of documentflow.xes: with negative traces from 
+    benchmark       ->  Matrix SMT Simplification
+    positive        ->  documentflow.xes
+    negative        ->  
+    complexity      ->  64
+    exec_time       ->  2015-11-15 23:24:59.823742
+    overall_time    ->  2.4456512928
+    details
+        parse_traces    ->  0.154507160187
+        do_projection   ->  0.171977996826
+        convexHull      ->  0.000379085540771
+        shift&rotate    ->  2.11878705025

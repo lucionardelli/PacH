@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">
+  <net id="exit_net" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <name>
+      <text>"DriversLicense.pnml" Generater automagically with PacH</text>
+    </name>
+    <page id="page">
+
+      <!-- Places -->
+      <place id="place-0001">
+        <name>
+          <text>HS dim 9    1 x2  -   1 x4   >= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0002">
+        <name>
+          <text>HS dim 9    1 x8   >= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0003">
+        <name>
+          <text>HS dim 9    1 x2  -   1 x3  +   1 x7   >= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0004">
+        <name>
+          <text>HS dim 9    1 x1  -   1 x7   >= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0005">
+        <name>
+          <text>HS dim 9    1 x4  -   1 x5  +   1 x8   >= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0006">
+        <name>
+          <text>HS dim 9    1 x5  -   1 x6   >= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <!-- Transitions -->
+      <transition id="SSSTTTAAARRRTTT">
+        <name>
+          <text>SSSTTTAAARRRTTT</text>
+        </name>
+      </transition>
+
+      <transition id="Apply_for_License">
+        <name>
+          <text>Apply for License</text>
+        </name>
+      </transition>
+
+      <transition id="Attend_Classes_Drive_Cars">
+        <name>
+          <text>Attend Classes Drive Cars</text>
+        </name>
+      </transition>
+
+      <transition id="Do_Theoretical_Exam">
+        <name>
+          <text>Do Theoretical Exam</text>
+        </name>
+      </transition>
+
+      <transition id="Do_Practical_Exam_Drive_Cars">
+        <name>
+          <text>Do Practical Exam Drive Cars</text>
+        </name>
+      </transition>
+
+      <transition id="Get_Result">
+        <name>
+          <text>Get Result</text>
+        </name>
+      </transition>
+
+      <transition id="EEENNNDDD">
+        <name>
+          <text>EEENNNDDD</text>
+        </name>
+      </transition>
+
+      <transition id="Attend_Classes_Ride_Motorbikes">
+        <name>
+          <text>Attend Classes Ride Motorbikes</text>
+        </name>
+      </transition>
+
+      <transition id="Do_Practical_Exam_Ride_Motorbikes">
+        <name>
+          <text>Do Practical Exam Ride Motorbikes</text>
+        </name>
+      </transition>
+
+      <!-- Arcs -->
+      <arc id="arc-TAttend_Classes_Drive_Cars-P0001" source="Attend_Classes_Drive_Cars" target="place-0001"></arc>
+      <arc id="arc-P0001-TDo_Practical_Exam_Drive_Cars" source="place-0001" target="Do_Practical_Exam_Drive_Cars"></arc>
+      <arc id="arc-TDo_Practical_Exam_Ride_Motorbikes-P0002" source="Do_Practical_Exam_Ride_Motorbikes" target="place-0002"></arc>
+      <arc id="arc-TAttend_Classes_Drive_Cars-P0003" source="Attend_Classes_Drive_Cars" target="place-0003"></arc>
+      <arc id="arc-P0003-TDo_Theoretical_Exam" source="place-0003" target="Do_Theoretical_Exam"></arc>
+      <arc id="arc-TAttend_Classes_Ride_Motorbikes-P0003" source="Attend_Classes_Ride_Motorbikes" target="place-0003"></arc>
+      <arc id="arc-TApply_for_License-P0004" source="Apply_for_License" target="place-0004"></arc>
+      <arc id="arc-P0004-TAttend_Classes_Ride_Motorbikes" source="place-0004" target="Attend_Classes_Ride_Motorbikes"></arc>
+      <arc id="arc-TDo_Practical_Exam_Drive_Cars-P0005" source="Do_Practical_Exam_Drive_Cars" target="place-0005"></arc>
+      <arc id="arc-P0005-TGet_Result" source="place-0005" target="Get_Result"></arc>
+      <arc id="arc-TDo_Practical_Exam_Ride_Motorbikes-P0005" source="Do_Practical_Exam_Ride_Motorbikes" target="place-0005"></arc>
+      <arc id="arc-TGet_Result-P0006" source="Get_Result" target="place-0006"></arc>
+      <arc id="arc-P0006-TEEENNNDDD" source="place-0006" target="EEENNNDDD"></arc>
+      <!-- Dummy Places -->
+      <place id="place-0007">
+        <name>
+          <text>Dummy place 0001</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <arc id="arc-P0007-TSSSTTTAAARRRTTT" source="SSSTTTAAARRRTTT" target="place-0007">1</arc>
+      <arc id="arc-T0-P0007" source="place-0007" target="SSSTTTAAARRRTTT">1</arc>
+      <place id="place-0008">
+        <name>
+          <text>Dummy place 0002</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <arc id="arc-P0008-TApply_for_License" source="Apply_for_License" target="place-0008">1</arc>
+      <arc id="arc-T1-P0008" source="place-0008" target="Apply_for_License">1</arc>
+      <place id="place-0009">
+        <name>
+          <text>Dummy place 0003</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <arc id="arc-P0009-TAttend_Classes_Drive_Cars" source="Attend_Classes_Drive_Cars" target="place-0009">1</arc>
+      <arc id="arc-T2-P0009" source="place-0009" target="Attend_Classes_Drive_Cars">1</arc>
+      <place id="place-0010">
+        <name>
+          <text>Dummy place 0004</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <arc id="arc-T3-P0010" source="Do_Theoretical_Exam" target="place-0010">1</arc>
+      <place id="place-0011">
+        <name>
+          <text>Dummy place 0005</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <arc id="arc-T6-P0011" source="EEENNNDDD" target="place-0011">1</arc>
+      <place id="place-0012">
+        <name>
+          <text>Dummy place 0006</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <arc id="arc-P0012-TDo_Practical_Exam_Ride_Motorbikes" source="Do_Practical_Exam_Ride_Motorbikes" target="place-0012">1</arc>
+      <arc id="arc-T8-P0012" source="place-0012" target="Do_Practical_Exam_Ride_Motorbikes">1</arc>
+    </page>
+  </net>
+</pnml>

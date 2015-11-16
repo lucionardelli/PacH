@@ -1,0 +1,13 @@
+
+Statistic of a32.xes: with negative traces from 
+    benchmark       ->  No SMT Simplification
+    positive        ->  a32.xes
+    negative        ->  
+    complexity      ->  6794
+    exec_time       ->  2015-11-15 20:37:08.636043
+    overall_time    ->  0.792164087296
+    details
+        parse_traces    ->  0.0607590675354
+        do_projection   ->  0.727715015411
+        convexHull      ->  0.00369000434875
+        simplify        ->  0.0

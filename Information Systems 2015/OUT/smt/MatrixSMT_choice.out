@@ -1,0 +1,12 @@
+
+Statistic of choice.xes: with negative traces from 
+    benchmark       ->  Matrix SMT Simplification
+    positive        ->  choice.xes
+    negative        ->  
+    complexity      ->  8
+    exec_time       ->  2015-11-15 23:19:56.326668
+    overall_time    ->  0.230756998062
+    details
+        parse_traces    ->  0.0479009151459
+        convexHull      ->  0.0672240257263
+        shift&rotate    ->  0.11563205719

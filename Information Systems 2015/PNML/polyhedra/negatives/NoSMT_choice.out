@@ -1,0 +1,13 @@
+
+Statistic of choice.xes: with negative traces from choice.negatives.xes
+    benchmark       ->  No SMT Simplification
+    positive        ->  choice.xes
+    negative        ->  choice.negatives.xes
+    complexity      ->  33
+    exec_time       ->  2015-11-15 20:55:15.343545
+    overall_time    ->  0.173229932785
+    details
+        parse_traces    ->  0.0493929386139
+        parse_negatives ->  0.0487279891968
+        convexHull      ->  0.0750350952148
+        simplify        ->  7.39097595215e-05

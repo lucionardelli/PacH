@@ -1,0 +1,14 @@
+
+Statistic of incident.xes: with negative traces from incident.negatives.xes
+    benchmark       ->  Iterative SMT Simplification
+    positive        ->  incident.xes
+    negative        ->  incident.negatives.xes
+    complexity      ->  327
+    exec_time       ->  2015-11-15 21:15:24.029690
+    overall_time    ->  32.0030107498
+    details
+        parse_traces    ->  0.0897610187531
+        parse_negatives ->  0.0899558067322
+        do_projection   ->  0.0780100822449
+        convexHull      ->  0.00342488288879
+        shift&rotate    ->  31.7418589592

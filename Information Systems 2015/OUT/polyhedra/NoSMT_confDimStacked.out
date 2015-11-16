@@ -1,0 +1,12 @@
+
+Statistic of confDimStacked.xes: with negative traces from 
+    benchmark       ->  No SMT Simplification
+    positive        ->  confDimStacked.xes
+    negative        ->  
+    complexity      ->  33
+    exec_time       ->  2015-11-15 20:36:58.866750
+    overall_time    ->  0.0951178073883
+    details
+        parse_traces    ->  0.089026927948
+        convexHull      ->  0.00609087944031
+        simplify        ->  0.0

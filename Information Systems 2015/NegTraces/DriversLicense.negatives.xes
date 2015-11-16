@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- This file has been generated with the OpenXES library. It conforms -->
+<!-- to the XML serialization of the XES standard for log storage and -->
+<!-- management. -->
+<!-- XES standard version: 1.0 -->
+<!-- OpenXES library version: 1.0RC7 -->
+<!-- OpenXES is available from http://www.openxes.org/ -->
+<log xes.version="1.0" xes.features="nested-attributes" openxes.version="1.0RC7">
+	<trace>
+		<string key="concept:name" value="pi160-5-Do Practical Exam Drive Cars+complete"/>
+		<string key="GroupedIdentifiers" value="pi160, pi161, pi162, pi163, pi164, pi165, pi166, pi167, pi168, pi169, pi170, pi171, pi172, pi173, pi174, pi175, pi176, pi177, pi178, pi179, pi180, pi181, pi182, pi183, pi184, pi185, pi186, pi187, pi188, pi189, pi190, pi191, pi192, pi193, pi194, pi195, pi196, pi197, pi198, pi199, pi200, pi201, pi202, pi203, pi204, pi205, pi206, pi207, pi208, pi209, pi210, pi211, pi212, pi213, pi214, pi215, pi216, pi217, pi218, pi219, pi220, pi221, pi222, pi223, pi224, pi225, pi226, pi227, pi228, pi229, pi230, pi231, pi232, pi233, pi234, pi235, pi236, pi237, pi238, pi239, pi240, pi241, pi242, pi243, pi244, pi245, pi246, pi247, pi248, pi249, pi250, pi251, pi252, pi253, pi254, pi255, pi256, pi257, pi258, pi259, pi260, pi261, pi262, pi263, pi264, pi265, pi266, pi267, pi268, pi269, pi270, pi271, pi272, pi273, pi274, pi275, pi276, pi277, pi278, pi279, pi280, pi281, pi282, pi283, pi284, pi285, pi286, pi287, pi288, pi289, pi290, pi291, pi292, pi293, pi294, pi295, pi296, pi297, pi298, pi299, pi300"/>
+		<string key="numSimilarInstances" value="141"/>
+		<event>
+			<string key="concept:name" value="SSSTTTAAARRRTTT"/>
+			<string key="lifecycle:transition" value="complete"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Apply for License"/>
+			<string key="lifecycle:transition" value="complete"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Attend Classes Drive Cars"/>
+			<string key="lifecycle:transition" value="complete"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Do Theoretical Exam"/>
+			<string key="lifecycle:transition" value="complete"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Do Practical Exam Drive Cars"/>
+			<string key="lifecycle:transition" value="complete"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Do Practical Exam Drive Cars"/>
+			<string key="lifecycle:transition" value="complete-rejected"/>
+			<boolean key="negative:isnegative" value="true"/>
+		</event>
+		<event>
+			<string key="concept:name" value="EEENNNDDD"/>
+			<string key="lifecycle:transition" value="complete"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Get Result"/>
+			<string key="lifecycle:transition" value="complete"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Attend Classes Drive Cars"/>
+			<string key="lifecycle:transition" value="complete"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Get Result"/>
+			<string key="lifecycle:transition" value="complete"/>
+		</event>
+		<event>
+			<string key="concept:name" value="Do Practical Exam Drive Cars"/>
+			<string key="lifecycle:transition" value="complete"/>
+		</event>
+		<event>
+			<string key="concept:name" value="EEENNNDDD"/>
+			<string key="lifecycle:transition" value="complete"/>
+		</event>
+	</trace>
+</log>

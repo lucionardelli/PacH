@@ -1,0 +1,14 @@
+
+Statistic of a32.xes: with negative traces from a32.negatives.xes
+    benchmark       ->  Iterative SMT Simplification
+    positive        ->  a32.xes
+    negative        ->  a32.negatives.xes
+    complexity      ->  6417
+    exec_time       ->  2015-11-15 21:22:25.832752
+    overall_time    ->  375.431091785
+    details
+        parse_traces    ->  0.0787799358368
+        parse_negatives ->  0.490947008133
+        do_projection   ->  0.823174953461
+        convexHull      ->  0.00392293930054
+        shift&rotate    ->  374.034266949

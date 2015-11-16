@@ -1,0 +1,12 @@
+
+Statistic of confDimBlocking.xes: with negative traces from 
+    benchmark       ->  Iterative SMT Simplification
+    positive        ->  confDimBlocking.xes
+    negative        ->  
+    complexity      ->  31
+    exec_time       ->  2015-11-15 20:44:40.588865
+    overall_time    ->  0.573772907257
+    details
+        parse_traces    ->  0.0584900379181
+        convexHull      ->  0.00662684440613
+        shift&rotate    ->  0.508656024933

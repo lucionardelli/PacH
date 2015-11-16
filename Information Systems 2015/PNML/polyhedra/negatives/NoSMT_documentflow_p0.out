@@ -1,0 +1,14 @@
+
+Statistic of documentflow.xes: with negative traces from documentflow.negatives.xes
+    benchmark       ->  No SMT Simplification
+    positive        ->  documentflow.xes
+    negative        ->  documentflow.negatives.xes
+    complexity      ->  64
+    exec_time       ->  2015-11-15 20:57:22.327860
+    overall_time    ->  0.793179035187
+    details
+        parse_traces    ->  0.146383047104
+        parse_negatives ->  0.461450099945
+        do_projection   ->  0.184639930725
+        convexHull      ->  0.000540018081665
+        simplify        ->  0.000165939331055

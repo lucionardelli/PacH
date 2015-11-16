@@ -1,0 +1,14 @@
+
+Statistic of a42.xes: with negative traces from a42.negatives.xes
+    benchmark       ->  Matrix SMT Simplification
+    positive        ->  a42.xes
+    negative        ->  a42.negatives.xes
+    complexity      ->  1467
+    exec_time       ->  2015-11-16 00:15:49.855693
+    overall_time    ->  458.655037165
+    details
+        parse_traces    ->  0.114848136902
+        parse_negatives ->  1.22943615913
+        do_projection   ->  1.32534098625
+        convexHull      ->  0.000422954559326
+        shift&rotate    ->  455.984988928

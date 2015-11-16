@@ -1,0 +1,13 @@
+
+Statistic of Peterson-PT-2.xes: with negative traces from 
+    benchmark       ->  Iterative SMT Simplification
+    positive        ->  Peterson-PT-2.xes
+    negative        ->  
+    complexity      ->  2265
+    exec_time       ->  2015-11-15 20:48:04.204404
+    overall_time    ->  102.461425781
+    details
+        parse_traces    ->  2.09726786613
+        do_projection   ->  10.0094709396
+        convexHull      ->  0.000396966934204
+        shift&rotate    ->  90.3542900085

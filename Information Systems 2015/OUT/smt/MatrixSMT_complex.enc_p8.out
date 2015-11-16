@@ -1,0 +1,13 @@
+
+Statistic of complex.enc.xes: with negative traces from 
+    benchmark       ->  Matrix SMT Simplification
+    positive        ->  complex.enc.xes
+    negative        ->  
+    complexity      ->  2816
+    exec_time       ->  2015-11-15 23:24:28.229791
+    overall_time    ->  10.1877491474
+    details
+        parse_traces    ->  1.69824504852
+        do_projection   ->  1.71815991402
+        convexHull      ->  0.000404119491577
+        shift&rotate    ->  6.77094006538

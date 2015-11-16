@@ -1,0 +1,13 @@
+
+Statistic of Peterson-PT-2.xes: with negative traces from 
+    benchmark       ->  Matrix SMT Simplification
+    positive        ->  Peterson-PT-2.xes
+    negative        ->  
+    complexity      ->  1742
+    exec_time       ->  2015-11-15 23:21:47.343160
+    overall_time    ->  41.9432628155
+    details
+        parse_traces    ->  1.840061903
+        do_projection   ->  9.39825701714
+        convexHull      ->  0.00617504119873
+        shift&rotate    ->  30.6987688541

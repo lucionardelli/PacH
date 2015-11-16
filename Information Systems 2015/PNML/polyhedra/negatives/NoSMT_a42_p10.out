@@ -1,0 +1,14 @@
+
+Statistic of a42.xes: with negative traces from a42.negatives.xes
+    benchmark       ->  No SMT Simplification
+    positive        ->  a42.xes
+    negative        ->  a42.negatives.xes
+    complexity      ->  1467
+    exec_time       ->  2015-11-15 21:01:50.800422
+    overall_time    ->  2.52307724953
+    details
+        parse_traces    ->  0.116146087646
+        parse_negatives ->  1.05091309547
+        do_projection   ->  1.04841899872
+        convexHull      ->  0.000903129577637
+        simplify        ->  0.30669593811

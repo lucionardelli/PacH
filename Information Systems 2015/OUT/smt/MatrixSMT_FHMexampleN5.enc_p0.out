@@ -1,0 +1,13 @@
+
+Statistic of FHMexampleN5.enc.xes: with negative traces from 
+    benchmark       ->  Matrix SMT Simplification
+    positive        ->  FHMexampleN5.enc.xes
+    negative        ->  
+    complexity      ->  8
+    exec_time       ->  2015-11-15 23:25:06.094076
+    overall_time    ->  0.383357048035
+    details
+        parse_traces    ->  0.244031190872
+        do_projection   ->  0.0658819675446
+        convexHull      ->  0.00102496147156
+        shift&rotate    ->  0.0724189281464

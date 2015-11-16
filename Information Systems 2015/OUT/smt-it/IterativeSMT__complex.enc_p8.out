@@ -1,0 +1,13 @@
+
+Statistic of complex.enc.xes: with negative traces from 
+    benchmark       ->  Iterative SMT Simplification
+    positive        ->  complex.enc.xes
+    negative        ->  
+    complexity      ->  2294
+    exec_time       ->  2015-11-15 20:53:13.635826
+    overall_time    ->  16.9197239876
+    details
+        parse_traces    ->  1.60655808449
+        do_projection   ->  1.90118503571
+        convexHull      ->  0.000391960144043
+        shift&rotate    ->  13.4115889072
