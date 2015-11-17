@@ -37,13 +37,13 @@ class PacH(object):
         logger.info('Negative traces file: %s', nfilename)
         self.verbose = verbose
         # Referentes a las trazas
-        self.pv_traces = []
+        self.pv_traces = {}
         self.pv_set = set()
         self.pv_array = np.array([])
         self._qhull = None
         # Referentes a las trazas negativas
         self.max_coef = max_coef
-        self.npv_traces = []
+        self.npv_traces = {}
         self.npv_set = set()
         self.npv_array = np.array([])
         # Inicialización de varibales
@@ -85,7 +85,6 @@ class PacH(object):
             pp_nfile = os.path.basename(nfilename)
         else:
             pp_nfile = ''
-
         self.output = { 'positive': pp_file,
                 'negative': pp_nfile,
                 'time': '%s'%datetime.now(),
@@ -424,8 +423,12 @@ class PacH(object):
         overall = 0
         output = """
 Statistic of {positive}: with negative traces from {negative}
+
     benchmark       ->  {benchmark}
     positive        ->  {positive}
+    dimension       ->  {dimension}
+    traces          ->  {traces}
+    events          ->  {events}
     negative        ->  {negative}
     complexity      ->  {complexity}
     exec_time       ->  {time}
@@ -462,6 +465,9 @@ Statistic of {positive}: with negative traces from {negative}
         for k in ('parse_traces', 'compute_hiperspaces'):
             overall += times.get(k,0)
 
+        self.output['dimension'] = self.dim
+        self.output['traces'] = len(self.pv_traces)
+        self.output['events'] = sum(sum(trace[-1]) for idc,trace in self.pv_traces.items())
         self.output['complexity'] = self.complexity
         self.output['benchmark'] = benchmark
         self.output['overall_time'] = overall

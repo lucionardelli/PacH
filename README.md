@@ -103,13 +103,16 @@ A wrape up of the elements necesary for:
     Statistic of {positive}: with negative traces from {negative}
     benchmark       ->  {benchmark }
     positive        ->  {positive traces file}
+    dimension       ->  {dimension}
+    traces          ->  {positive traces}
+    events          ->  {total events found in positive traces}
     negative        ->  {negative traces file}
     complexity      ->  {complexity of the model}  
     exec_time       ->  {execution time}
     overall_time    ->  {overall time}
     details
         parse_traces    ->  {time parsing traces}
-        parse_negatives ->  {time parsin negatives}
+        parse_negatives ->  {time parsing negatives}
         do_sampling     ->  {time doing sampling}
         do_projection   ->  {time doing projection}
         convexHull      ->  {time computing hiperspaces}
