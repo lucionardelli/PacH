@@ -2,7 +2,6 @@
 # -*- coding: UTF-8
 from os.path import isfile
 from lxml import etree
-from utils import check_argv
 import pdb
 import numpy as np
 
@@ -25,6 +24,7 @@ class XesParser(object):
         self.traces = {}
         self.max_len = 0
         self.max_len_idx = None
+        # Event to value
         self.event_dictionary = {}
         self.dim = 0
         self.verbose = verbose
@@ -107,8 +107,6 @@ class XesParser(object):
                 print 'Traza {0} with points:'.format(trace)
                 for point in self.pv_traces[trace]:
                     print(point)
-            print 'Se encontraron {0} puntos en un espacio de dimensión {1}'.format(
-                    len(self.pv_set), self.dim)
         logger.info('Se encontraron %s puntos en un espacio de dimensión %s',
                 len(self.pv_set), self.dim)
         return True

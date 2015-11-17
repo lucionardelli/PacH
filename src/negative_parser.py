@@ -2,7 +2,6 @@
 # -*- coding: UTF-8
 from os.path import isfile
 from lxml import etree
-from utils import check_argv
 import pdb
 import numpy as np
 

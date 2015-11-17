@@ -20,7 +20,6 @@ class Qhull(object):
     def __init__(self, points, neg_points=[], verbose=False):
         self.points = set(points)
         self.neg_points = set(neg_points)
-        self.__qhull = None
         self.facets = []
         self.verbose = verbose
         self.output = {}
@@ -63,12 +62,7 @@ class Qhull(object):
                     len(points[0]),len(points))
             output = qconvex('n',points)
             if len(output) == 1:
-                #print "Shake it baby!"
                 logger.debug('Could not get Hull. Joggle input?')
-# TODO sacar las líneas que siguen. Eran para chequear
-#                import pdb;pdb.set_trace()
-#                output = qconvex('n',points)
-                #output = qconvex('QJ n',list(self.points))
         try:
             dim, facets_nbr, facets = self.__parse_hs_output(output)
         except IncorrectOutput:
@@ -86,16 +80,12 @@ class Qhull(object):
 
     @stopwatch
     def prepare_negatives(self):
-        # Simplifation made to (at most) with same number of
-        # negative and positive points
         positive_points = len(self.points)
         actual_neg_points = []
         for npoint in self.neg_points:
             if npoint not in self:
                 actual_neg_points.append(npoint)
                 positive_points -= 1
-            #if positive_points == 0:
-            #    break
         self.net_points = actual_neg_points
 
     def union(self, facets):
@@ -146,8 +136,9 @@ class Qhull(object):
         logger.info('Sanity check: Are all points still valid?')
         where = self.separate(points)
         if len(where.get('outside',[])) > 0:
-            logger.error('Nooo!!!! We lost some!')
-            raise LostPoints('We lost some: %s', where['outside'])
+            logger.error('Some points are outisde the hull')
+            raise LostPoints('Some points are outisde the hull: %s',
+                    where['outside'])
         logger.info('Sanity check passed')
         return True
 
@@ -330,8 +321,6 @@ class Qhull(object):
                     z3_val = z3.Int("a" + str(p_id) + "," + str(t_id))
                     normal.append(int(str(sol[z3_val])))
                 if sum(abs(x) for x in normal) != 0:
-                    # TODO Realmente no hay que convertir en intergers?
-                    # Son siempre enteros?
                     f = Halfspace(normal, b, integer_vals=False)
                     if not f in facets:
                         facets.append(f)

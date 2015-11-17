@@ -9,9 +9,10 @@ from qhull import Qhull
 from parser import XesParser, AdHocParser
 from comparator import Comparator
 from negative_parser import NegativeParser
+from pnml import PnmlParser
 
 def pach_main():
-    usage = 'Usage: ./pach <LOG filename> [--debug][--verbose]'\
+    usage = 'Usage: ./pach.py <LOG filename> [--debug][--verbose]'\
         '\n\t[--negative <Negative points filename>] [max_coeficient]]'\
         '\n\t[--sampling [<number of samplings>] [<sampling size>]]'\
         '\n\t[--projection [<max group size>] [<connected model>]]'\
@@ -138,7 +139,6 @@ def parser_main():
             if '--verbose' in sys.argv:
                 print 'Parse done. Calcuting Parikhs vector'
             obj.parikhs_vector()
-            CorrMatrix(obj.pv_array)
             print 'Se encontraron {0} puntos en un espacio de dimensión {1}'.format(
                     len(obj.pv_set), obj.dim)
             if '--verbose' in sys.argv:
@@ -153,7 +153,7 @@ def parser_main():
         return ret
 
 def qhull_main():
-    usage = 'Usage: ./qhull <points> [--debug][--verbose]'
+    usage = 'Usage: ./qhull.py <points> [--debug][--verbose]'
     if not check_argv(sys.argv, minimum=1, maximum=5):
         print usage
         ret =  -1
@@ -197,7 +197,7 @@ def qhull_main():
 
 def negative_parser_main():
     usage = """
-        Usage: ./parser.py <negative XES LOG filename> [--verbose][--debug]
+        Usage: ./negative_parser.py <negative XES LOG filename> [--verbose][--debug]
     """
     if not check_argv(sys.argv, minimum=1, maximum=4):
         print usage
@@ -232,7 +232,7 @@ def negative_parser_main():
         return ret
 
 def comparator_main():
-    usage = 'Usage: ./comparator <LOG filename> [--debug]'\
+    usage = 'Usage: ./comparator.py <LOG filename> [--debug]'\
         '\n\t[--negative <Negative points filename>] [max_coeficient]]'\
         '\n\t[--sampling [<number of samplings>] [<sampling size>]]'\
         '\n\t[--projection [<max group size>] [<connected model>]]'\
@@ -320,3 +320,39 @@ def comparator_main():
             raise err
         return ret
 
+def pnml_main():
+    usage = """
+        Usage: ./pnml.py <PNML filename> [--verbose][--debug]
+    """
+    if not check_argv(sys.argv, minimum=1, maximum=4):
+        print usage
+        ret = -1
+    else:
+        ret = 0
+        try:
+            filename = sys.argv[1]
+            if not (filename.endswith('.pnml')):
+                print filename, ' does not end in .pnml. It should...'
+                raise Exception('Filename has wrong extension')
+            if not isfile(filename):
+                raise Exception("El archivo especificado no existe")
+            if '--debug' in sys.argv:
+                pdb.set_trace()
+            obj = PnmlParser(filename, verbose='--verbose' in sys.argv)
+            obj.parse()
+            if '--verbose' in sys.argv:
+                print 'Parse done.'
+                print obj.petrinet
+            qhull = obj.petrinet.get_qhull()
+            if '--verbose' in sys.argv:
+                print 'Got qhull representation whith %s facets.'%(len(qhull.facets))
+                print 'This are them:\n'
+                for facet in self.facets:print facet
+        except Exception, err:
+            ret = 1
+            if hasattr(err, 'message'):
+                print 'Error: ', err.message
+            else:
+                print 'Error: ', err
+            raise err
+        return ret

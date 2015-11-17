@@ -4,6 +4,8 @@ from qhull import Qhull
 from parser import XesParser, AdHocParser
 from negative_parser import NegativeParser
 from corrmatrix import CorrMatrix
+from halfspace import Halfspace
+from petrinet import PetriNet, Place, Transition, Arc
 from utils import get_positions, rotate_dict
 import time
 import numpy as np
@@ -11,7 +13,6 @@ from random import sample
 from datetime import datetime
 import os
 
-from halfspace import Halfspace
 from custom_exceptions import CannotGetHull, WrongDimension, CannotIntegerify
 from sampling import sampling
 from projection import projection
@@ -303,59 +304,36 @@ class PacH(object):
     def generate_pnml(self, filename=None):
         if not filename:
             filename = self.get_def_pnml_name()
-        pp_file = os.path.basename(filename)
-        preamble = '<?xml version="1.0" encoding="UTF-8"?>\n'\
-                   '<pnml xmlns="http://www.pnml.org/version-2009/grammar/pnml">\n'\
-                   '  <net id="exit_net" type="http://www.pnml.org/version-2009/grammar/ptnet">\n'\
-                   '    <name>\n'\
-                   '      <text>"%s" Generater automagically with PacH</text>\n'\
-                   '    </name>\n'\
-                   '    <page id="page">\n'%(pp_file)
+        net_name = os.path.basename(filename)
+        net_id = net_name.replace(' ','_').lower()
 
+        net = PetriNet(net_id=net_id,name=net_name,filename=filename)
         # Comenzamos con los Places (i.e. un place por cada inecuación)
         nbr_places = 0
-        places = '\n      <!-- Places -->\n'
         places_list = []
         for idx, place in enumerate(self.facets,1):
             nbr_places += 1
             place_id = "place-%04d"%idx
-            place_name = ("%s"%(place)).replace('<=','&lt;=')
-            places_list.append(
-                    '      <place id="%s">\n'\
-                    '        <name>\n'\
-                    '          <text>%s</text>\n'\
-                    '        </name>\n'\
-                    '        <initialMarking>\n'\
-                    '          <text>%d</text>\n'\
-                    '        </initialMarking>\n'\
-                    '      </place>'%(place_id,place_name,abs(place.offset)))
-        places += '\n'.join(places_list)
+            place_label = "%s"%place
+            marking = abs(place.offset)
+            Place(net, place_id, label=place_label, marking=marking)
 
         # Seguimos con las Transitions (i.e. una transition por cada variable)
         # Se crearán tantas transiciones como dimensiones del espacio
         nbr_transitions = 0
-        transitions = '\n      <!-- Transitions -->\n'
-        transitions_list = []
         for idx in xrange(self.dim):
             if idx in self.reversed_dictionary:
                 transition_id = self.reversed_dictionary.get(idx).replace(' ','_')
-                transition_name = self.reversed_dictionary.get(idx)
+                transition_label = self.reversed_dictionary.get(idx)
             else:
                 transition_id = 'trans-%04d'%(idx+1)
-                transition_name = 'Transition %04d'%(idx+1)
-            transitions_list.append(
-                    '      <transition id="%s">\n'\
-                    '        <name>\n'\
-                    '          <text>%s</text>\n'\
-                    '        </name>\n'\
-                    '      </transition>\n'%(transition_id,transition_name))
-        transitions += '\n'.join(transitions_list)
+                transition_label = 'Transition %04d'%(idx+1)
+            Transition(net, transition_id, label=transition_label)
 
         # Los arcos se arman relacionando los places con las transitions
         # Para cada inecuación, se crean un arco hacia la transition
         # (i.e. variable) con peso igual al TI que la acompaña
         # Salvo que sea 0, claro.
-        arcs = '\n      <!-- Arcs -->\n'
 
         # Para las transiciones que no tienen
         # al menos un elemento en el preset y uno en el postset
@@ -369,22 +347,16 @@ class PacH(object):
         for pl_id,place in enumerate(self.facets,1):
             # Contamos desde uno
             place_id = 'place-%04d'%(pl_id)
-            for tr_id, val in enumerate(place.normal):
+            for tr_id, value in enumerate(place.normal):
                 # Si es cero no crear el arco
-                if not val:
+                if not value:
                     continue
 
                 if tr_id in self.reversed_dictionary:
                     transition_id = self.reversed_dictionary.get(tr_id).replace(' ','_')
                 else:
                     transition_id = 'trans-%04d'%(tr_id+1)
-                if abs(val) != 1:
-                    arc_value = '<inscription>'\
-                            '<text>%s</text>'\
-                            '</inscription>'%(abs(val))
-                else:
-                    arc_value = ''
-                if val > 0:
+                if value > 0:
                     if tr_id in needs_preset:
                         # Puede que ya le hayamos creado un arco
                         # entrante
@@ -408,10 +380,7 @@ class PacH(object):
                     continue
                 else:
                     seen_arcs.append((from_id, to_id))
-                arcs_list.append('      <arc id="%s" source="%s" target="%s">%s</arc>'
-                                        %(arc_id,from_id,to_id,arc_value))
-
-        arcs += '\n'.join(arcs_list)
+                Arc(net, arc_id, from_id, to_id, value=value)
 
         # Generamos los places y arcos para los bucles de las transitions
         # desconectadas
@@ -419,26 +388,16 @@ class PacH(object):
         for idx,tr_id in enumerate(needs_preset | needs_postset):
             pl_id = nbr_places + idx + 1
             place_id = "place-%04d"%(pl_id)
-            place_name = 'Dummy place %04d'%(idx+1)
+            place_label = 'Dummy place %04d'%(idx+1)
 
             if tr_id in needs_preset:
-                place_value = 1
+                marking = 1
             elif tr_id in needs_postset:
-                place_value = 0
+                marking = 0
             else:
                 raise Exception('No necesita pre ni post!')
 
-            loops_list.append(
-                    '      <place id="%s">\n'\
-                    '        <name>\n'\
-                    '          <text>%s</text>\n'\
-                    '        </name>\n'\
-                    '        <initialMarking>\n'\
-                    '          <text>%d</text>\n'\
-                    '        </initialMarking>\n'\
-                    '      </place>'%(place_id,place_name,place_value))
-
-
+            Place(net, place_id, place_label, marking)
             if tr_id in self.reversed_dictionary:
                 transition_id = self.reversed_dictionary.get(tr_id).replace(' ','_')
             else:
@@ -448,29 +407,14 @@ class PacH(object):
                 # disparar siempre, por lo que generamos un loop
                 # con el dummy-place
                 arc_id = 'arc-P%04d-T%s'%(pl_id,transition_id)
-                loops_list.append('      <arc id="%s" source="%s" target="%s">%s</arc>'
-                                                %(arc_id,transition_id,place_id,1))
-                arc_id = 'arc-T%s-P%04d'%(tr_id,pl_id)
-                loops_list.append('      <arc id="%s" source="%s" target="%s">%s</arc>'
-                                                %(arc_id,place_id,transition_id,1))
+                Arc(net, arc_id, transition_id,place_id, 1)
+                Arc(net, arc_id, place_id, transition_id, 1)
             elif tr_id in needs_postset:
                 # Lo agregamos al postset de la transición como una
                 # especie de "/dev/null" donde tirar los markings generados
                 arc_id = 'arc-T%s-P%04d'%(tr_id,pl_id)
-                loops_list.append('      <arc id="%s" source="%s" target="%s">%s</arc>'
-                                                %(arc_id,transition_id,place_id,1))
-        if len(loops_list) == 0:
-            loops = ''
-        else:
-            loops = '\n      <!-- Dummy Places -->\n'
-            loops += '\n'.join(loops_list)
-
-        # Finalizamos el archivo
-        ending = '\n    </page>\n  </net>\n</pnml>\n'
-
-        pnml = preamble + places + transitions + arcs + loops + ending
-        with open(filename,'w') as ffile:
-            ffile.write(pnml)
+                Arc(net, arc_id, transition_id,place_id, 1)
+        net.save()
         logger.info('Generated the PNML %s', filename)
         return True
 
