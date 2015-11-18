@@ -73,12 +73,6 @@ class PetriNet(object):
                 xml_declaration=True, method="xml", pretty_print=True)
         logger.info('Generated the PNML %s', self.filename)
 
-    @property
-    def qhull(self):
-        if not self._qhull:
-            self._qhull = self.get_qhull()
-        return self._qhull
-
     def get_qhull(self, neg_points=[]):
         """ From a Petrinet, gets it's representationas a Convex Hull
         """

@@ -237,7 +237,8 @@ class Qhull(object):
     @stopwatch
     def smt_solution(self,timeout):
         solver = z3.Solver()
-        solver.set("soft_timeout", timeout)
+        solver.set("timeout", timeout)
+
         diff_sol = False
         non_trivial = False
         A1 = True

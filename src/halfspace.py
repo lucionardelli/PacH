@@ -154,7 +154,7 @@ class Halfspace(Halfspace):
     def smt_solution(self, timeout, neg_points=None):
         neg_points = neg_points or []
         solver = z3.Solver()
-        solver.set("soft_timeout", timeout)
+        solver.set("timeout", timeout)
 
         b = self.offset
         z3_b = z3.Int("b")

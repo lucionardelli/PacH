@@ -11,7 +11,6 @@ from parser import XesParser
 
 class NegativeParser(XesParser):
 
-
     def __init__(self,xes_file_name, verbose=False,
             # New values required for negative traces
             required_dimension=0,

@@ -88,6 +88,14 @@ class PacH(object):
         self.output = { 'positive': pp_file,
                 'negative': pp_nfile,
                 'time': '%s'%datetime.now(),
+                'dimension': 0,
+                'traces': 0,
+                'events': 0,
+                'complexity': 0,
+                'benchmark': '',
+                'parse_traces': 0,
+                'compute_hiperspaces': 0,
+                'overall_time': 0,
                 'times': {}}
 
     @stopwatch

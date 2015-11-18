@@ -44,18 +44,20 @@ class PnmlParser(object):
             if self.verbose:
                 print 'Creando el place %s'%pl
         # Iteramos sobre las transiciones y las vamos agregando a la red
+        # Una transition por cada variable, por lo que indica la dim
+        dim = 0
         for tr_node in net_node.iter('{*}transition'):
+            dim += 1
             tr_id = tr_node.get('id')
             label = tr_node.find('{*}name/{*}text').text
+            if label not in self.event_dictionary:
+                self.event_dictionary[label] = len(self.event_dictionary)
             tr = Transition(net, tr_id, label=label)
             logger.debug('Creando la transition %s',tr)
             if self.verbose:
                 print 'Creando la transition %s'%tr
         # Iteramos sobre los arcos y los vamos agregando a la red
-        # Una transition por cada variable, por lo que indica la dim
-        dim = 0
         for arc_node in net_node.iter('{*}arc'):
-            dim += 1
             arc_id = arc_node.get('id')
             from_id = arc_node.get('source')
             to_id = arc_node.get('target')
