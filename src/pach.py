@@ -232,7 +232,7 @@ class PacH(object):
                 start_time = time.time()
             old_len = len(self.facets)
             self.qhull.no_smt_simplify(max_coef=self.max_coef)
-            removed = len(self.facets) - old_len
+            removed = old_len - len(self.facets)
             if removed:
                 logger.debug('We removed %d facets without allowing negative points',removed)
             else:
@@ -461,7 +461,7 @@ Statistic of {positive}: with negative traces from {negative}
             overall += times.get('smt_hull_simplify')
         elif self.smt_iter:
             benchmark = 'Iterative SMT Simplification'
-            outfile = 'IterativeSMT__' + outfile
+            outfile = 'IterativeSMT_' + outfile
             output +="""\n        shift&rotate    ->  {smt_facet_simplify}"""
             overall += times.get('smt_facet_simplify')
         else:

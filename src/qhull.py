@@ -17,7 +17,7 @@ from config import logger
 
 class Qhull(object):
 
-    def __init__(self, points, neg_points=[], verbose=False):
+    def __init__(self, points=[], neg_points=[], verbose=False):
         self.points = set(points)
         self.neg_points = set(neg_points)
         self.facets = []
@@ -210,9 +210,6 @@ class Qhull(object):
                 tmpqhull = Qhull(set())
                 tmpqhull.facets = list(set(facets)-set([facet]))
                 simplify = True
-                # Simplifation made to (at most) with same number of
-                # negative and positive points
-                positive_points = len(self.points)
                 for npoint in self.neg_points:
                     if npoint in tmpqhull:
                         simplify = False
@@ -320,7 +317,7 @@ class Qhull(object):
                 b = int(str(sol[z3.Int("b" + str(p_id))]))
                 for t_id, val in enumerate(place.normal):
                     z3_val = z3.Int("a" + str(p_id) + "," + str(t_id))
-                    normal.append(int(str(sol[z3_val])))
+                    normal.append(int(str(sol[z3_val] or 0)))
                 if sum(abs(x) for x in normal) != 0:
                     f = Halfspace(normal, b, integer_vals=False)
                     if not f in facets:

@@ -77,7 +77,7 @@ class PetriNet(object):
         """ From a Petrinet, gets it's representationas a Convex Hull
         """
         # Create an empty Convex Hull
-        qhull = Qhull([], neg_points=neg_points)
+        qhull = Qhull(neg_points=neg_points)
         # La normal por defaul para cada facet
         dim = len(self.transitions)
         tmpl_normal = [0]*dim

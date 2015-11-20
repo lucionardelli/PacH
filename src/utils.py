@@ -77,3 +77,40 @@ def __lcm_two(num1,num2=1):
 
 def lcm(*args):
     return reduce(__lcm_two, args)
+
+from ConfigParser import SafeConfigParser
+from os.path import isfile
+# Funtction to parse .ini config giles and return values for scripting
+def parse_config(options_file):
+    parser = SafeConfigParser()
+    parser.read(options_file)
+
+    # One section per file to compute
+    for section in parser.sections():
+        if section == 'OUTPUT_DIRS':
+            continue
+        print 'Starting:', section
+        # Filename is a special option
+        filename = parser.get(section, 'filename')
+        parser.remove_option(section, 'filename')
+        if not isfile(filename):
+            raise Exception("El archivo especificado no existe")
+        arguments = {}
+        for arg in parser.options(section):
+            # Try to search for actual value, if not, it's a string
+            try:
+                val = eval(parser.get(section, arg))
+            except:
+                val = parser.get(section, arg)
+            arguments[arg] = val
+        yield (filename, arguments)
+
+# Funtction to parse .ini config giles and return values for scripting
+def parse_config_output(options_file):
+    parser = SafeConfigParser()
+    parser.read(options_file)
+
+    # One section per file to compute
+    pnml_dir = parser.get('OUTPUT_DIRS', 'pnml_output')
+    out_dir = parser.get('OUTPUT_DIRS', 'statistics_output')
+    return pnml_dir, out_dir

@@ -29,7 +29,7 @@ class Comparator(object):
         qhull = self.qhull_no_smt
         old_len = len(qhull.facets)
         qhull.no_smt_simplify(max_coef=self.max_coef)
-        removed = len(qhull.facets) - old_len
+        removed = old_len - len(qhull.facets)
         if removed:
             logger.info('NO-SMT: We removed %d facets without allowing negative points',removed)
         else:
@@ -41,7 +41,7 @@ class Comparator(object):
         qhull = self.qhull_smt_iter
         old_len = len(qhull.facets)
         qhull.smt_facet_simplify(timeout=self.timeout_smt_iter)
-        removed = len(qhull.facets) - old_len
+        removed = old_len - len(qhull.facets)
         if removed:
             logger.info('SMT-ITER: We removed %d facets without allowing negative points',removed)
         else:
@@ -53,7 +53,7 @@ class Comparator(object):
         qhull = self.qhull_smt_matrix
         old_len = len(qhull.facets)
         qhull.smt_hull_simplify(timeout=self.timeout_smt_matrix)
-        removed = len(qhull.facets) - old_len
+        removed = old_len - len(qhull.facets)
         if removed:
             logger.info('SMT-MATRIX: We removed %d facets without allowing negative points',removed)
         else:

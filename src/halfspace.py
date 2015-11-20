@@ -26,6 +26,8 @@ except:
     #No module named z3, whouldn't be available
     pass
 
+counter = 0
+
 class Halfspace(Halfspace):
     """
     A halfspace defined by dot(normal, coords) + offset <= 0
@@ -181,6 +183,8 @@ class Halfspace(Halfspace):
         variables = []
 
         for t_id, val in enumerate(self.normal):
+            if not val:
+                continue
             z3_val = z3.Int("a" + str(t_id))
             x = z3.Int("x" + str(t_id))
             variables.append(x)
@@ -192,9 +196,6 @@ class Halfspace(Halfspace):
             elif val < 0:
                 solver.add(z3_val <= 0)
                 solver.add(val <= z3_val)
-            else:
-                solver.add(z3_val == 0)
-
             if not simple:
                 some_consume = z3.Or(some_consume, z3_val < 0)
                 some_produce = z3.Or(some_produce, z3_val > 0)
@@ -221,9 +222,12 @@ class Halfspace(Halfspace):
             smt_np = z3.simplify(z3.Or(smt_np, ineq_np < 0))
             solver.add(smt_np)
 
+        #import pdb;pdb.set_trace()
         sol = solver.check()
         if sol == z3.unsat or sol == z3.unknown:
             ret = False
+            del(solver)
+            del(sol)
         else:
             ret = solver.model()
         return ret
@@ -233,15 +237,21 @@ class Halfspace(Halfspace):
         if sol:
             offset = int(str(sol[z3.Int("b")]))
 
+            #import pdb;pdb.set_trace()
             for t_id, val in enumerate(self.normal):
                 z3_val = z3.Int("a" + str(t_id))
-                normal.append(int(str(sol[z3_val])))
+                normal.append(int(str(sol[z3_val] or 0)))
             if sum(abs(x) for x in normal) != 0:
                 self.normal = normal
                 self.offset = offset
 
     def smt_facet_simplify(self, neg_points=None, timeout=0):
+        #import pdb;pdb.set_trace()
+        global counter
+        counter = counter + 1
         neg_points = neg_points or []
+        logger.info('SMT simplifying facet #%s of dim %s',counter, self.dim)
+        logger.debug('SMT simplifying facet #%s: %s',counter, self)
         sol = self.smt_solution(timeout, neg_points=neg_points)
         while sol:
             self.simplify(sol)
