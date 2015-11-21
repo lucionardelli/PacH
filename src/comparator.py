@@ -89,7 +89,7 @@ class Comparator(object):
         return self.complexity()
 
     def generate_outputs(self, filename=''):
-        filename = filename or 'Generated automagically comparator.py'
+        filename = filename or 'Generated automagically'
         pach = PacH(filename)
         pach.dim = self.dim
         # For every benchmark, generate the output

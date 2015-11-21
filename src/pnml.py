@@ -38,7 +38,8 @@ class PnmlParser(object):
         for pl_node in net_node.iter('{*}place'):
             pl_id = pl_node.get('id')
             label = pl_node.find('{*}name/{*}text').text
-            marking = int(pl_node.find('{*}initialMarking/{*}text').text)
+            marking = pl_node.find('{*}initialMarking/{*}text')
+            marking = marking is not None and int(marking.text) or 0
             pl = Place(net, pl_id, label=label, marking=marking)
             logger.debug('Creando el place %s',pl)
             if self.verbose:

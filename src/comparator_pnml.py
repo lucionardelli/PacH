@@ -20,7 +20,7 @@ class ComparatorPnml(object):
         self.dim = parser.dim
         #self.event_dictionary = parser.event_dictionary
 
-        # Helper pach. Doesn't actually compute anything
+        # Helper pach. Doesn't actually compute hull
         self.pach = PacH(filename,nfilename=nfilename)
         self.pach.event_dictionary = parser.event_dictionary
         self.pach.reversed_dictionary = rotate_dict(parser.event_dictionary)
@@ -38,7 +38,10 @@ class ComparatorPnml(object):
                 max_coef, smt_timeout_iter, smt_timeout_matrix)
 
     def generate_pnml(self):
-        return self.comparator.generate_pnml(filename=self.filename,
+        output_pnml = self.filename
+        output_pnml = (output_pnml.endswith('.pnml') and output_pnml[:-5])\
+                or output_pnml or ''
+        return self.comparator.generate_pnml(filename=output_pnml,
                 reversed_dictionary=self.pach.reversed_dictionary)
 
     def compare(self):
@@ -46,7 +49,7 @@ class ComparatorPnml(object):
 
     def generate_outputs(self):
         # For every benchmark, generate the output
-        return self.comparator.generate_outputs()
+        return self.comparator.generate_outputs(filename=self.filename)
 
 if __name__ == '__main__':
     import sys, traceback, pdb
