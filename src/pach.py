@@ -339,7 +339,7 @@ class PacH(object):
 
         # Los arcos se arman relacionando los places con las transitions
         # Para cada inecuación, se crean un arco hacia la transition
-        # (i.e. variable) con peso igual al TI que la acompaña
+        # (i.e. variable) con peso igual al coef que la acompaña
         # Salvo que sea 0, claro.
 
         # Para las transiciones que no tienen
@@ -380,6 +380,7 @@ class PacH(object):
                     arc_id = 'arc-T%s-P%04d'%(transition_id,pl_id)
                     from_id = transition_id
                     to_id = place_id
+                    value = abs(value)
                 # No debería pasar, pero por las dudas,
                 # evitemos crear arcos repetidos
                 if (from_id, to_id) in seen_arcs:

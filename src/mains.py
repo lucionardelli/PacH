@@ -372,13 +372,23 @@ def pnml_comparator_main():
                     args['smt_timeout_iter'] = int(sys.argv[smt_idx+1])
                 except:
                     pass
-
             if '--debug' in sys.argv:
                 pdb.set_trace()
+            if '--check' in sys.argv or '-c' in sys.argv:
+                lidx = '-c' in sys.argv and sys.argv.index('-c') or\
+                    sys.argv.index('--check')
+                log_file = sys.argv[lidx+1]
+                if not (log_file.endswith('.xes')):
+                    print log_file, ' does not end in .xes. It should...'
+                    raise Exception('Filename does not end in .xes')
+                if not isfile(log_file):
+                    raise Exception("El archivo especificado no existe")
+                args['positive_log'] = log_file
             comparator = ComparatorPnml(filename, **args)
             complexity = comparator.compare()
             comparator.generate_pnml()
             comparator.generate_outputs()
+            comparator.check_hull()
             if '--verbose' in sys.argv:
                 print complexity
         except Exception, err:
@@ -392,9 +402,9 @@ def pnml_comparator_main():
 
 def pnml_main():
     usage = """
-        Usage: ./pnml.py <PNML filename> [--verbose][--debug]
+        Usage: ./pnml.py <PNML filename> [--verbose][--debug][--check <XES Log filename>]
     """
-    if not check_argv(sys.argv, minimum=1, maximum=4):
+    if not check_argv(sys.argv, minimum=1, maximum=5):
         print usage
         ret = -1
     else:
@@ -414,10 +424,20 @@ def pnml_main():
                 print 'Parse done.'
                 print obj.petrinet
             qhull = obj.petrinet.get_qhull()
+            if '--check' in sys.argv or '-c' in sys.argv:
+                lidx = '-c' in sys.argv and sys.argv.index('-c') or\
+                    sys.argv.index('--check')
+                log_file = sys.argv[lidx+1]
+                if not (log_file.endswith('.xes')):
+                    print log_file, ' does not end in .xes. It should...'
+                    raise Exception('Filename does not end in .xes')
+                if not isfile(log_file):
+                    raise Exception("El archivo especificado no existe")
+                qhull.all_in_file(log_file, event_dictionary=obj.event_dictionary)
             if '--verbose' in sys.argv:
                 print 'Got qhull representation whith %s facets.'%(len(qhull.facets))
                 print 'This are them:\n'
-                for facet in self.facets:print facet
+                for facet in qhull.facets:print facet
         except Exception, err:
             ret = 1
             if hasattr(err, 'message'):

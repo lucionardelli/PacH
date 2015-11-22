@@ -72,6 +72,7 @@ class PnmlParser(object):
             if self.verbose:
                 print 'Creando el arco %s'%arc
         self.petrinet = net
+        self.petrinet.event_dictionary = self.event_dictionary
         self.dim = dim
         return True
 

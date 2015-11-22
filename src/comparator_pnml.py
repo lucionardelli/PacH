@@ -12,13 +12,15 @@ from config import logger
 class ComparatorPnml(object):
 
     def __init__(self, filename, nfilename=None,
-            max_coef=10, smt_timeout_iter=0, smt_timeout_matrix=0):
+            max_coef=10, smt_timeout_iter=0, smt_timeout_matrix=0,
+            positive_log=None):
         self.filename = filename
         parser = PnmlParser(filename)
         parser.parse()
         self.net = parser.petrinet
         self.dim = parser.dim
-        #self.event_dictionary = parser.event_dictionary
+        self.event_dictionary = parser.event_dictionary
+        self.positive_log = positive_log
 
         # Helper pach. Doesn't actually compute hull
         self.pach = PacH(filename,nfilename=nfilename)
@@ -50,6 +52,11 @@ class ComparatorPnml(object):
     def generate_outputs(self):
         # For every benchmark, generate the output
         return self.comparator.generate_outputs(filename=self.filename)
+
+    def check_hull(self):
+        if self.positive_log:
+            return self.comparator.check_hull(log_file=self.positive_log,
+                    event_dictionary=self.event_dictionary)
 
 if __name__ == '__main__':
     import sys, traceback, pdb

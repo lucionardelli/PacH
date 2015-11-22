@@ -12,7 +12,7 @@ TOLERANCE =0.0001
 #General Logging config
 
 LOG_CONFIG = {
-    'level': logging.DEBUG,
+    'level': logging.INFO,
     'filename': '/var/log/pach.log',
     'filemode': 'a',
     'format': '%(asctime)s %(levelname)-8s %(message)s',

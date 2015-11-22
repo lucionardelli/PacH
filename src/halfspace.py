@@ -250,7 +250,7 @@ class Halfspace(Halfspace):
         global counter
         counter = counter + 1
         neg_points = neg_points or []
-        logger.info('SMT simplifying facet #%s of dim %s',counter, self.dim)
+        logger.debug('SMT simplifying facet #%s of dim %s',counter, self.dim)
         logger.debug('SMT simplifying facet #%s: %s',counter, self)
         sol = self.smt_solution(timeout, neg_points=neg_points)
         while sol:

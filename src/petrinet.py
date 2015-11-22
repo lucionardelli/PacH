@@ -82,8 +82,8 @@ class PetriNet(object):
         dim = len(self.transitions)
         tmpl_normal = [0]*dim
         # Each transition corresponds to one dimension
-        # transition.id -> dimension number
-        transitions = {}
+        # transition.label -> dimension number
+        transitions = self.event_dictionary
         # Each facet corresponds to one place
         # place.id -> {normal->[arc.value], offset->marking}
         facets_dict = {}
@@ -91,21 +91,30 @@ class PetriNet(object):
         for arc in self.arcs:
             # No debería haber arcos nulos
             if not arc.value:
-                logger.warning('We found a zero arc: %s',arc)
-                continue
+                logger.error('We found a zero arc: %s',arc)
+                raise Exception('We found a zero arc: %s',arc)
+            # NOTE recordar que nuestra representación interna de HS es
+            # al revés que el paper (usamos <= 0 en lguar de >= 0)
             if isinstance(arc.source,Transition):
-                # Si el arco sale de una transition el TI es < 0
+                # Si el arco sale de una transition el coeficiente es < 0
                 coef = -1*arc.value
                 transition = arc.source
                 place = arc.destination
             else:
-                # Si el arco sale de un place el TI es > 0
+                # Si el arco sale de un place el coeficiente es > 0
                 coef = arc.value
                 place = arc.source
                 transition = arc.destination
-            x = transitions.setdefault(transition.id,len(transitions))
+            x = transitions.setdefault(transition.label,len(transitions))
             facet = facets_dict.setdefault(place.id,{'normal':list(tmpl_normal),
-                                                    'offset': place.marking})
+                                                    'in_transitions':[],
+                                                    'out_transitions':[],
+                                                    'offset': -1*place.marking,
+                                                    'id':place.id})
+            if coef < 0:
+                facet['in_transitions'].append(transition.label)
+            else:
+                facet['out_transitions'].append(transition.label)
             if facet['normal'][x]:
                 logger.debug('Coeficient already loaded. Dummy place')
                 coef = 0

@@ -1,11 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8
 import copy
+from os.path import isfile
 
 from pach import PacH
 from config import logger
-
-
 class Comparator(object):
 
     def __init__(self, no_smt_qhull, iter_qhull, matrix_qhull,
@@ -116,3 +115,14 @@ class Comparator(object):
         logger.info('Generated output for Matrix SMT simplification')
         return True
 
+    def check_hull(self, log_file='', event_dictionary={}):
+        if not (log_file.endswith('.xes')):
+            print log_file, ' does not end in .xes. It should...'
+            raise Exception('Filename does not end in .xes')
+        if not isfile(log_file):
+            raise Exception("El archivo especificado no existe")
+        # For every benchmark, check that the hull accepts the positive log
+        for benchmark in ['no_smt', 'smt_iter', 'smt_matrix']:
+            qhull = getattr(self,'qhull_'+benchmark)
+            qhull.all_in_file(log_file, event_dictionary=event_dictionary)
+        return True

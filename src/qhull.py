@@ -3,6 +3,7 @@
 from pyhull import qconvex
 from utils import get_positions
 from halfspace import Halfspace
+from parser import XesParser
 from custom_exceptions import IncorrectOutput, CannotGetHull, LostPoints
 from stopwatch_wrapper import stopwatch
 
@@ -128,6 +129,15 @@ class Qhull(object):
                 really = not point in self
                 outside.append(point)
         return ret
+
+    def all_in_file(self, filename, event_dictionary=None):
+        # Esto es para chequear que no dejando a nadia afuera
+        # hace todo más lento en ejemplos grandes
+        parser = XesParser(filename)
+        parser.event_dictionary = event_dictionary or {}
+        parser.parse()
+        parser.parikhs_vector()
+        return self.all_in(parser.pv_set)
 
     @stopwatch
     def all_in(self, points):
