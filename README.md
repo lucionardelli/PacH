@@ -121,19 +121,62 @@ A wrape up of the elements necesary for:
 
 `
 
-#####`comparator.py`
+#####`comparator_xes.py`
 
-Experimental tool to compare all 3 simplifications w.r.t. a unique convex hull representation.
+Tool to compare all 3 simplifications (Polyhedra, STM-Matrix, SMT-Iterative) w.r.t. a unique convex hull representation.
 
 
 **Usage**:
 
-    Usage: ./comparator.py <LOG filename> [--debug]
+    Usage: ./comparator_xes.py <LOG filename> [--debug]
     [--negative <Negative points filename>] [max_coeficient]]
     [--sampling [<number of samplings>] [<sampling size>]]
     [--projection [<max group size>] [<connected model>]]
     [--smt-matrix [<timeout>]]
     [--smt-iter [<timeout>]]
+
+
+    If using config file, this are the options
+        samp_num :  Number of samples to take (Default no sample, use all elements)
+        nfilename :    Negative traces file location
+        max_coef :    Maximum allowed in halfspaces. If no coefficient is bigger than this, won't try to simplify
+        proj_size :    Number for maximum dimension to project to (Default no projection, 0 for no limit)
+        proj_connected :    Boolean indicating whether to (try to) connect clusters (default: True)
+        smt_timeout_matrix :    Timeout for smt solution finding when simplifying all hull at once
+        samp_size :    Number of elementes to take on each sample (No default)
+        sanity_check :    Performs sanity check that all traces are inside hull
+        smt_timeout_iter :    Timeout for smt solution finding when simplifying one halfpsace at the time
+        filename :    Location of .xes file with traces or .pnml file with Petri net model
+
+
+**_Arguments_**:
+
+Analogous to the ones of `pach.py`.
+
+#####`comparator_pnml.py`
+
+Tool to compare all 3 simplifications (Polyhedra, STM-Matrix, SMT-Iterative) applied to ProM/ILPMiner output.
+
+**Usage**:
+
+    Usage: ./comparator_pnml.py <PNML filename> [--debug]
+    [--negative <Negative XES points filename>] [max_coeficient]]
+    [--smt-matrix [<timeout>]]
+    [--smt-iter [<timeout>]]
+
+
+    If using config file, this are the options
+        samp_num :  Number of samples to take (Default no sample, use all elements)
+        nfilename :    Negative traces file location
+        max_coef :    Maximum allowed in halfspaces. If no coefficient is bigger than this, won't try to simplify
+        proj_size :    Number for maximum dimension to project to (Default no projection, 0 for no limit)
+        proj_connected :    Boolean indicating whether to (try to) connect clusters (default: True)
+        smt_timeout_matrix :    Timeout for smt solution finding when simplifying all hull at once
+        samp_size :    Number of elementes to take on each sample (No default)
+        sanity_check :    Performs sanity check that all traces are inside hull
+        smt_timeout_iter :    Timeout for smt solution finding when simplifying one halfpsace at the time
+        filename :    Location of .xes file with traces or .pnml file with Petri net model
+
 
 **_Arguments_**:
 
