@@ -120,7 +120,7 @@ class Comparator(object):
             print log_file, ' does not end in .xes. It should...'
             raise Exception('Filename does not end in .xes')
         if not isfile(log_file):
-            raise Exception("El archivo especificado no existe")
+            raise Exception("No such file")
         # For every benchmark, check that the hull accepts the positive log
         for benchmark in ['no_smt', 'smt_iter', 'smt_matrix']:
             qhull = getattr(self,'qhull_'+benchmark)

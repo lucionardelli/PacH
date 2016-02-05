@@ -108,25 +108,3 @@ class CorrMatrix(object):
         else:
             cor0 = cor1 = None
         return  p0,p1,cor0,cor1
-
-    def closest_point(self,cluster):
-        raise Exception('Deprecated function')
-        rel = {}
-        closest_tuple = (None,None)
-        max_all = 0
-        for point in cluster:
-            corr_list = rel.setdefault(point,[])
-            for idx in xrange(self.dim):
-                if idx in cluster:
-                    corr_list.append(0)
-                    continue
-                else:
-                    corr = abs(self[point][idx])
-                    corr_list.append(corr)
-                    if max_all < corr:
-                        max_all = corr
-                        closest = idx
-                        p0,p1 = (point,idx)
-        cor0 = self[p0]
-        cor1 = self[p1]
-        return  p0,p1,cor0,cor1

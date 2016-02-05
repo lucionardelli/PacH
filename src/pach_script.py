@@ -22,7 +22,7 @@ def main(*args, **kwargs):
                 print config_file, ' does not end in .ini. It should...'
                 raise Exception('Filename has wrong extension')
             if not isfile(config_file):
-                raise Exception("El archivo especificado no existe")
+                raise Exception("No such file")
             if '--debug' in sys.argv:
                 pdb.set_trace()
             for filename, arguments in parse_config(config_file):

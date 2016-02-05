@@ -63,7 +63,7 @@ class PacH(object):
         if self.samp_num > 1:
             logger.info('Will apply %s samples',self.samp_num)
         self.samp_size = samp_size
-        if self.samp_size != 0:
+        if self.samp_size and self.samp_size != 0:
             logger.info('Samples will have %s points',self.samp_size)
         # Projection configuration
         self.projections = {}

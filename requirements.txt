@@ -1,5 +1,5 @@
-angr-z3==4.4.0.1
 decorator==3.4.2
+faulthandler==2.4
 functools32==3.2.3.post2
 JsonForm==0.0.2
 jsonschema==2.5.1

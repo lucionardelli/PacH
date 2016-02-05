@@ -157,21 +157,20 @@ class Halfspace(Halfspace):
         neg_points = neg_points or []
         solver = z3.Solver()
         solver.set("timeout", timeout)
+        solver.set("zero_accuracy",10)
 
         b = self.offset
         z3_b = z3.Int("b")
 
-        if b > 0:
-            solver.add(z3_b >= 0)
-            solver.add(z3_b <= b)
-        elif b < 0:
-            solver.add(z3_b <= 0)
-            solver.add(z3_b >= b)
+        if b:
+            solver.add(min(0,b) <= z3_b, z3_b <= max(0,b))
         else:
             solver.add(z3_b == 0)
 
-        pos_x = True
-        simple = sum(abs(x) for x in self.normal) < 1
+        possible_x = True
+        # If halfspace has coefficients adding 1 it's
+        # as simple as it gets
+        simple = sum(abs(x) for x in self.normal) <= 1
         non_trivial = False
         if not simple:
             some_consume = False
@@ -182,47 +181,44 @@ class Halfspace(Halfspace):
         h2 = z3_b
         variables = []
 
-        for t_id, val in enumerate(self.normal):
-            if not val:
+        for t_id, coeff in enumerate(self.normal):
+            if not coeff:
                 continue
-            z3_val = z3.Int("a" + str(t_id))
-            x = z3.Int("x" + str(t_id))
-            variables.append(x)
-            pos_x = z3.And(pos_x, x >= 0)
+            smt_coeff = z3.Int("a%s"%t_id)
+            var = z3.Int("x%s"%t_id)
 
-            if val > 0:
-                solver.add(0 <= z3_val)
-                solver.add(z3_val <= val)
-            elif val < 0:
-                solver.add(z3_val <= 0)
-                solver.add(val <= z3_val)
+            variables.append(var)
+            possible_x = z3.And(possible_x, var >= 0)
+
+            solver.add(min(0,coeff) <= smt_coeff, smt_coeff <= max(0, coeff))
             if not simple:
-                some_consume = z3.Or(some_consume, z3_val < 0)
-                some_produce = z3.Or(some_produce, z3_val > 0)
+                some_consume = z3.Or(some_consume, smt_coeff < 0)
+                some_produce = z3.Or(some_produce, smt_coeff > 0)
 
-            non_trivial = z3.Or(non_trivial, z3_val != 0)
-            diff_sol = z3.Or(diff_sol, z3_val != val)
-            h1 = h1 + val * x
-            h2 = h2 + z3_val * x
+            non_trivial = z3.Or(non_trivial, smt_coeff != 0)
+            diff_sol = z3.Or(diff_sol, smt_coeff != coeff)
+            h1 = h1 + coeff * var
+            h2 = h2 + smt_coeff * var
 
         if not simple:
             solver.add(z3.simplify(some_consume))
             solver.add(z3.simplify(some_produce))
         solver.add(z3.simplify(non_trivial))
         solver.add(z3.simplify(diff_sol))
-        solver.add(z3.simplify(z3.ForAll(variables, z3.Implies(z3.And(pos_x, h1 <= 0), h2 <= 0))))
+        solver.add(z3.simplify(z3.ForAll(variables, z3.Implies(z3.And(possible_x, h1 <= 0), h2 <= 0))))
 
         ## non negative point should be a solution
-        for np in list(neg_points)[:min(100,len(neg_points))]:
+#        for np in list(neg_points)[:min(100,len(neg_points))]:
+        for np in list(neg_points):
             smt_np = False
             ineq_np = self.offset
-            for t_id, val in enumerate(self.normal):
-                z3_var = z3.Int("a" + str(t_id))
-                ineq_np = ineq_np + z3_var * np[t_id]
-            smt_np = z3.simplify(z3.Or(smt_np, ineq_np < 0))
+            for t_id, coeff in enumerate(self.normal):
+                if np[t_id]:
+                    z3_var = z3.Int("a%s"%(t_id))
+                    ineq_np = ineq_np + z3_var * np[t_id]
+            smt_np = z3.simplify(z3.Or(smt_np, ineq_np > 0))
             solver.add(smt_np)
 
-        #import pdb;pdb.set_trace()
         sol = solver.check()
         if sol == z3.unsat or sol == z3.unknown:
             ret = False
@@ -235,18 +231,16 @@ class Halfspace(Halfspace):
     def simplify(self, sol):
         normal = []
         if sol:
-            offset = int(str(sol[z3.Int("b")]))
+            offset = sol[z3.Int("b")].as_long()
 
-            #import pdb;pdb.set_trace()
-            for t_id, val in enumerate(self.normal):
-                z3_val = z3.Int("a" + str(t_id))
-                normal.append(int(str(sol[z3_val] or 0)))
+            for t_id, coeff in enumerate(self.normal):
+                smt_coeff = z3.Int("a%s"%(t_id))
+                normal.append(int(str(sol[smt_coeff] or 0)))
             if sum(abs(x) for x in normal) != 0:
                 self.normal = normal
                 self.offset = offset
 
     def smt_facet_simplify(self, neg_points=None, timeout=0):
-        #import pdb;pdb.set_trace()
         global counter
         counter = counter + 1
         neg_points = neg_points or []

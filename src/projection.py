@@ -9,6 +9,7 @@ from stopwatch_wrapper import stopwatch
 from config import *
 
 def projection(func):
+
     @stopwatch
     def do_projection(self, points, *args, **kwargs):
         # Calculamos la matrix de correlaciones
@@ -60,7 +61,7 @@ def projection(func):
                 logger.debug('Calling k-means with %s',leader_row)
                 cluster0, cluster1 = two_means(leader_row,max_size=self.proj_size)
                 logger.debug('Cluster0: %s \n Cluster1: %s', cluster0, cluster1)
-                if 0.0  in cluster1:
+                if 0.0 in cluster1:
                     logger.error("Error getting Cluster. "\
                             " 0.0 is present in %s",cluster1)
                     raise Exception('Cannot get clusters!')

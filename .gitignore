@@ -61,3 +61,5 @@ target/
 
 # La salida del pach.py
 *-complexities.out
+# Script de ayuda ad-hoc
+exports_to_do.sh

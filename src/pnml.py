@@ -12,7 +12,7 @@ class PnmlParser(object):
 
     def __init__(self,pnml_file_name, verbose=False):
         if not isfile(pnml_file_name):
-            raise Exception("El archivo especificado no existe")
+            raise Exception("No such file")
         self.filename = pnml_file_name
         self.parsed = False
         self.petrinet = None

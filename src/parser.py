@@ -13,7 +13,7 @@ class XesParser(object):
 
     def __init__(self,xes_file_name, verbose=False):
         if not isfile(xes_file_name):
-            raise Exception("El archivo especificado no existe")
+            raise Exception("No such file")
         self.filename = xes_file_name
         # Diferent presentation of Parikhs Vectors
         self.pv_set = set()

@@ -6,6 +6,9 @@ from custom_exceptions import CannotGetHull, WrongDimension, CannotIntegerify
 from stopwatch_wrapper import stopwatch
 from config import logger
 
+# CHECKME Los tries estan deprecados??
+# CHECKME Los tries estan deprecados??
+# CHECKME Los tries estan deprecados??
 def sampling(func):
     @stopwatch
     def do_sampling(self, points, *args, **kwargs):

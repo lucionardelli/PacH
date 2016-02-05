@@ -11,6 +11,9 @@ from comparator_xes import ComparatorXes
 from comparator_pnml import ComparatorPnml
 from negative_parser import NegativeParser
 from pnml import PnmlParser
+from config import CONFIGS
+
+config_options = '\n'.join(['\t%s :\t\t %s'%(k,v) for k,v in CONFIGS.items()])
 
 def pach_main():
     usage = 'Usage: ./pach.py <LOG filename> [--debug][--verbose]'\
@@ -19,7 +22,8 @@ def pach_main():
         '\n\t[--projection [<max group size>] [<connected model>]]'\
         '\n\t[--smt-matrix [<timeout>]]'\
         '\n\t[--smt-iter [<timeout>]]'\
-        '\n\t[--sanity-check]'
+        '\n\t[--sanity-check]'\
+        '\nIf using config file, this are the options: \n%s'%config_options
     if not check_argv(sys.argv, minimum=1, maximum=17):
         print usage
         ret = -1
@@ -32,7 +36,7 @@ def pach_main():
                 print filename, ' does not end in .xes not .txt. It should...'
                 raise Exception('Filename does not end in .xes')
             if not isfile(filename):
-                raise Exception("El archivo especificado no existe")
+                raise Exception("No such file")
             if '--sampling' in sys.argv or '-s' in sys.argv:
                 samp_idx = '-s' in sys.argv and sys.argv.index('-s') or\
                     sys.argv.index('--sampling')
@@ -66,7 +70,7 @@ def pach_main():
                     print nfilename, ' does not end in .xes not .txt. It should...'
                     raise Exception('Filename does not end in .xes')
                 if not isfile(nfilename):
-                    raise Exception("El archivo especificado no existe")
+                    raise Exception("No such file")
                 args['nfilename'] = nfilename
                 try:
                     args['max_coef'] = int(sys.argv[nidx+2])
@@ -131,7 +135,7 @@ def parser_main():
                 print filename, ' does not end in .xes nor .txt. It should...'
                 raise Exception('Filename has wrong extension')
             if not isfile(filename):
-                raise Exception("El archivo especificado no existe")
+                raise Exception("No such file")
             if filename.endswith('.xes'):
                 obj = XesParser(filename, verbose='--verbose' in sys.argv)
             elif filename.endswith('.txt'):
@@ -211,7 +215,7 @@ def negative_parser_main():
                 print filename, ' does not end in .xes. It should...'
                 raise Exception('Filename has wrong extension')
             if not isfile(filename):
-                raise Exception("El archivo especificado no existe")
+                raise Exception("No such file")
             if '--debug' in sys.argv:
                 pdb.set_trace()
             obj = NegativeParser(filename, verbose='--verbose' in sys.argv)
@@ -238,7 +242,8 @@ def xes_comparator_main():
         '\n\t[--sampling [<number of samplings>] [<sampling size>]]'\
         '\n\t[--projection [<max group size>] [<connected model>]]'\
         '\n\t[--smt-matrix [<timeout>]]'\
-        '\n\t[--smt-iter [<timeout>]]'
+        '\n\t[--smt-iter [<timeout>]]'\
+        '\nIf using config file, this are the options: \n%s'%config_options
     if not check_argv(sys.argv, minimum=1, maximum=16):
         print usage
         ret = -1
@@ -251,7 +256,7 @@ def xes_comparator_main():
                 print filename, ' does not end in .xes not .txt. It should...'
                 raise Exception('Filename does not end in .xes')
             if not isfile(filename):
-                raise Exception("El archivo especificado no existe")
+                raise Exception("No such file")
             if '--sampling' in sys.argv or '-s' in sys.argv:
                 samp_idx = '-s' in sys.argv and sys.argv.index('-s') or\
                     sys.argv.index('--sampling')
@@ -285,7 +290,7 @@ def xes_comparator_main():
                     print nfilename, ' does not end in .xes. It should...'
                     raise Exception('Filename does not end in .xes')
                 if not isfile(nfilename):
-                    raise Exception("El archivo especificado no existe")
+                    raise Exception("No such file")
                 args['nfilename'] = nfilename
                 try:
                     args['max_coef'] = int(sys.argv[nidx+2])
@@ -328,7 +333,8 @@ def pnml_comparator_main():
         Usage: ./comparator_pnml.py <PNML filename> [--debug]
         '\n\t[--negative <Negative XES points filename>] [max_coeficient]]'\
         '\n\t[--smt-matrix [<timeout>]]'\
-        '\n\t[--smt-iter [<timeout>]]'
+        '\n\t[--smt-iter [<timeout>]]'\
+        '\nIf using config file, this are the options: \n%s'%config_options
     """
     if not check_argv(sys.argv, minimum=1, maximum=10):
         print usage
@@ -342,7 +348,7 @@ def pnml_comparator_main():
                 print filename, ' does not end in .pnml. It should...'
                 raise Exception('Filename has wrong extension')
             if not isfile(filename):
-                raise Exception("El archivo especificado no existe")
+                raise Exception("No such file")
             if '--negative' in sys.argv or '-n' in sys.argv:
                 nidx = '-n' in sys.argv and sys.argv.index('-n') or\
                     sys.argv.index('--negative')
@@ -351,7 +357,7 @@ def pnml_comparator_main():
                     print nfilename, ' does not end in .xes. It should...'
                     raise Exception('Filename does not end in .xes')
                 if not isfile(nfilename):
-                    raise Exception("El archivo especificado no existe")
+                    raise Exception("No such file")
                 args['nfilename'] = nfilename
                 try:
                     args['max_coef'] = int(sys.argv[nidx+2])
@@ -382,7 +388,7 @@ def pnml_comparator_main():
                     print log_file, ' does not end in .xes. It should...'
                     raise Exception('Filename does not end in .xes')
                 if not isfile(log_file):
-                    raise Exception("El archivo especificado no existe")
+                    raise Exception("No such file")
                 args['positive_log'] = log_file
             comparator = ComparatorPnml(filename, **args)
             complexity = comparator.compare()
@@ -415,7 +421,7 @@ def pnml_main():
                 print filename, ' does not end in .pnml. It should...'
                 raise Exception('Filename has wrong extension')
             if not isfile(filename):
-                raise Exception("El archivo especificado no existe")
+                raise Exception("No such file")
             if '--debug' in sys.argv:
                 pdb.set_trace()
             obj = PnmlParser(filename, verbose='--verbose' in sys.argv)
@@ -432,7 +438,7 @@ def pnml_main():
                     print log_file, ' does not end in .xes. It should...'
                     raise Exception('Filename does not end in .xes')
                 if not isfile(log_file):
-                    raise Exception("El archivo especificado no existe")
+                    raise Exception("No such file")
                 qhull.all_in_file(log_file, event_dictionary=obj.event_dictionary)
             if '--verbose' in sys.argv:
                 print 'Got qhull representation whith %s facets.'%(len(qhull.facets))

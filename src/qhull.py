@@ -87,7 +87,7 @@ class Qhull(object):
             if npoint not in self:
                 actual_neg_points.append(npoint)
                 positive_points -= 1
-        self.net_points = actual_neg_points
+        self.neg_points = actual_neg_points
 
     def union(self, facets):
         """
@@ -131,8 +131,8 @@ class Qhull(object):
         return ret
 
     def all_in_file(self, filename, event_dictionary=None):
-        # Esto es para chequear que no dejando a nadia afuera
-        # hace todo más lento en ejemplos grandes
+        # Sanity check. Are all points from file inside the Hull?
+        # It makes thing slower, speacially in big cases
         parser = XesParser(filename)
         parser.event_dictionary = event_dictionary or {}
         parser.parse()
@@ -141,8 +141,8 @@ class Qhull(object):
 
     @stopwatch
     def all_in(self, points):
-        # Esto es para chequear que no dejando a nadia afuera
-        # hace todo más lento en ejemplos grandes
+        # Sanity check. Are points inside the Hull?
+        # It makes thing slower, speacially in big cases
         logger.info('Sanity check: Are all points still valid?')
         where = self.separate(points)
         if len(where.get('outside',[])) > 0:
@@ -210,26 +210,26 @@ class Qhull(object):
     def no_smt_simplify(self, max_coef=10):
         facets = list(self.facets)
         popped = 0
-        for idx,facet in enumerate(self.facets):
-            if max_coef and len([x for x in facet.normal + [facet.offset]\
-                    if abs(x) > max_coef]) > 0:
+        if len(self.neg_points):
+            for idx,facet in enumerate(self.facets):
                 # If the max coef is inside the expected
                 # we don't try to remove it
-                # Creamos un dummy hull para guardar los facets
-                # menos el que se considera para eliminar
-                tmpqhull = Qhull(set())
-                tmpqhull.facets = list(set(facets)-set([facet]))
-                simplify = True
-                for npoint in self.neg_points:
-                    if npoint in tmpqhull:
-                        simplify = False
-                        break
-                if simplify:
-                    facets.pop(idx - popped)
-                    popped += 1
-        logger.info('Popped %d facets using negative info',popped)
+                if max_coef and len([x for x in facet.normal + [facet.offset]\
+                        if abs(x) > max_coef]) > 0:
+                    # Create a dummy hull to temporaly store the facets
+                    # of the original hull except for the candidate to be deleted
+                    tmpqhull = Qhull(set())
+                    tmpqhull.facets = list(set(facets)-set([facet]))
+                    simplify = True
+                    for npoint in self.neg_points:
+                        if npoint in tmpqhull:
+                            simplify = False
+                            break
+                    if simplify:
+                        facets.pop(idx - popped)
+                        popped += 1
+            logger.info('Popped %d facets using negative info',popped)
         self.facets = facets
-
 
     def complexity(self):
         complexity = 0
@@ -245,6 +245,7 @@ class Qhull(object):
     def smt_solution(self,timeout):
         solver = z3.Solver()
         solver.set("timeout", timeout)
+        solver.set("zero_accuracy",10)
 
         diff_sol = False
         non_trivial = False
@@ -252,17 +253,19 @@ class Qhull(object):
         A2 = True
         for p_id, place in enumerate(self.facets):
             b = place.offset
-            z3_b = z3.Int("b" + str(p_id))
+            smt_b = z3.Int("b%s"%(p_id))
             if b > 0:
-                solver.add(z3_b >= 0)
-                solver.add(z3_b <= b)
+                solver.add(smt_b >= 0)
+                solver.add(smt_b <= b)
             elif b< 0:
-                solver.add(z3_b <= 0)
-                solver.add(z3_b >= b)
+                solver.add(smt_b <= 0)
+                solver.add(smt_b >= b)
             else:
-                solver.add(z3_b == 0)
+                solver.add(smt_b == 0)
 
             pos_x = True
+            # If halfspace has coefficients adding 1 it's
+            # as simple as it gets
             simple = sum(abs(x) for x in place.normal) <= 1
             diff_sig = reduce(lambda x,y:x*y, [x + 1 for x in place.normal]) < 1
 
@@ -270,29 +273,29 @@ class Qhull(object):
                 some_produce = False
                 some_consume = False
             h1 = b
-            h2 = z3_b
+            h2 = smt_b
             variables = []
             for t_id, val in enumerate(place.normal):
-                z3_val = z3.Int("a" + str(p_id) + "," + str(t_id))
-                x = z3.Int("x" + str(t_id))
+                smt_val = z3.Int("a%s-%s"%(p_id,t_id))
+                x = z3.Int("x%s"%(t_id))
                 variables.append(x)
                 pos_x = z3.And(pos_x, x >= 0)
                 if val:
                     if val > 0:
-                        solver.add(0 <= z3_val)
-                        solver.add(z3_val <= val)
+                        solver.add(0 <= smt_val)
+                        solver.add(smt_val <= val)
                     else:
-                        solver.add(val <= z3_val)
-                        solver.add(z3_val <= 0)
+                        solver.add(val <= smt_val)
+                        solver.add(smt_val <= 0)
                     if not simple and diff_sig:
-                        some_consume = z3.Or(some_consume, z3_val < 0)
-                        some_produce = z3.Or(some_produce, z3_val > 0)
-                    non_trivial = z3.Or(non_trivial, z3_val != 0)
-                    diff_sol = z3.Or(diff_sol, z3_val != val)
+                        some_consume = z3.Or(some_consume, smt_val < 0)
+                        some_produce = z3.Or(some_produce, smt_val > 0)
+                    non_trivial = z3.Or(non_trivial, smt_val != 0)
+                    diff_sol = z3.Or(diff_sol, smt_val != val)
                     h1 = h1 + val * x
-                    h2 = h2 + z3_val * x
+                    h2 = h2 + smt_val * x
                 else:
-                    solver.add(z3_val == 0)
+                    solver.add(smt_val == 0)
             if not simple and diff_sig:
                 solver.add(z3.simplify(some_consume))
                 solver.add(z3.simplify(some_produce))
@@ -301,15 +304,17 @@ class Qhull(object):
         solver.add(z3.simplify(non_trivial))
         solver.add(z3.simplify(diff_sol))
         solver.add(z3.simplify(z3.ForAll(variables, z3.Implies(z3.And(pos_x, A1), A2))))
-        ## non negative point should be a solution
-        for np in list(self.neg_points)[:min(100,len(self.neg_points))]:
+        # non negative point shouldn't be a solution
+        #for np in list(self.neg_points)[:min(100,len(self.neg_points))]:
+        for np in list(self.neg_points):
             smt_np = False
             for p_id, place in enumerate(self.facets):
                 ineq_np = place.offset
                 for t_id, val in enumerate(place.normal):
-                    z3_var = z3.Int("a" + str(p_id) + "," + str(t_id))
-                    ineq_np = ineq_np + z3_var * np[t_id]
-                smt_np = z3.simplify(z3.Or(smt_np, ineq_np < 0))
+                    if np[t_id]:
+                        z3_var = z3.Int("a%s-%s"%(p_id,t_id))
+                        ineq_np = ineq_np + z3_var * np[t_id]
+                smt_np = z3.simplify(z3.Or(smt_np, ineq_np > 0))
             solver.add(smt_np)
         sol = solver.check()
         if sol == z3.unsat or sol == z3.unknown:
@@ -324,10 +329,10 @@ class Qhull(object):
         if sol:
             for p_id, place in enumerate(self.facets):
                 normal = []
-                b = int(str(sol[z3.Int("b" + str(p_id))]))
+                b = sol[z3.Int("b%s"%(p_id))].as_long()
                 for t_id, val in enumerate(place.normal):
-                    z3_val = z3.Int("a" + str(p_id) + "," + str(t_id))
-                    normal.append(int(str(sol[z3_val] or 0)))
+                    smt_val = z3.Int("a%s-%s"%(p_id,t_id))
+                    normal.append(int(str(sol[smt_val] or 0)))
                 if sum(abs(x) for x in normal) != 0:
                     f = Halfspace(normal, b, integer_vals=False)
                     if not f in facets:
