@@ -1,0 +1,1684 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="telecom_smt_matrix.pnml" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <name>
+      <text>telecom_smt_matrix.pnml</text>
+    </name>
+    <page id="page">
+      <transition id="BOss_internal_mobile">
+        <name>
+          <text>BOss internal mobile</text>
+        </name>
+      </transition>
+      <transition id="cc_CFU">
+        <name>
+          <text>cc CFU</text>
+        </name>
+      </transition>
+      <transition id="BOss_opvolging_vip">
+        <name>
+          <text>BOss opvolging vip</text>
+        </name>
+      </transition>
+      <transition id="BOss">
+        <name>
+          <text>BOss</text>
+        </name>
+      </transition>
+      <transition id="BOss_internal_int">
+        <name>
+          <text>BOss internal int</text>
+        </name>
+      </transition>
+      <transition id="BOss_internal_invoicing">
+        <name>
+          <text>BOss internal invoicing</text>
+        </name>
+      </transition>
+      <transition id="BOss_internal_idtv">
+        <name>
+          <text>BOss internal idtv</text>
+        </name>
+      </transition>
+      <transition id="BOss_internal_tel">
+        <name>
+          <text>BOss internal tel</text>
+        </name>
+      </transition>
+      <transition id="BOss_AVS_AOD">
+        <name>
+          <text>BOss AVS AOD</text>
+        </name>
+      </transition>
+      <transition id="BOss_internal_int_NEW">
+        <name>
+          <text>BOss internal int NEW</text>
+        </name>
+      </transition>
+      <transition id="CC_Outbound">
+        <name>
+          <text>CC Outbound</text>
+        </name>
+      </transition>
+      <transition id="BOss_actie_op_datum">
+        <name>
+          <text>BOss actie op datum</text>
+        </name>
+      </transition>
+      <transition id="BOss_internal_VIP">
+        <name>
+          <text>BOss internal VIP</text>
+        </name>
+      </transition>
+      <transition id="BOss_CATCHUP_INT">
+        <name>
+          <text>BOss CATCHUP INT</text>
+        </name>
+      </transition>
+      <transition id="BOss_followup_idtv">
+        <name>
+          <text>BOss followup idtv</text>
+        </name>
+      </transition>
+      <transition id="BOss_AVS_REACT">
+        <name>
+          <text>BOss AVS REACT</text>
+        </name>
+      </transition>
+      <transition id="ArtificialEndTask">
+        <name>
+          <text>ArtificialEndTask</text>
+        </name>
+      </transition>
+      <transition id="BOss_CAS_AOD">
+        <name>
+          <text>BOss CAS AOD</text>
+        </name>
+      </transition>
+      <transition id="BOss_opvolging_ISO_IBO">
+        <name>
+          <text>BOss opvolging ISO_IBO</text>
+        </name>
+      </transition>
+      <transition id="cc_written_care">
+        <name>
+          <text>cc written care</text>
+        </name>
+      </transition>
+      <transition id="BOss_invoicing_CATCHUP">
+        <name>
+          <text>BOss invoicing CATCHUP</text>
+        </name>
+      </transition>
+      <transition id="BnC_bp_op_datum">
+        <name>
+          <text>BnC bp op datum</text>
+        </name>
+      </transition>
+      <transition id="BOss_externe_info_nodig">
+        <name>
+          <text>BOss externe info nodig</text>
+        </name>
+      </transition>
+      <transition id="BILLING">
+        <name>
+          <text>BILLING</text>
+        </name>
+      </transition>
+      <transition id="BOss_internal_cust_locat">
+        <name>
+          <text>BOss internal cust locat</text>
+        </name>
+      </transition>
+      <transition id="ArtificialStartTask">
+        <name>
+          <text>ArtificialStartTask</text>
+        </name>
+      </transition>
+      <transition id="NA_Verkav_en_Groepsbouw">
+        <name>
+          <text>NA Verkav en Groepsbouw</text>
+        </name>
+      </transition>
+      <transition id="Onsite_repair">
+        <name>
+          <text>Onsite repair</text>
+        </name>
+      </transition>
+      <transition id="BOss_internal_wipbin">
+        <name>
+          <text>BOss internal wipbin</text>
+        </name>
+      </transition>
+      <transition id="CC_CONTACT_CENTER">
+        <name>
+          <text>CC CONTACT CENTER</text>
+        </name>
+      </transition>
+      <transition id="BOss_internal_Mobile">
+        <name>
+          <text>BOss internal Mobile</text>
+        </name>
+      </transition>
+      <transition id="BOss_followup_thd">
+        <name>
+          <text>BOss followup thd</text>
+        </name>
+      </transition>
+      <transition id="BOss_CATCHUP_Mobile">
+        <name>
+          <text>BOss CATCHUP Mobile</text>
+        </name>
+      </transition>
+      <transition id="BnC_PAYMENTS">
+        <name>
+          <text>BnC PAYMENTS</text>
+        </name>
+      </transition>
+      <transition id="cc_actie_op_datum">
+        <name>
+          <text>cc actie op datum</text>
+        </name>
+      </transition>
+      <transition id="BOss_internal_AVSnA">
+        <name>
+          <text>BOss internal AVSnA</text>
+        </name>
+      </transition>
+      <transition id="BOss_internal_iDTV">
+        <name>
+          <text>BOss internal iDTV</text>
+        </name>
+      </transition>
+      <transition id="BOss_followup_idtv_engin">
+        <name>
+          <text>BOss followup idtv engin</text>
+        </name>
+      </transition>
+      <transition id="Parent_Child">
+        <name>
+          <text>Parent_Child</text>
+        </name>
+      </transition>
+      <transition id="cc_externe_info_nodig">
+        <name>
+          <text>cc externe info nodig</text>
+        </name>
+      </transition>
+      <transition id="BnC_BAD_PAYERS">
+        <name>
+          <text>BnC BAD PAYERS</text>
+        </name>
+      </transition>
+      <transition id="bill_in_onderzoek">
+        <name>
+          <text>bill in onderzoek</text>
+        </name>
+      </transition>
+      <place id="place-0101">
+        <name>
+          <text>Dummy place 0038</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0100">
+        <name>
+          <text>Dummy place 0037</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0022">
+        <name>
+          <text>HS dim 42   2 x12 -   1 x24 +   2 x34  +   1 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0023">
+        <name>
+          <text>HS dim 42  -   5 x12 +   1 x24 -   3 x34  +  19 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>19</text>
+        </initialMarking>
+      </place>
+      <place id="place-0020">
+        <name>
+          <text>HS dim 42  -   1 x12 -   8 x13 -   9 x24 +  11 x34  +  27 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>27</text>
+        </initialMarking>
+      </place>
+      <place id="place-0021">
+        <name>
+          <text>HS dim 42  -   1 x12 -   1 x13 +   2 x24 -   4 x34  +  18 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>18</text>
+        </initialMarking>
+      </place>
+      <place id="place-0026">
+        <name>
+          <text>HS dim 42  -   1 x24 +   2 x34  +   2 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>2</text>
+        </initialMarking>
+      </place>
+      <place id="place-0027">
+        <name>
+          <text>HS dim 42  -   1 x13 +   2 x24 -   4 x34  +  12 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>12</text>
+        </initialMarking>
+      </place>
+      <place id="place-0024">
+        <name>
+          <text>HS dim 42  -   8 x12 +   1 x24 -   3 x34  +  31 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>31</text>
+        </initialMarking>
+      </place>
+      <place id="place-0025">
+        <name>
+          <text>HS dim 42  -   4 x12 -   1 x13 -   1 x24  +  19 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>19</text>
+        </initialMarking>
+      </place>
+      <place id="place-0028">
+        <name>
+          <text>HS dim 42   1 x12 -   1 x13 -   1 x24 +   1 x34  +   3 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>3</text>
+        </initialMarking>
+      </place>
+      <place id="place-0029">
+        <name>
+          <text>HS dim 42  -   1 x13 -   1 x34  +   6 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>6</text>
+        </initialMarking>
+      </place>
+      <place id="place-0031">
+        <name>
+          <text>HS dim 42   1 x24  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0030">
+        <name>
+          <text>HS dim 42  -   1 x12  +   3 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>3</text>
+        </initialMarking>
+      </place>
+      <place id="place-0033">
+        <name>
+          <text>HS dim 42   4 x12 -   1 x13 -   1 x24 +   1 x34  +   2 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>2</text>
+        </initialMarking>
+      </place>
+      <place id="place-0032">
+        <name>
+          <text>HS dim 42   1 x12 -   2 x13 -   1 x24 +   3 x34  +   4 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>4</text>
+        </initialMarking>
+      </place>
+      <place id="place-0035">
+        <name>
+          <text>HS dim 42   1 x12  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0034">
+        <name>
+          <text>HS dim 42  -   6 x12 +   1 x13 +   2 x24 -   4 x34  +  22 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>22</text>
+        </initialMarking>
+      </place>
+      <place id="place-0037">
+        <name>
+          <text>HS dim 42  -   1 x12 -   1 x13 +   1 x24 -   3 x34  +  14 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>14</text>
+        </initialMarking>
+      </place>
+      <place id="place-0036">
+        <name>
+          <text>HS dim 42   1 x12 +   4 x13 -   4 x24 +   3 x34  +  11 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>11</text>
+        </initialMarking>
+      </place>
+      <place id="place-0039">
+        <name>
+          <text>HS dim 42  -   5 x12 -   1 x13 +   1 x24 -   3 x34  +  23 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>23</text>
+        </initialMarking>
+      </place>
+      <place id="place-0038">
+        <name>
+          <text>HS dim 42  17 x12 -   5 x13 -   1 x34  +   5 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>5</text>
+        </initialMarking>
+      </place>
+      <place id="place-0004">
+        <name>
+          <text>HS dim 42   2 x12 +   2 x24 -   1 x34  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0005">
+        <name>
+          <text>HS dim 42  -   1 x12 +   1 x13 +   4 x24 -   2 x34  +   3 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>3</text>
+        </initialMarking>
+      </place>
+      <place id="place-0006">
+        <name>
+          <text>HS dim 42   1 x12 +   4 x24 -   4 x34  +   9 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>9</text>
+        </initialMarking>
+      </place>
+      <place id="place-0007">
+        <name>
+          <text>HS dim 42   1 x24 -   1 x34  +   2 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>2</text>
+        </initialMarking>
+      </place>
+      <place id="place-0001">
+        <name>
+          <text>HS dim 42  -   1 x13 -   1 x24 +   1 x34  +   6 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>6</text>
+        </initialMarking>
+      </place>
+      <place id="place-0002">
+        <name>
+          <text>HS dim 42   1 x12 -   1 x13 -   1 x34  +   6 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>6</text>
+        </initialMarking>
+      </place>
+      <place id="place-0003">
+        <name>
+          <text>HS dim 42  -   2 x12 -   1 x13 -   1 x34  +  10 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>10</text>
+        </initialMarking>
+      </place>
+      <place id="place-0008">
+        <name>
+          <text>HS dim 42   5 x12 -   1 x13 +   1 x24 -   1 x34  +   1 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0009">
+        <name>
+          <text>HS dim 42  -   1 x13  +   4 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>4</text>
+        </initialMarking>
+      </place>
+      <place id="place-0088">
+        <name>
+          <text>Dummy place 0025</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0089">
+        <name>
+          <text>Dummy place 0026</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0084">
+        <name>
+          <text>Dummy place 0021</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0085">
+        <name>
+          <text>Dummy place 0022</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0086">
+        <name>
+          <text>Dummy place 0023</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0087">
+        <name>
+          <text>Dummy place 0024</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0080">
+        <name>
+          <text>Dummy place 0017</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0081">
+        <name>
+          <text>Dummy place 0018</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0082">
+        <name>
+          <text>Dummy place 0019</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0083">
+        <name>
+          <text>Dummy place 0020</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0019">
+        <name>
+          <text>HS dim 42  -   2 x12 +   2 x13 +   1 x24 -   2 x34  +   9 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>9</text>
+        </initialMarking>
+      </place>
+      <place id="place-0018">
+        <name>
+          <text>HS dim 42   2 x12 +   1 x13 +   4 x24 -   2 x34  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0013">
+        <name>
+          <text>HS dim 42  14 x12 -   5 x13 -   2 x24 +   1 x34  +   5 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>5</text>
+        </initialMarking>
+      </place>
+      <place id="place-0012">
+        <name>
+          <text>HS dim 42  -   1 x12 +   5 x13 -   1 x24  +  13 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>13</text>
+        </initialMarking>
+      </place>
+      <place id="place-0011">
+        <name>
+          <text>HS dim 42   1 x13 +   2 x24 -   2 x34  +   2 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>2</text>
+        </initialMarking>
+      </place>
+      <place id="place-0010">
+        <name>
+          <text>HS dim 42   8 x12 -   3 x13 -   2 x24 +   1 x34  +   6 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>6</text>
+        </initialMarking>
+      </place>
+      <place id="place-0017">
+        <name>
+          <text>HS dim 42  -   1 x12 -   1 x13 +   1 x24 -   3 x34  +  15 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>15</text>
+        </initialMarking>
+      </place>
+      <place id="place-0016">
+        <name>
+          <text>HS dim 42  -   2 x12 -   2 x13 -   1 x24  +  16 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>16</text>
+        </initialMarking>
+      </place>
+      <place id="place-0015">
+        <name>
+          <text>HS dim 42  -   2 x12 +   2 x13 +   1 x24 -   2 x34  +  10 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>10</text>
+        </initialMarking>
+      </place>
+      <place id="place-0014">
+        <name>
+          <text>HS dim 42   2 x12 -   2 x13 -   1 x24 +   2 x34  +   2 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>2</text>
+        </initialMarking>
+      </place>
+      <place id="place-0093">
+        <name>
+          <text>Dummy place 0030</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0092">
+        <name>
+          <text>Dummy place 0029</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0091">
+        <name>
+          <text>Dummy place 0028</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0090">
+        <name>
+          <text>Dummy place 0027</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0097">
+        <name>
+          <text>Dummy place 0034</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0096">
+        <name>
+          <text>Dummy place 0033</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0095">
+        <name>
+          <text>Dummy place 0032</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0094">
+        <name>
+          <text>Dummy place 0031</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0099">
+        <name>
+          <text>Dummy place 0036</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0098">
+        <name>
+          <text>Dummy place 0035</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0068">
+        <name>
+          <text>Dummy place 0005</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0069">
+        <name>
+          <text>Dummy place 0006</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0066">
+        <name>
+          <text>Dummy place 0003</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0067">
+        <name>
+          <text>Dummy place 0004</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0064">
+        <name>
+          <text>Dummy place 0001</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0065">
+        <name>
+          <text>Dummy place 0002</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0062">
+        <name>
+          <text>HS dim 42   1 x12 -   3 x13 -   2 x24 +   3 x34  +   8 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>8</text>
+        </initialMarking>
+      </place>
+      <place id="place-0063">
+        <name>
+          <text>HS dim 42  -   2 x12 +   1 x13 +   6 x24 -   3 x34  +   8 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>8</text>
+        </initialMarking>
+      </place>
+      <place id="place-0060">
+        <name>
+          <text>HS dim 42  -   1 x13 +   1 x24 -   3 x34  +  16 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>16</text>
+        </initialMarking>
+      </place>
+      <place id="place-0061">
+        <name>
+          <text>HS dim 42  -   2 x12 +   2 x13 +   1 x24 -   2 x34  +   8 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>8</text>
+        </initialMarking>
+      </place>
+      <place id="place-0079">
+        <name>
+          <text>Dummy place 0016</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0078">
+        <name>
+          <text>Dummy place 0015</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0075">
+        <name>
+          <text>Dummy place 0012</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0074">
+        <name>
+          <text>Dummy place 0011</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0077">
+        <name>
+          <text>Dummy place 0014</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0076">
+        <name>
+          <text>Dummy place 0013</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0071">
+        <name>
+          <text>Dummy place 0008</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0070">
+        <name>
+          <text>Dummy place 0007</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0073">
+        <name>
+          <text>Dummy place 0010</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0072">
+        <name>
+          <text>Dummy place 0009</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0040">
+        <name>
+          <text>HS dim 42   1 x34  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0041">
+        <name>
+          <text>HS dim 42   4 x12 +   1 x13 -   2 x24 +   1 x34  +   5 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>5</text>
+        </initialMarking>
+      </place>
+      <place id="place-0042">
+        <name>
+          <text>HS dim 42  -   1 x12 -   3 x13 -   4 x24 +   6 x34  +  16 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>16</text>
+        </initialMarking>
+      </place>
+      <place id="place-0043">
+        <name>
+          <text>HS dim 42  -   3 x12 +   2 x13 +   1 x24 -   2 x34  +  11 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>11</text>
+        </initialMarking>
+      </place>
+      <place id="place-0044">
+        <name>
+          <text>HS dim 42   2 x12 -   1 x13 -   1 x24 +   1 x34  +   2 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>2</text>
+        </initialMarking>
+      </place>
+      <place id="place-0045">
+        <name>
+          <text>HS dim 42  -   1 x12 +   1 x24 -   1 x34  +   4 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>4</text>
+        </initialMarking>
+      </place>
+      <place id="place-0046">
+        <name>
+          <text>HS dim 42   1 x12 +   1 x24 -   1 x34  +   1 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0047">
+        <name>
+          <text>HS dim 42  -   1 x12 -   1 x24 +   3 x34  +   6 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>6</text>
+        </initialMarking>
+      </place>
+      <place id="place-0048">
+        <name>
+          <text>HS dim 42   4 x12 -   1 x13  +   2 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>2</text>
+        </initialMarking>
+      </place>
+      <place id="place-0049">
+        <name>
+          <text>HS dim 42  -   3 x12 +   1 x13 +   1 x24 -   2 x34  +  10 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>10</text>
+        </initialMarking>
+      </place>
+      <place id="place-0057">
+        <name>
+          <text>HS dim 42  -   1 x12 -   1 x13 -   2 x24 +   5 x34  +   6 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>6</text>
+        </initialMarking>
+      </place>
+      <place id="place-0056">
+        <name>
+          <text>HS dim 42   2 x12 -   1 x13 -   1 x24 +   1 x34  +   1 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0055">
+        <name>
+          <text>HS dim 42   1 x13  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0054">
+        <name>
+          <text>HS dim 42   1 x12 +   1 x13 -   1 x24  +   5 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>5</text>
+        </initialMarking>
+      </place>
+      <place id="place-0053">
+        <name>
+          <text>HS dim 42  -   3 x12 -   1 x13 -   3 x24 +   7 x34  +  13 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>13</text>
+        </initialMarking>
+      </place>
+      <place id="place-0052">
+        <name>
+          <text>HS dim 42  -  10 x12 -   1 x13 -   3 x34  +  37 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>37</text>
+        </initialMarking>
+      </place>
+      <place id="place-0051">
+        <name>
+          <text>HS dim 42  -   2 x12 +   1 x13 +   1 x24 -   2 x34  +   9 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>9</text>
+        </initialMarking>
+      </place>
+      <place id="place-0050">
+        <name>
+          <text>HS dim 42  -   1 x12 +   2 x13 -   1 x34  +   7 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>7</text>
+        </initialMarking>
+      </place>
+      <place id="place-0059">
+        <name>
+          <text>HS dim 42  -   1 x12 -   1 x13  +   6 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>6</text>
+        </initialMarking>
+      </place>
+      <place id="place-0058">
+        <name>
+          <text>HS dim 42  -   1 x34  +   5 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>5</text>
+        </initialMarking>
+      </place>
+      <arc id="arc-P0001-TCC_Outbound" source="place-0001" target="CC_Outbound"/>
+      <arc id="arc-P0001-Tcc_written_care" source="place-0001" target="cc_written_care"/>
+      <arc id="arc-Tcc_actie_op_datum-P0001" source="cc_actie_op_datum" target="place-0001"/>
+      <arc id="arc-TCC_CONTACT_CENTER-P0002" source="CC_CONTACT_CENTER" target="place-0002"/>
+      <arc id="arc-P0002-TCC_Outbound" source="place-0002" target="CC_Outbound"/>
+      <arc id="arc-P0002-Tcc_actie_op_datum" source="place-0002" target="cc_actie_op_datum"/>
+      <arc id="arc-P0003-TCC_CONTACT_CENTER" source="place-0003" target="CC_CONTACT_CENTER">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-P0003-TCC_Outbound" source="place-0003" target="CC_Outbound"/>
+      <arc id="arc-P0003-Tcc_actie_op_datum" source="place-0003" target="cc_actie_op_datum"/>
+      <arc id="arc-TCC_CONTACT_CENTER-P0004" source="CC_CONTACT_CENTER" target="place-0004">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-Tcc_written_care-P0004" source="cc_written_care" target="place-0004">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-P0004-Tcc_actie_op_datum" source="place-0004" target="cc_actie_op_datum"/>
+      <arc id="arc-P0005-TCC_CONTACT_CENTER" source="place-0005" target="CC_CONTACT_CENTER"/>
+      <arc id="arc-TCC_Outbound-P0005" source="CC_Outbound" target="place-0005"/>
+      <arc id="arc-Tcc_written_care-P0005" source="cc_written_care" target="place-0005">
+        <value>
+          <text>4</text>
+        </value>
+      </arc>
+      <arc id="arc-P0005-Tcc_actie_op_datum" source="place-0005" target="cc_actie_op_datum">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-TCC_CONTACT_CENTER-P0006" source="CC_CONTACT_CENTER" target="place-0006"/>
+      <arc id="arc-Tcc_written_care-P0006" source="cc_written_care" target="place-0006">
+        <value>
+          <text>4</text>
+        </value>
+      </arc>
+      <arc id="arc-P0006-Tcc_actie_op_datum" source="place-0006" target="cc_actie_op_datum">
+        <value>
+          <text>4</text>
+        </value>
+      </arc>
+      <arc id="arc-Tcc_written_care-P0007" source="cc_written_care" target="place-0007"/>
+      <arc id="arc-P0007-Tcc_actie_op_datum" source="place-0007" target="cc_actie_op_datum"/>
+      <arc id="arc-TCC_CONTACT_CENTER-P0008" source="CC_CONTACT_CENTER" target="place-0008">
+        <value>
+          <text>5</text>
+        </value>
+      </arc>
+      <arc id="arc-P0008-TCC_Outbound" source="place-0008" target="CC_Outbound"/>
+      <arc id="arc-Tcc_written_care-P0008" source="cc_written_care" target="place-0008"/>
+      <arc id="arc-P0008-Tcc_actie_op_datum" source="place-0008" target="cc_actie_op_datum"/>
+      <arc id="arc-P0009-TCC_Outbound" source="place-0009" target="CC_Outbound"/>
+      <arc id="arc-TCC_CONTACT_CENTER-P0010" source="CC_CONTACT_CENTER" target="place-0010">
+        <value>
+          <text>8</text>
+        </value>
+      </arc>
+      <arc id="arc-P0010-TCC_Outbound" source="place-0010" target="CC_Outbound">
+        <value>
+          <text>3</text>
+        </value>
+      </arc>
+      <arc id="arc-P0010-Tcc_written_care" source="place-0010" target="cc_written_care">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-Tcc_actie_op_datum-P0010" source="cc_actie_op_datum" target="place-0010"/>
+      <arc id="arc-TCC_Outbound-P0011" source="CC_Outbound" target="place-0011"/>
+      <arc id="arc-Tcc_written_care-P0011" source="cc_written_care" target="place-0011">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-P0011-Tcc_actie_op_datum" source="place-0011" target="cc_actie_op_datum">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-P0012-TCC_CONTACT_CENTER" source="place-0012" target="CC_CONTACT_CENTER"/>
+      <arc id="arc-TCC_Outbound-P0012" source="CC_Outbound" target="place-0012">
+        <value>
+          <text>5</text>
+        </value>
+      </arc>
+      <arc id="arc-P0012-Tcc_written_care" source="place-0012" target="cc_written_care"/>
+      <arc id="arc-TCC_CONTACT_CENTER-P0013" source="CC_CONTACT_CENTER" target="place-0013">
+        <value>
+          <text>14</text>
+        </value>
+      </arc>
+      <arc id="arc-P0013-TCC_Outbound" source="place-0013" target="CC_Outbound">
+        <value>
+          <text>5</text>
+        </value>
+      </arc>
+      <arc id="arc-P0013-Tcc_written_care" source="place-0013" target="cc_written_care">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-Tcc_actie_op_datum-P0013" source="cc_actie_op_datum" target="place-0013"/>
+      <arc id="arc-TCC_CONTACT_CENTER-P0014" source="CC_CONTACT_CENTER" target="place-0014">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-P0014-TCC_Outbound" source="place-0014" target="CC_Outbound">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-P0014-Tcc_written_care" source="place-0014" target="cc_written_care"/>
+      <arc id="arc-Tcc_actie_op_datum-P0014" source="cc_actie_op_datum" target="place-0014">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-P0015-TCC_CONTACT_CENTER" source="place-0015" target="CC_CONTACT_CENTER">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-TCC_Outbound-P0015" source="CC_Outbound" target="place-0015">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-Tcc_written_care-P0015" source="cc_written_care" target="place-0015"/>
+      <arc id="arc-P0015-Tcc_actie_op_datum" source="place-0015" target="cc_actie_op_datum">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-P0016-TCC_CONTACT_CENTER" source="place-0016" target="CC_CONTACT_CENTER">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-P0016-TCC_Outbound" source="place-0016" target="CC_Outbound">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-P0016-Tcc_written_care" source="place-0016" target="cc_written_care"/>
+      <arc id="arc-P0017-TCC_CONTACT_CENTER" source="place-0017" target="CC_CONTACT_CENTER"/>
+      <arc id="arc-P0017-TCC_Outbound" source="place-0017" target="CC_Outbound"/>
+      <arc id="arc-Tcc_written_care-P0017" source="cc_written_care" target="place-0017"/>
+      <arc id="arc-P0017-Tcc_actie_op_datum" source="place-0017" target="cc_actie_op_datum">
+        <value>
+          <text>3</text>
+        </value>
+      </arc>
+      <arc id="arc-TCC_CONTACT_CENTER-P0018" source="CC_CONTACT_CENTER" target="place-0018">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-TCC_Outbound-P0018" source="CC_Outbound" target="place-0018"/>
+      <arc id="arc-Tcc_written_care-P0018" source="cc_written_care" target="place-0018">
+        <value>
+          <text>4</text>
+        </value>
+      </arc>
+      <arc id="arc-P0018-Tcc_actie_op_datum" source="place-0018" target="cc_actie_op_datum">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-P0019-TCC_CONTACT_CENTER" source="place-0019" target="CC_CONTACT_CENTER">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-TCC_Outbound-P0019" source="CC_Outbound" target="place-0019">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-Tcc_written_care-P0019" source="cc_written_care" target="place-0019"/>
+      <arc id="arc-P0019-Tcc_actie_op_datum" source="place-0019" target="cc_actie_op_datum">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-P0020-TCC_CONTACT_CENTER" source="place-0020" target="CC_CONTACT_CENTER"/>
+      <arc id="arc-P0020-TCC_Outbound" source="place-0020" target="CC_Outbound">
+        <value>
+          <text>8</text>
+        </value>
+      </arc>
+      <arc id="arc-P0020-Tcc_written_care" source="place-0020" target="cc_written_care">
+        <value>
+          <text>9</text>
+        </value>
+      </arc>
+      <arc id="arc-Tcc_actie_op_datum-P0020" source="cc_actie_op_datum" target="place-0020">
+        <value>
+          <text>11</text>
+        </value>
+      </arc>
+      <arc id="arc-P0021-TCC_CONTACT_CENTER" source="place-0021" target="CC_CONTACT_CENTER"/>
+      <arc id="arc-P0021-TCC_Outbound" source="place-0021" target="CC_Outbound"/>
+      <arc id="arc-Tcc_written_care-P0021" source="cc_written_care" target="place-0021">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-P0021-Tcc_actie_op_datum" source="place-0021" target="cc_actie_op_datum">
+        <value>
+          <text>4</text>
+        </value>
+      </arc>
+      <arc id="arc-TCC_CONTACT_CENTER-P0022" source="CC_CONTACT_CENTER" target="place-0022">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-P0022-Tcc_written_care" source="place-0022" target="cc_written_care"/>
+      <arc id="arc-Tcc_actie_op_datum-P0022" source="cc_actie_op_datum" target="place-0022">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-P0023-TCC_CONTACT_CENTER" source="place-0023" target="CC_CONTACT_CENTER">
+        <value>
+          <text>5</text>
+        </value>
+      </arc>
+      <arc id="arc-Tcc_written_care-P0023" source="cc_written_care" target="place-0023"/>
+      <arc id="arc-P0023-Tcc_actie_op_datum" source="place-0023" target="cc_actie_op_datum">
+        <value>
+          <text>3</text>
+        </value>
+      </arc>
+      <arc id="arc-P0024-TCC_CONTACT_CENTER" source="place-0024" target="CC_CONTACT_CENTER">
+        <value>
+          <text>8</text>
+        </value>
+      </arc>
+      <arc id="arc-Tcc_written_care-P0024" source="cc_written_care" target="place-0024"/>
+      <arc id="arc-P0024-Tcc_actie_op_datum" source="place-0024" target="cc_actie_op_datum">
+        <value>
+          <text>3</text>
+        </value>
+      </arc>
+      <arc id="arc-P0025-TCC_CONTACT_CENTER" source="place-0025" target="CC_CONTACT_CENTER">
+        <value>
+          <text>4</text>
+        </value>
+      </arc>
+      <arc id="arc-P0025-TCC_Outbound" source="place-0025" target="CC_Outbound"/>
+      <arc id="arc-P0025-Tcc_written_care" source="place-0025" target="cc_written_care"/>
+      <arc id="arc-P0026-Tcc_written_care" source="place-0026" target="cc_written_care"/>
+      <arc id="arc-Tcc_actie_op_datum-P0026" source="cc_actie_op_datum" target="place-0026">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-P0027-TCC_Outbound" source="place-0027" target="CC_Outbound"/>
+      <arc id="arc-Tcc_written_care-P0027" source="cc_written_care" target="place-0027">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-P0027-Tcc_actie_op_datum" source="place-0027" target="cc_actie_op_datum">
+        <value>
+          <text>4</text>
+        </value>
+      </arc>
+      <arc id="arc-TCC_CONTACT_CENTER-P0028" source="CC_CONTACT_CENTER" target="place-0028"/>
+      <arc id="arc-P0028-TCC_Outbound" source="place-0028" target="CC_Outbound"/>
+      <arc id="arc-P0028-Tcc_written_care" source="place-0028" target="cc_written_care"/>
+      <arc id="arc-Tcc_actie_op_datum-P0028" source="cc_actie_op_datum" target="place-0028"/>
+      <arc id="arc-P0029-TCC_Outbound" source="place-0029" target="CC_Outbound"/>
+      <arc id="arc-P0029-Tcc_actie_op_datum" source="place-0029" target="cc_actie_op_datum"/>
+      <arc id="arc-P0030-TCC_CONTACT_CENTER" source="place-0030" target="CC_CONTACT_CENTER"/>
+      <arc id="arc-Tcc_written_care-P0031" source="cc_written_care" target="place-0031"/>
+      <arc id="arc-TCC_CONTACT_CENTER-P0032" source="CC_CONTACT_CENTER" target="place-0032"/>
+      <arc id="arc-P0032-TCC_Outbound" source="place-0032" target="CC_Outbound">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-P0032-Tcc_written_care" source="place-0032" target="cc_written_care"/>
+      <arc id="arc-Tcc_actie_op_datum-P0032" source="cc_actie_op_datum" target="place-0032">
+        <value>
+          <text>3</text>
+        </value>
+      </arc>
+      <arc id="arc-TCC_CONTACT_CENTER-P0033" source="CC_CONTACT_CENTER" target="place-0033">
+        <value>
+          <text>4</text>
+        </value>
+      </arc>
+      <arc id="arc-P0033-TCC_Outbound" source="place-0033" target="CC_Outbound"/>
+      <arc id="arc-P0033-Tcc_written_care" source="place-0033" target="cc_written_care"/>
+      <arc id="arc-Tcc_actie_op_datum-P0033" source="cc_actie_op_datum" target="place-0033"/>
+      <arc id="arc-P0034-TCC_CONTACT_CENTER" source="place-0034" target="CC_CONTACT_CENTER">
+        <value>
+          <text>6</text>
+        </value>
+      </arc>
+      <arc id="arc-TCC_Outbound-P0034" source="CC_Outbound" target="place-0034"/>
+      <arc id="arc-Tcc_written_care-P0034" source="cc_written_care" target="place-0034">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-P0034-Tcc_actie_op_datum" source="place-0034" target="cc_actie_op_datum">
+        <value>
+          <text>4</text>
+        </value>
+      </arc>
+      <arc id="arc-TCC_CONTACT_CENTER-P0035" source="CC_CONTACT_CENTER" target="place-0035"/>
+      <arc id="arc-TCC_CONTACT_CENTER-P0036" source="CC_CONTACT_CENTER" target="place-0036"/>
+      <arc id="arc-TCC_Outbound-P0036" source="CC_Outbound" target="place-0036">
+        <value>
+          <text>4</text>
+        </value>
+      </arc>
+      <arc id="arc-P0036-Tcc_written_care" source="place-0036" target="cc_written_care">
+        <value>
+          <text>4</text>
+        </value>
+      </arc>
+      <arc id="arc-Tcc_actie_op_datum-P0036" source="cc_actie_op_datum" target="place-0036">
+        <value>
+          <text>3</text>
+        </value>
+      </arc>
+      <arc id="arc-P0037-TCC_CONTACT_CENTER" source="place-0037" target="CC_CONTACT_CENTER"/>
+      <arc id="arc-P0037-TCC_Outbound" source="place-0037" target="CC_Outbound"/>
+      <arc id="arc-Tcc_written_care-P0037" source="cc_written_care" target="place-0037"/>
+      <arc id="arc-P0037-Tcc_actie_op_datum" source="place-0037" target="cc_actie_op_datum">
+        <value>
+          <text>3</text>
+        </value>
+      </arc>
+      <arc id="arc-TCC_CONTACT_CENTER-P0038" source="CC_CONTACT_CENTER" target="place-0038">
+        <value>
+          <text>17</text>
+        </value>
+      </arc>
+      <arc id="arc-P0038-TCC_Outbound" source="place-0038" target="CC_Outbound">
+        <value>
+          <text>5</text>
+        </value>
+      </arc>
+      <arc id="arc-P0038-Tcc_actie_op_datum" source="place-0038" target="cc_actie_op_datum"/>
+      <arc id="arc-P0039-TCC_CONTACT_CENTER" source="place-0039" target="CC_CONTACT_CENTER">
+        <value>
+          <text>5</text>
+        </value>
+      </arc>
+      <arc id="arc-P0039-TCC_Outbound" source="place-0039" target="CC_Outbound"/>
+      <arc id="arc-Tcc_written_care-P0039" source="cc_written_care" target="place-0039"/>
+      <arc id="arc-P0039-Tcc_actie_op_datum" source="place-0039" target="cc_actie_op_datum">
+        <value>
+          <text>3</text>
+        </value>
+      </arc>
+      <arc id="arc-Tcc_actie_op_datum-P0040" source="cc_actie_op_datum" target="place-0040"/>
+      <arc id="arc-TCC_CONTACT_CENTER-P0041" source="CC_CONTACT_CENTER" target="place-0041">
+        <value>
+          <text>4</text>
+        </value>
+      </arc>
+      <arc id="arc-TCC_Outbound-P0041" source="CC_Outbound" target="place-0041"/>
+      <arc id="arc-P0041-Tcc_written_care" source="place-0041" target="cc_written_care">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-Tcc_actie_op_datum-P0041" source="cc_actie_op_datum" target="place-0041"/>
+      <arc id="arc-P0042-TCC_CONTACT_CENTER" source="place-0042" target="CC_CONTACT_CENTER"/>
+      <arc id="arc-P0042-TCC_Outbound" source="place-0042" target="CC_Outbound">
+        <value>
+          <text>3</text>
+        </value>
+      </arc>
+      <arc id="arc-P0042-Tcc_written_care" source="place-0042" target="cc_written_care">
+        <value>
+          <text>4</text>
+        </value>
+      </arc>
+      <arc id="arc-Tcc_actie_op_datum-P0042" source="cc_actie_op_datum" target="place-0042">
+        <value>
+          <text>6</text>
+        </value>
+      </arc>
+      <arc id="arc-P0043-TCC_CONTACT_CENTER" source="place-0043" target="CC_CONTACT_CENTER">
+        <value>
+          <text>3</text>
+        </value>
+      </arc>
+      <arc id="arc-TCC_Outbound-P0043" source="CC_Outbound" target="place-0043">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-Tcc_written_care-P0043" source="cc_written_care" target="place-0043"/>
+      <arc id="arc-P0043-Tcc_actie_op_datum" source="place-0043" target="cc_actie_op_datum">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-TCC_CONTACT_CENTER-P0044" source="CC_CONTACT_CENTER" target="place-0044">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-P0044-TCC_Outbound" source="place-0044" target="CC_Outbound"/>
+      <arc id="arc-P0044-Tcc_written_care" source="place-0044" target="cc_written_care"/>
+      <arc id="arc-Tcc_actie_op_datum-P0044" source="cc_actie_op_datum" target="place-0044"/>
+      <arc id="arc-P0045-TCC_CONTACT_CENTER" source="place-0045" target="CC_CONTACT_CENTER"/>
+      <arc id="arc-Tcc_written_care-P0045" source="cc_written_care" target="place-0045"/>
+      <arc id="arc-P0045-Tcc_actie_op_datum" source="place-0045" target="cc_actie_op_datum"/>
+      <arc id="arc-TCC_CONTACT_CENTER-P0046" source="CC_CONTACT_CENTER" target="place-0046"/>
+      <arc id="arc-Tcc_written_care-P0046" source="cc_written_care" target="place-0046"/>
+      <arc id="arc-P0046-Tcc_actie_op_datum" source="place-0046" target="cc_actie_op_datum"/>
+      <arc id="arc-P0047-TCC_CONTACT_CENTER" source="place-0047" target="CC_CONTACT_CENTER"/>
+      <arc id="arc-P0047-Tcc_written_care" source="place-0047" target="cc_written_care"/>
+      <arc id="arc-Tcc_actie_op_datum-P0047" source="cc_actie_op_datum" target="place-0047">
+        <value>
+          <text>3</text>
+        </value>
+      </arc>
+      <arc id="arc-TCC_CONTACT_CENTER-P0048" source="CC_CONTACT_CENTER" target="place-0048">
+        <value>
+          <text>4</text>
+        </value>
+      </arc>
+      <arc id="arc-P0048-TCC_Outbound" source="place-0048" target="CC_Outbound"/>
+      <arc id="arc-P0049-TCC_CONTACT_CENTER" source="place-0049" target="CC_CONTACT_CENTER">
+        <value>
+          <text>3</text>
+        </value>
+      </arc>
+      <arc id="arc-TCC_Outbound-P0049" source="CC_Outbound" target="place-0049"/>
+      <arc id="arc-Tcc_written_care-P0049" source="cc_written_care" target="place-0049"/>
+      <arc id="arc-P0049-Tcc_actie_op_datum" source="place-0049" target="cc_actie_op_datum">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-P0050-TCC_CONTACT_CENTER" source="place-0050" target="CC_CONTACT_CENTER"/>
+      <arc id="arc-TCC_Outbound-P0050" source="CC_Outbound" target="place-0050">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-P0050-Tcc_actie_op_datum" source="place-0050" target="cc_actie_op_datum"/>
+      <arc id="arc-P0051-TCC_CONTACT_CENTER" source="place-0051" target="CC_CONTACT_CENTER">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-TCC_Outbound-P0051" source="CC_Outbound" target="place-0051"/>
+      <arc id="arc-Tcc_written_care-P0051" source="cc_written_care" target="place-0051"/>
+      <arc id="arc-P0051-Tcc_actie_op_datum" source="place-0051" target="cc_actie_op_datum">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-P0052-TCC_CONTACT_CENTER" source="place-0052" target="CC_CONTACT_CENTER">
+        <value>
+          <text>10</text>
+        </value>
+      </arc>
+      <arc id="arc-P0052-TCC_Outbound" source="place-0052" target="CC_Outbound"/>
+      <arc id="arc-P0052-Tcc_actie_op_datum" source="place-0052" target="cc_actie_op_datum">
+        <value>
+          <text>3</text>
+        </value>
+      </arc>
+      <arc id="arc-P0053-TCC_CONTACT_CENTER" source="place-0053" target="CC_CONTACT_CENTER">
+        <value>
+          <text>3</text>
+        </value>
+      </arc>
+      <arc id="arc-P0053-TCC_Outbound" source="place-0053" target="CC_Outbound"/>
+      <arc id="arc-P0053-Tcc_written_care" source="place-0053" target="cc_written_care">
+        <value>
+          <text>3</text>
+        </value>
+      </arc>
+      <arc id="arc-Tcc_actie_op_datum-P0053" source="cc_actie_op_datum" target="place-0053">
+        <value>
+          <text>7</text>
+        </value>
+      </arc>
+      <arc id="arc-TCC_CONTACT_CENTER-P0054" source="CC_CONTACT_CENTER" target="place-0054"/>
+      <arc id="arc-TCC_Outbound-P0054" source="CC_Outbound" target="place-0054"/>
+      <arc id="arc-P0054-Tcc_written_care" source="place-0054" target="cc_written_care"/>
+      <arc id="arc-TCC_Outbound-P0055" source="CC_Outbound" target="place-0055"/>
+      <arc id="arc-TCC_CONTACT_CENTER-P0056" source="CC_CONTACT_CENTER" target="place-0056">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-P0056-TCC_Outbound" source="place-0056" target="CC_Outbound"/>
+      <arc id="arc-P0056-Tcc_written_care" source="place-0056" target="cc_written_care"/>
+      <arc id="arc-Tcc_actie_op_datum-P0056" source="cc_actie_op_datum" target="place-0056"/>
+      <arc id="arc-P0057-TCC_CONTACT_CENTER" source="place-0057" target="CC_CONTACT_CENTER"/>
+      <arc id="arc-P0057-TCC_Outbound" source="place-0057" target="CC_Outbound"/>
+      <arc id="arc-P0057-Tcc_written_care" source="place-0057" target="cc_written_care">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-Tcc_actie_op_datum-P0057" source="cc_actie_op_datum" target="place-0057">
+        <value>
+          <text>5</text>
+        </value>
+      </arc>
+      <arc id="arc-P0058-Tcc_actie_op_datum" source="place-0058" target="cc_actie_op_datum"/>
+      <arc id="arc-P0059-TCC_CONTACT_CENTER" source="place-0059" target="CC_CONTACT_CENTER"/>
+      <arc id="arc-P0059-TCC_Outbound" source="place-0059" target="CC_Outbound"/>
+      <arc id="arc-P0060-TCC_Outbound" source="place-0060" target="CC_Outbound"/>
+      <arc id="arc-Tcc_written_care-P0060" source="cc_written_care" target="place-0060"/>
+      <arc id="arc-P0060-Tcc_actie_op_datum" source="place-0060" target="cc_actie_op_datum">
+        <value>
+          <text>3</text>
+        </value>
+      </arc>
+      <arc id="arc-P0061-TCC_CONTACT_CENTER" source="place-0061" target="CC_CONTACT_CENTER">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-TCC_Outbound-P0061" source="CC_Outbound" target="place-0061">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-Tcc_written_care-P0061" source="cc_written_care" target="place-0061"/>
+      <arc id="arc-P0061-Tcc_actie_op_datum" source="place-0061" target="cc_actie_op_datum">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-TCC_CONTACT_CENTER-P0062" source="CC_CONTACT_CENTER" target="place-0062"/>
+      <arc id="arc-P0062-TCC_Outbound" source="place-0062" target="CC_Outbound">
+        <value>
+          <text>3</text>
+        </value>
+      </arc>
+      <arc id="arc-P0062-Tcc_written_care" source="place-0062" target="cc_written_care">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-Tcc_actie_op_datum-P0062" source="cc_actie_op_datum" target="place-0062">
+        <value>
+          <text>3</text>
+        </value>
+      </arc>
+      <arc id="arc-P0063-TCC_CONTACT_CENTER" source="place-0063" target="CC_CONTACT_CENTER">
+        <value>
+          <text>2</text>
+        </value>
+      </arc>
+      <arc id="arc-TCC_Outbound-P0063" source="CC_Outbound" target="place-0063"/>
+      <arc id="arc-Tcc_written_care-P0063" source="cc_written_care" target="place-0063">
+        <value>
+          <text>6</text>
+        </value>
+      </arc>
+      <arc id="arc-P0063-Tcc_actie_op_datum" source="place-0063" target="cc_actie_op_datum">
+        <value>
+          <text>3</text>
+        </value>
+      </arc>
+      <arc id="arc-P0064-TArtificialStartTask" source="ArtificialStartTask" target="place-0064"/>
+      <arc id="arc-P0064-TArtificialStartTask" source="place-0064" target="ArtificialStartTask"/>
+      <arc id="arc-P0065-TBOss" source="BOss" target="place-0065"/>
+      <arc id="arc-P0065-TBOss" source="place-0065" target="BOss"/>
+      <arc id="arc-P0066-TBOss_internal_tel" source="BOss_internal_tel" target="place-0066"/>
+      <arc id="arc-P0066-TBOss_internal_tel" source="place-0066" target="BOss_internal_tel"/>
+      <arc id="arc-P0067-TArtificialEndTask" source="ArtificialEndTask" target="place-0067"/>
+      <arc id="arc-P0067-TArtificialEndTask" source="place-0067" target="ArtificialEndTask"/>
+      <arc id="arc-P0068-TBOss_internal_invoicing" source="BOss_internal_invoicing" target="place-0068"/>
+      <arc id="arc-P0068-TBOss_internal_invoicing" source="place-0068" target="BOss_internal_invoicing"/>
+      <arc id="arc-P0069-TBOss_internal_idtv" source="BOss_internal_idtv" target="place-0069"/>
+      <arc id="arc-P0069-TBOss_internal_idtv" source="place-0069" target="BOss_internal_idtv"/>
+      <arc id="arc-P0070-TBOss_internal_iDTV" source="BOss_internal_iDTV" target="place-0070"/>
+      <arc id="arc-P0070-TBOss_internal_iDTV" source="place-0070" target="BOss_internal_iDTV"/>
+      <arc id="arc-P0071-TBOss_internal_wipbin" source="BOss_internal_wipbin" target="place-0071"/>
+      <arc id="arc-P0071-TBOss_internal_wipbin" source="place-0071" target="BOss_internal_wipbin"/>
+      <arc id="arc-P0072-Tcc_externe_info_nodig" source="cc_externe_info_nodig" target="place-0072"/>
+      <arc id="arc-P0072-Tcc_externe_info_nodig" source="place-0072" target="cc_externe_info_nodig"/>
+      <arc id="arc-P0073-TBOss_internal_AVSnA" source="BOss_internal_AVSnA" target="place-0073"/>
+      <arc id="arc-P0073-TBOss_internal_AVSnA" source="place-0073" target="BOss_internal_AVSnA"/>
+      <arc id="arc-P0074-TParent_Child" source="Parent_Child" target="place-0074"/>
+      <arc id="arc-P0074-TParent_Child" source="place-0074" target="Parent_Child"/>
+      <arc id="arc-P0075-TOnsite_repair" source="Onsite_repair" target="place-0075"/>
+      <arc id="arc-P0075-TOnsite_repair" source="place-0075" target="Onsite_repair"/>
+      <arc id="arc-P0076-TBOss_followup_thd" source="BOss_followup_thd" target="place-0076"/>
+      <arc id="arc-P0076-TBOss_followup_thd" source="place-0076" target="BOss_followup_thd"/>
+      <arc id="arc-P0077-TBnC_PAYMENTS" source="BnC_PAYMENTS" target="place-0077"/>
+      <arc id="arc-P0077-TBnC_PAYMENTS" source="place-0077" target="BnC_PAYMENTS"/>
+      <arc id="arc-P0078-TBOss_internal_mobile" source="BOss_internal_mobile" target="place-0078"/>
+      <arc id="arc-P0078-TBOss_internal_mobile" source="place-0078" target="BOss_internal_mobile"/>
+      <arc id="arc-P0079-TBOss_internal_int" source="BOss_internal_int" target="place-0079"/>
+      <arc id="arc-P0079-TBOss_internal_int" source="place-0079" target="BOss_internal_int"/>
+      <arc id="arc-P0080-TBOss_internal_cust_locat" source="BOss_internal_cust_locat" target="place-0080"/>
+      <arc id="arc-P0080-TBOss_internal_cust_locat" source="place-0080" target="BOss_internal_cust_locat"/>
+      <arc id="arc-P0081-TBILLING" source="BILLING" target="place-0081"/>
+      <arc id="arc-P0081-TBILLING" source="place-0081" target="BILLING"/>
+      <arc id="arc-P0082-Tbill_in_onderzoek" source="bill_in_onderzoek" target="place-0082"/>
+      <arc id="arc-P0082-Tbill_in_onderzoek" source="place-0082" target="bill_in_onderzoek"/>
+      <arc id="arc-P0083-TBOss_internal_Mobile" source="BOss_internal_Mobile" target="place-0083"/>
+      <arc id="arc-P0083-TBOss_internal_Mobile" source="place-0083" target="BOss_internal_Mobile"/>
+      <arc id="arc-P0084-TBOss_opvolging_ISO_IBO" source="BOss_opvolging_ISO_IBO" target="place-0084"/>
+      <arc id="arc-P0084-TBOss_opvolging_ISO_IBO" source="place-0084" target="BOss_opvolging_ISO_IBO"/>
+      <arc id="arc-P0085-TBOss_actie_op_datum" source="BOss_actie_op_datum" target="place-0085"/>
+      <arc id="arc-P0085-TBOss_actie_op_datum" source="place-0085" target="BOss_actie_op_datum"/>
+      <arc id="arc-P0086-TBOss_externe_info_nodig" source="BOss_externe_info_nodig" target="place-0086"/>
+      <arc id="arc-P0086-TBOss_externe_info_nodig" source="place-0086" target="BOss_externe_info_nodig"/>
+      <arc id="arc-P0087-TBOss_CATCHUP_INT" source="BOss_CATCHUP_INT" target="place-0087"/>
+      <arc id="arc-P0087-TBOss_CATCHUP_INT" source="place-0087" target="BOss_CATCHUP_INT"/>
+      <arc id="arc-P0088-TBnC_BAD_PAYERS" source="BnC_BAD_PAYERS" target="place-0088"/>
+      <arc id="arc-P0088-TBnC_BAD_PAYERS" source="place-0088" target="BnC_BAD_PAYERS"/>
+      <arc id="arc-P0089-TBOss_AVS_REACT" source="BOss_AVS_REACT" target="place-0089"/>
+      <arc id="arc-P0089-TBOss_AVS_REACT" source="place-0089" target="BOss_AVS_REACT"/>
+      <arc id="arc-P0090-TBOss_AVS_AOD" source="BOss_AVS_AOD" target="place-0090"/>
+      <arc id="arc-P0090-TBOss_AVS_AOD" source="place-0090" target="BOss_AVS_AOD"/>
+      <arc id="arc-P0091-TBOss_CAS_AOD" source="BOss_CAS_AOD" target="place-0091"/>
+      <arc id="arc-P0091-TBOss_CAS_AOD" source="place-0091" target="BOss_CAS_AOD"/>
+      <arc id="arc-P0092-TNA_Verkav_en_Groepsbouw" source="NA_Verkav_en_Groepsbouw" target="place-0092"/>
+      <arc id="arc-P0092-TNA_Verkav_en_Groepsbouw" source="place-0092" target="NA_Verkav_en_Groepsbouw"/>
+      <arc id="arc-P0093-TBOss_opvolging_vip" source="BOss_opvolging_vip" target="place-0093"/>
+      <arc id="arc-P0093-TBOss_opvolging_vip" source="place-0093" target="BOss_opvolging_vip"/>
+      <arc id="arc-P0094-TBOss_internal_VIP" source="BOss_internal_VIP" target="place-0094"/>
+      <arc id="arc-P0094-TBOss_internal_VIP" source="place-0094" target="BOss_internal_VIP"/>
+      <arc id="arc-P0095-TBnC_bp_op_datum" source="BnC_bp_op_datum" target="place-0095"/>
+      <arc id="arc-P0095-TBnC_bp_op_datum" source="place-0095" target="BnC_bp_op_datum"/>
+      <arc id="arc-P0096-TBOss_internal_int_NEW" source="BOss_internal_int_NEW" target="place-0096"/>
+      <arc id="arc-P0096-TBOss_internal_int_NEW" source="place-0096" target="BOss_internal_int_NEW"/>
+      <arc id="arc-P0097-TBOss_followup_idtv_engin" source="BOss_followup_idtv_engin" target="place-0097"/>
+      <arc id="arc-P0097-TBOss_followup_idtv_engin" source="place-0097" target="BOss_followup_idtv_engin"/>
+      <arc id="arc-P0098-TBOss_followup_idtv" source="BOss_followup_idtv" target="place-0098"/>
+      <arc id="arc-P0098-TBOss_followup_idtv" source="place-0098" target="BOss_followup_idtv"/>
+      <arc id="arc-P0099-TBOss_CATCHUP_Mobile" source="BOss_CATCHUP_Mobile" target="place-0099"/>
+      <arc id="arc-P0099-TBOss_CATCHUP_Mobile" source="place-0099" target="BOss_CATCHUP_Mobile"/>
+      <arc id="arc-P0100-TBOss_invoicing_CATCHUP" source="BOss_invoicing_CATCHUP" target="place-0100"/>
+      <arc id="arc-P0100-TBOss_invoicing_CATCHUP" source="place-0100" target="BOss_invoicing_CATCHUP"/>
+      <arc id="arc-P0101-Tcc_CFU" source="cc_CFU" target="place-0101"/>
+      <arc id="arc-P0101-Tcc_CFU" source="place-0101" target="cc_CFU"/>
+    </page>
+  </net>
+</pnml>

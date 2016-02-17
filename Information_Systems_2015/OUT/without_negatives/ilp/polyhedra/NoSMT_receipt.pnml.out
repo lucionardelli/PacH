@@ -1,0 +1,17 @@
+
+Statistic of receipt.pnml: with negative traces from 
+
+    benchmark       ->  No SMT Simplification
+    positive        ->  receipt.pnml
+    dimension       ->  27
+    traces          ->  0
+    events          ->  0
+    negative        ->  
+    complexity      ->  118
+    effectiveness   ->  1.0
+    exec_time       ->  2016-02-17 16:29:17.602426
+    overall_time    ->  5.96046447754e-06
+    details
+        parse_traces    ->  0
+        convexHull      ->  0
+        simplify        ->  5.96046447754e-06

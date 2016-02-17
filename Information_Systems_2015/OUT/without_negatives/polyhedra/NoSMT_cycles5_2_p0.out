@@ -1,0 +1,18 @@
+
+Statistic of cycles5_2.xes: with negative traces from 
+
+    benchmark       ->  No SMT Simplification
+    positive        ->  cycles5_2.xes
+    dimension       ->  20
+    traces          ->  100
+    events          ->  4000
+    negative        ->  
+    complexity      ->  301
+    effectiveness   ->  1.0
+    exec_time       ->  2016-02-17 16:16:05.215118
+    overall_time    ->  0.405533790588
+    details
+        parse_traces    ->  0.109326839447
+        do_projection   ->  0.286296129227
+        convexHull      ->  0.00990295410156
+        simplify        ->  7.86781311035e-06

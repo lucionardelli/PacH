@@ -1,0 +1,17 @@
+
+Statistic of documentflow.pnml: with negative traces from 
+
+    benchmark       ->  Iterative SMT Simplification
+    positive        ->  documentflow.pnml
+    dimension       ->  59
+    traces          ->  0
+    events          ->  0
+    negative        ->  
+    complexity      ->  478
+    effectiveness   ->  0.554524361949
+    exec_time       ->  2016-02-17 16:31:03.994260
+    overall_time    ->  8.6966509819
+    details
+        parse_traces    ->  0
+        convexHull      ->  0
+        shift&rotate    ->  8.6966509819

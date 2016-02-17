@@ -1,0 +1,17 @@
+
+Statistic of t32.pnml: with negative traces from 
+
+    benchmark       ->  Matrix SMT Simplification
+    positive        ->  t32.pnml
+    dimension       ->  33
+    traces          ->  0
+    events          ->  0
+    negative        ->  
+    complexity      ->  607
+    effectiveness   ->  1.0
+    exec_time       ->  2016-02-17 16:29:34.005824
+    overall_time    ->  6.58946704865
+    details
+        parse_traces    ->  0
+        convexHull      ->  0
+        shift&rotate    ->  6.58946704865

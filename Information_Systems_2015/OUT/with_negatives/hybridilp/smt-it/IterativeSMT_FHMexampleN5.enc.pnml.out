@@ -1,0 +1,17 @@
+
+Statistic of FHMexampleN5.enc.pnml: with negative traces from 
+
+    benchmark       ->  Iterative SMT Simplification
+    positive        ->  FHMexampleN5.enc.pnml
+    dimension       ->  13
+    traces          ->  0
+    events          ->  0
+    negative        ->  
+    complexity      ->  136
+    effectiveness   ->  1.0
+    exec_time       ->  2016-02-17 18:18:49.960239
+    overall_time    ->  1.682918787
+    details
+        parse_traces    ->  0
+        convexHull      ->  0
+        shift&rotate    ->  1.682918787

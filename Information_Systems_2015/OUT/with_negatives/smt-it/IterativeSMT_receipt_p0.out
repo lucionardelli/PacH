@@ -1,0 +1,19 @@
+
+Statistic of receipt.xes: with negative traces from receipt.xes
+
+    benchmark       ->  Iterative SMT Simplification
+    positive        ->  receipt.xes
+    dimension       ->  27
+    traces          ->  1434
+    events          ->  8577
+    negative        ->  receipt.xes
+    complexity      ->  795
+    effectiveness   ->  1.0
+    exec_time       ->  2016-02-17 04:52:00.432381
+    overall_time    ->  1629.56105709
+    details
+        parse_traces    ->  0.190271139145
+        parse_negatives ->  0.31054186821
+        do_projection   ->  0.267452001572
+        convexHull      ->  0.00210213661194
+        shift&rotate    ->  1628.79068995

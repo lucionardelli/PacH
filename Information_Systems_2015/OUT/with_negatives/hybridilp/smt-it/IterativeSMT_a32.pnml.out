@@ -1,0 +1,17 @@
+
+Statistic of a32.pnml: with negative traces from 
+
+    benchmark       ->  Iterative SMT Simplification
+    positive        ->  a32.pnml
+    dimension       ->  32
+    traces          ->  0
+    events          ->  0
+    negative        ->  
+    complexity      ->  594
+    effectiveness   ->  0.7734375
+    exec_time       ->  2016-02-17 18:15:44.200575
+    overall_time    ->  10.9402520657
+    details
+        parse_traces    ->  0
+        convexHull      ->  0
+        shift&rotate    ->  10.9402520657

@@ -1,0 +1,17 @@
+
+Statistic of choice.pnml: with negative traces from 
+
+    benchmark       ->  Iterative SMT Simplification
+    positive        ->  choice.pnml
+    dimension       ->  12
+    traces          ->  0
+    events          ->  0
+    negative        ->  
+    complexity      ->  187
+    effectiveness   ->  0.816593886463
+    exec_time       ->  2016-02-17 18:16:16.572104
+    overall_time    ->  3.11179089546
+    details
+        parse_traces    ->  0
+        convexHull      ->  0
+        shift&rotate    ->  3.11179089546

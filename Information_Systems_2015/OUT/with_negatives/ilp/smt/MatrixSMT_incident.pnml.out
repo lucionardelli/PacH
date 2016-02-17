@@ -1,0 +1,17 @@
+
+Statistic of incident.pnml: with negative traces from 
+
+    benchmark       ->  Matrix SMT Simplification
+    positive        ->  incident.pnml
+    dimension       ->  18
+    traces          ->  0
+    events          ->  0
+    negative        ->  
+    complexity      ->  10
+    effectiveness   ->  0.0568181818182
+    exec_time       ->  2016-02-17 16:31:09.004951
+    overall_time    ->  1.17023992538
+    details
+        parse_traces    ->  0
+        convexHull      ->  0
+        shift&rotate    ->  1.17023992538

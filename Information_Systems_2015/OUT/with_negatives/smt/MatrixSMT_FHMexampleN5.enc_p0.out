@@ -1,0 +1,19 @@
+
+Statistic of FHMexampleN5.enc.xes: with negative traces from FHMexampleN5.enc.xes
+
+    benchmark       ->  Matrix SMT Simplification
+    positive        ->  FHMexampleN5.enc.xes
+    dimension       ->  13
+    traces          ->  1000
+    events          ->  13837
+    negative        ->  FHMexampleN5.enc.xes
+    complexity      ->  127
+    effectiveness   ->  1.0
+    exec_time       ->  2016-02-17 04:13:17.401474
+    overall_time    ->  1170.07575583
+    details
+        parse_traces    ->  0.273571014404
+        parse_negatives ->  0.385848999023
+        do_projection   ->  0.242510795593
+        convexHull      ->  0.00312900543213
+        shift&rotate    ->  1169.17069602

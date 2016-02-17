@@ -1,0 +1,18 @@
+
+Statistic of receipt.xes: with negative traces from 
+
+    benchmark       ->  No SMT Simplification
+    positive        ->  receipt.xes
+    dimension       ->  27
+    traces          ->  1434
+    events          ->  8577
+    negative        ->  
+    complexity      ->  611
+    effectiveness   ->  1.0
+    exec_time       ->  2016-02-17 16:11:14.630197
+    overall_time    ->  0.389597892761
+    details
+        parse_traces    ->  0.173239946365
+        do_projection   ->  0.213479042053
+        convexHull      ->  0.00286889076233
+        simplify        ->  1.00135803223e-05

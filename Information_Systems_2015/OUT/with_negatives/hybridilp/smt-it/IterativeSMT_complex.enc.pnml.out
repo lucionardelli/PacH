@@ -1,0 +1,17 @@
+
+Statistic of complex.enc.pnml: with negative traces from 
+
+    benchmark       ->  Iterative SMT Simplification
+    positive        ->  complex.enc.pnml
+    dimension       ->  19
+    traces          ->  0
+    events          ->  0
+    negative        ->  
+    complexity      ->  641
+    effectiveness   ->  0.817602040816
+    exec_time       ->  2016-02-17 18:16:38.044332
+    overall_time    ->  9.97295880318
+    details
+        parse_traces    ->  0
+        convexHull      ->  0
+        shift&rotate    ->  9.97295880318

@@ -1,0 +1,18 @@
+
+Statistic of documentflow.xes: with negative traces from 
+
+    benchmark       ->  No SMT Simplification
+    positive        ->  documentflow.xes
+    dimension       ->  59
+    traces          ->  1000
+    events          ->  5328
+    negative        ->  
+    complexity      ->  64
+    effectiveness   ->  1.0
+    exec_time       ->  2016-02-17 16:11:27.338824
+    overall_time    ->  0.332192182541
+    details
+        parse_traces    ->  0.142327070236
+        do_projection   ->  0.187798976898
+        convexHull      ->  0.00205707550049
+        simplify        ->  9.05990600586e-06

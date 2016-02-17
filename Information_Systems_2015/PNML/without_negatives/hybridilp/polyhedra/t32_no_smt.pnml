@@ -1,0 +1,522 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="t32_no_smt.pnml" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <name>
+      <text>t32_no_smt.pnml</text>
+    </name>
+    <page id="page">
+      <transition id="e19">
+        <name>
+          <text>e19</text>
+        </name>
+      </transition>
+      <transition id="e18">
+        <name>
+          <text>e18</text>
+        </name>
+      </transition>
+      <transition id="e33">
+        <name>
+          <text>e33</text>
+        </name>
+      </transition>
+      <transition id="e32">
+        <name>
+          <text>e32</text>
+        </name>
+      </transition>
+      <transition id="e31">
+        <name>
+          <text>e31</text>
+        </name>
+      </transition>
+      <transition id="e30">
+        <name>
+          <text>e30</text>
+        </name>
+      </transition>
+      <transition id="e11">
+        <name>
+          <text>e11</text>
+        </name>
+      </transition>
+      <transition id="e10">
+        <name>
+          <text>e10</text>
+        </name>
+      </transition>
+      <transition id="e13">
+        <name>
+          <text>e13</text>
+        </name>
+      </transition>
+      <transition id="e12">
+        <name>
+          <text>e12</text>
+        </name>
+      </transition>
+      <transition id="e15">
+        <name>
+          <text>e15</text>
+        </name>
+      </transition>
+      <transition id="e14">
+        <name>
+          <text>e14</text>
+        </name>
+      </transition>
+      <transition id="e17">
+        <name>
+          <text>e17</text>
+        </name>
+      </transition>
+      <transition id="e16">
+        <name>
+          <text>e16</text>
+        </name>
+      </transition>
+      <transition id="e9">
+        <name>
+          <text>e9</text>
+        </name>
+      </transition>
+      <transition id="e8">
+        <name>
+          <text>e8</text>
+        </name>
+      </transition>
+      <transition id="e5">
+        <name>
+          <text>e5</text>
+        </name>
+      </transition>
+      <transition id="e4">
+        <name>
+          <text>e4</text>
+        </name>
+      </transition>
+      <transition id="e7">
+        <name>
+          <text>e7</text>
+        </name>
+      </transition>
+      <transition id="e6">
+        <name>
+          <text>e6</text>
+        </name>
+      </transition>
+      <transition id="e1">
+        <name>
+          <text>e1</text>
+        </name>
+      </transition>
+      <transition id="e3">
+        <name>
+          <text>e3</text>
+        </name>
+      </transition>
+      <transition id="e2">
+        <name>
+          <text>e2</text>
+        </name>
+      </transition>
+      <transition id="e24">
+        <name>
+          <text>e24</text>
+        </name>
+      </transition>
+      <transition id="e25">
+        <name>
+          <text>e25</text>
+        </name>
+      </transition>
+      <transition id="e26">
+        <name>
+          <text>e26</text>
+        </name>
+      </transition>
+      <transition id="e27">
+        <name>
+          <text>e27</text>
+        </name>
+      </transition>
+      <transition id="e20">
+        <name>
+          <text>e20</text>
+        </name>
+      </transition>
+      <transition id="e21">
+        <name>
+          <text>e21</text>
+        </name>
+      </transition>
+      <transition id="e22">
+        <name>
+          <text>e22</text>
+        </name>
+      </transition>
+      <transition id="e23">
+        <name>
+          <text>e23</text>
+        </name>
+      </transition>
+      <transition id="e28">
+        <name>
+          <text>e28</text>
+        </name>
+      </transition>
+      <transition id="e29">
+        <name>
+          <text>e29</text>
+        </name>
+      </transition>
+      <place id="place-0024">
+        <name>
+          <text>Dummy place 0022</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0025">
+        <name>
+          <text>Dummy place 0023</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0022">
+        <name>
+          <text>Dummy place 0020</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0005">
+        <name>
+          <text>Dummy place 0003</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0020">
+        <name>
+          <text>Dummy place 0018</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0021">
+        <name>
+          <text>Dummy place 0019</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0026">
+        <name>
+          <text>Dummy place 0024</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0001">
+        <name>
+          <text>HS dim 33  -   1 x7  -   1 x8  +   1 x28  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0002">
+        <name>
+          <text>HS dim 33  -   1 x12  +   1 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0003">
+        <name>
+          <text>Dummy place 0001</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0028">
+        <name>
+          <text>Dummy place 0026</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0029">
+        <name>
+          <text>Dummy place 0027</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0008">
+        <name>
+          <text>Dummy place 0006</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0009">
+        <name>
+          <text>Dummy place 0007</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0019">
+        <name>
+          <text>Dummy place 0017</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0018">
+        <name>
+          <text>Dummy place 0016</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0013">
+        <name>
+          <text>Dummy place 0011</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0012">
+        <name>
+          <text>Dummy place 0010</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0011">
+        <name>
+          <text>Dummy place 0009</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0010">
+        <name>
+          <text>Dummy place 0008</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0017">
+        <name>
+          <text>Dummy place 0015</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0016">
+        <name>
+          <text>Dummy place 0014</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0015">
+        <name>
+          <text>Dummy place 0013</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0014">
+        <name>
+          <text>Dummy place 0012</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0031">
+        <name>
+          <text>Dummy place 0029</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0030">
+        <name>
+          <text>Dummy place 0028</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0033">
+        <name>
+          <text>Dummy place 0031</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0032">
+        <name>
+          <text>Dummy place 0030</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0035">
+        <name>
+          <text>Dummy place 0033</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0034">
+        <name>
+          <text>Dummy place 0032</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0004">
+        <name>
+          <text>Dummy place 0002</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0023">
+        <name>
+          <text>Dummy place 0021</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0006">
+        <name>
+          <text>Dummy place 0004</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0007">
+        <name>
+          <text>Dummy place 0005</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0027">
+        <name>
+          <text>Dummy place 0025</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <arc id="arc-P0001-Te3" source="place-0001" target="e3"/>
+      <arc id="arc-P0001-Te7" source="place-0001" target="e7"/>
+      <arc id="arc-Te2-P0001" source="e2" target="place-0001"/>
+      <arc id="arc-P0002-Te1" source="place-0002" target="e1"/>
+      <arc id="arc-P0003-Te33" source="e33" target="place-0003"/>
+      <arc id="arc-P0003-Te33" source="place-0003" target="e33"/>
+      <arc id="arc-P0004-Te5" source="e5" target="place-0004"/>
+      <arc id="arc-P0004-Te5" source="place-0004" target="e5"/>
+      <arc id="arc-P0005-Te9" source="e9" target="place-0005"/>
+      <arc id="arc-P0005-Te9" source="place-0005" target="e9"/>
+      <arc id="arc-P0006-Te15" source="e15" target="place-0006"/>
+      <arc id="arc-P0006-Te15" source="place-0006" target="e15"/>
+      <arc id="arc-P0007-Te21" source="e21" target="place-0007"/>
+      <arc id="arc-P0007-Te21" source="place-0007" target="e21"/>
+      <arc id="arc-P0008-Te25" source="e25" target="place-0008"/>
+      <arc id="arc-P0008-Te25" source="place-0008" target="e25"/>
+      <arc id="arc-P0009-Te31" source="e31" target="place-0009"/>
+      <arc id="arc-P0009-Te31" source="place-0009" target="e31"/>
+      <arc id="arc-T7-P0010" source="e3" target="place-0010"/>
+      <arc id="arc-T8-P0011" source="e7" target="place-0011"/>
+      <arc id="arc-P0012-Te13" source="e13" target="place-0012"/>
+      <arc id="arc-P0012-Te13" source="place-0012" target="e13"/>
+      <arc id="arc-P0013-Te8" source="e8" target="place-0013"/>
+      <arc id="arc-P0013-Te8" source="place-0013" target="e8"/>
+      <arc id="arc-P0014-Te18" source="e18" target="place-0014"/>
+      <arc id="arc-P0014-Te18" source="place-0014" target="e18"/>
+      <arc id="arc-T12-P0015" source="e1" target="place-0015"/>
+      <arc id="arc-P0016-Te11" source="e11" target="place-0016"/>
+      <arc id="arc-P0016-Te11" source="place-0016" target="e11"/>
+      <arc id="arc-P0017-Te28" source="e28" target="place-0017"/>
+      <arc id="arc-P0017-Te28" source="place-0017" target="e28"/>
+      <arc id="arc-P0018-Te30" source="e30" target="place-0018"/>
+      <arc id="arc-P0018-Te30" source="place-0018" target="e30"/>
+      <arc id="arc-P0019-Te6" source="e6" target="place-0019"/>
+      <arc id="arc-P0019-Te6" source="place-0019" target="e6"/>
+      <arc id="arc-P0020-Te12" source="e12" target="place-0020"/>
+      <arc id="arc-P0020-Te12" source="place-0020" target="e12"/>
+      <arc id="arc-P0021-Te16" source="e16" target="place-0021"/>
+      <arc id="arc-P0021-Te16" source="place-0021" target="e16"/>
+      <arc id="arc-P0022-Te22" source="e22" target="place-0022"/>
+      <arc id="arc-P0022-Te22" source="place-0022" target="e22"/>
+      <arc id="arc-P0023-Te26" source="e26" target="place-0023"/>
+      <arc id="arc-P0023-Te26" source="place-0023" target="e26"/>
+      <arc id="arc-P0024-Te32" source="e32" target="place-0024"/>
+      <arc id="arc-P0024-Te32" source="place-0024" target="e32"/>
+      <arc id="arc-P0025-Te4" source="e4" target="place-0025"/>
+      <arc id="arc-P0025-Te4" source="place-0025" target="e4"/>
+      <arc id="arc-P0026-Te10" source="e10" target="place-0026"/>
+      <arc id="arc-P0026-Te10" source="place-0026" target="e10"/>
+      <arc id="arc-P0027-Te14" source="e14" target="place-0027"/>
+      <arc id="arc-P0027-Te14" source="place-0027" target="e14"/>
+      <arc id="arc-P0028-Te24" source="e24" target="place-0028"/>
+      <arc id="arc-P0028-Te24" source="place-0028" target="e24"/>
+      <arc id="arc-P0029-Te20" source="e20" target="place-0029"/>
+      <arc id="arc-P0029-Te20" source="place-0029" target="e20"/>
+      <arc id="arc-P0030-Te19" source="e19" target="place-0030"/>
+      <arc id="arc-P0030-Te19" source="place-0030" target="e19"/>
+      <arc id="arc-P0031-Te2" source="e2" target="place-0031"/>
+      <arc id="arc-P0031-Te2" source="place-0031" target="e2"/>
+      <arc id="arc-P0032-Te29" source="e29" target="place-0032"/>
+      <arc id="arc-P0032-Te29" source="place-0032" target="e29"/>
+      <arc id="arc-P0033-Te17" source="e17" target="place-0033"/>
+      <arc id="arc-P0033-Te17" source="place-0033" target="e17"/>
+      <arc id="arc-P0034-Te23" source="e23" target="place-0034"/>
+      <arc id="arc-P0034-Te23" source="place-0034" target="e23"/>
+      <arc id="arc-P0035-Te27" source="e27" target="place-0035"/>
+      <arc id="arc-P0035-Te27" source="place-0035" target="e27"/>
+    </page>
+  </net>
+</pnml>

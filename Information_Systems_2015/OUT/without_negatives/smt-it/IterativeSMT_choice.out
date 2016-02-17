@@ -1,0 +1,17 @@
+
+Statistic of choice.xes: with negative traces from 
+
+    benchmark       ->  Iterative SMT Simplification
+    positive        ->  choice.xes
+    dimension       ->  12
+    traces          ->  300
+    events          ->  2400
+    negative        ->  
+    complexity      ->  29
+    effectiveness   ->  0.878787878788
+    exec_time       ->  2016-02-17 16:10:32.536669
+    overall_time    ->  0.569534063339
+    details
+        parse_traces    ->  0.0543429851532
+        convexHull      ->  0.108415126801
+        shift&rotate    ->  0.406775951385

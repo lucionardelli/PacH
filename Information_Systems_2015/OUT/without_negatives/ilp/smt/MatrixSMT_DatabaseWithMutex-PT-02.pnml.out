@@ -1,0 +1,17 @@
+
+Statistic of DatabaseWithMutex-PT-02.pnml: with negative traces from 
+
+    benchmark       ->  Matrix SMT Simplification
+    positive        ->  DatabaseWithMutex-PT-02.pnml
+    dimension       ->  32
+    traces          ->  0
+    events          ->  0
+    negative        ->  
+    complexity      ->  83
+    effectiveness   ->  0.96511627907
+    exec_time       ->  2016-02-17 16:28:44.951254
+    overall_time    ->  5.97418498993
+    details
+        parse_traces    ->  0
+        convexHull      ->  0
+        shift&rotate    ->  5.97418498993

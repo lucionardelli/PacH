@@ -1,0 +1,527 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="databasewithmutex-pt-02_smt_matrix.pnml" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <name>
+      <text>DatabaseWithMutex-PT-02_smt_matrix.pnml</text>
+    </name>
+    <page id="page">
+      <transition id="end_update_2_1+">
+        <name>
+          <text>end_update_2_1+</text>
+        </name>
+      </transition>
+      <transition id="Acquire_1_1+">
+        <name>
+          <text>Acquire_1_1+</text>
+        </name>
+      </transition>
+      <transition id="Start_1_2+">
+        <name>
+          <text>Start_1_2+</text>
+        </name>
+      </transition>
+      <transition id="SendMsg_1_1+">
+        <name>
+          <text>SendMsg_1_1+</text>
+        </name>
+      </transition>
+      <transition id="SendMsg_2_1+">
+        <name>
+          <text>SendMsg_2_1+</text>
+        </name>
+      </transition>
+      <transition id="Release_2_1+">
+        <name>
+          <text>Release_2_1+</text>
+        </name>
+      </transition>
+      <transition id="Change_2_2+">
+        <name>
+          <text>Change_2_2+</text>
+        </name>
+      </transition>
+      <transition id="Acquire_2_2+">
+        <name>
+          <text>Acquire_2_2+</text>
+        </name>
+      </transition>
+      <transition id="end_update_1_1+">
+        <name>
+          <text>end_update_1_1+</text>
+        </name>
+      </transition>
+      <transition id="Change_1_1+">
+        <name>
+          <text>Change_1_1+</text>
+        </name>
+      </transition>
+      <transition id="SendReply_1_2+">
+        <name>
+          <text>SendReply_1_2+</text>
+        </name>
+      </transition>
+      <transition id="Start_2_1+">
+        <name>
+          <text>Start_2_1+</text>
+        </name>
+      </transition>
+      <transition id="SendReply_2_2+">
+        <name>
+          <text>SendReply_2_2+</text>
+        </name>
+      </transition>
+      <transition id="Update_2_2+">
+        <name>
+          <text>Update_2_2+</text>
+        </name>
+      </transition>
+      <transition id="SendReply_2_1+">
+        <name>
+          <text>SendReply_2_1+</text>
+        </name>
+      </transition>
+      <transition id="Release_1_1+">
+        <name>
+          <text>Release_1_1+</text>
+        </name>
+      </transition>
+      <transition id="SendMsg_2_2+">
+        <name>
+          <text>SendMsg_2_2+</text>
+        </name>
+      </transition>
+      <transition id="end_update_2_2+">
+        <name>
+          <text>end_update_2_2+</text>
+        </name>
+      </transition>
+      <transition id="SendMsg_1_2+">
+        <name>
+          <text>SendMsg_1_2+</text>
+        </name>
+      </transition>
+      <transition id="Acquire_1_2+">
+        <name>
+          <text>Acquire_1_2+</text>
+        </name>
+      </transition>
+      <transition id="Release_2_2+">
+        <name>
+          <text>Release_2_2+</text>
+        </name>
+      </transition>
+      <transition id="Update_1_2+">
+        <name>
+          <text>Update_1_2+</text>
+        </name>
+      </transition>
+      <transition id="Change_2_1+">
+        <name>
+          <text>Change_2_1+</text>
+        </name>
+      </transition>
+      <transition id="Acquire_2_1+">
+        <name>
+          <text>Acquire_2_1+</text>
+        </name>
+      </transition>
+      <transition id="Update_1_1+">
+        <name>
+          <text>Update_1_1+</text>
+        </name>
+      </transition>
+      <transition id="Start_2_2+">
+        <name>
+          <text>Start_2_2+</text>
+        </name>
+      </transition>
+      <transition id="Update_2_1+">
+        <name>
+          <text>Update_2_1+</text>
+        </name>
+      </transition>
+      <transition id="end_update_1_2+">
+        <name>
+          <text>end_update_1_2+</text>
+        </name>
+      </transition>
+      <transition id="Change_1_2+">
+        <name>
+          <text>Change_1_2+</text>
+        </name>
+      </transition>
+      <transition id="Release_1_2+">
+        <name>
+          <text>Release_1_2+</text>
+        </name>
+      </transition>
+      <transition id="SendReply_1_1+">
+        <name>
+          <text>SendReply_1_1+</text>
+        </name>
+      </transition>
+      <transition id="Start_1_1+">
+        <name>
+          <text>Start_1_1+</text>
+        </name>
+      </transition>
+      <place id="place-0024">
+        <name>
+          <text>HS dim 32   1 x0  -   1 x22  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0025">
+        <name>
+          <text>HS dim 32   1 x11 -   1 x13 +   1 x19  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0022">
+        <name>
+          <text>HS dim 32  -   1 x3  +   1 x26 +   1 x27 -   1 x28  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0005">
+        <name>
+          <text>HS dim 32  -   1 x0  +   1 x9   &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0020">
+        <name>
+          <text>HS dim 32  -   1 x10 +   1 x16 -   1 x25 +   1 x30  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0021">
+        <name>
+          <text>HS dim 32  -   1 x2  +   1 x10 +   1 x20  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0026">
+        <name>
+          <text>HS dim 32  -   1 x23 +   1 x31  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0001">
+        <name>
+          <text>HS dim 32  -   1 x6  +   1 x18  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0002">
+        <name>
+          <text>HS dim 32   1 x3  +   1 x5  -   1 x30  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0003">
+        <name>
+          <text>HS dim 32   1 x5  +   1 x22 -   1 x27 -   1 x30  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0028">
+        <name>
+          <text>HS dim 32   1 x2  -   1 x3  -   1 x15 +   1 x27  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0029">
+        <name>
+          <text>Dummy place 0001</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0008">
+        <name>
+          <text>HS dim 32  -   1 x2  +   1 x8  -   1 x16 +   1 x20  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0009">
+        <name>
+          <text>HS dim 32  -   1 x9  +   1 x14 +   1 x26  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0019">
+        <name>
+          <text>HS dim 32  -   1 x3  +   1 x21 -   1 x26 +   1 x27  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0018">
+        <name>
+          <text>HS dim 32   1 x1  +   1 x13 -   1 x14 -   1 x21  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0013">
+        <name>
+          <text>HS dim 32   1 x1  +   1 x4  -   1 x21 -   1 x29  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0012">
+        <name>
+          <text>HS dim 32  -   1 x1  +   1 x7   &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0011">
+        <name>
+          <text>HS dim 32   1 x6  -   1 x12  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0010">
+        <name>
+          <text>HS dim 32  -   1 x18 +   1 x24  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0017">
+        <name>
+          <text>HS dim 32  -   1 x3  -   1 x7  +   1 x15 +   1 x27  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0016">
+        <name>
+          <text>HS dim 32   1 x4  +   1 x28 -   1 x29  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0015">
+        <name>
+          <text>HS dim 32   1 x5  +   1 x27 -   1 x30  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0014">
+        <name>
+          <text>HS dim 32  -   1 x17 +   1 x23  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0031">
+        <name>
+          <text>Dummy place 0003</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0030">
+        <name>
+          <text>Dummy place 0002</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0033">
+        <name>
+          <text>Dummy place 0005</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0032">
+        <name>
+          <text>Dummy place 0004</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0004">
+        <name>
+          <text>HS dim 32  -   1 x13 +   1 x19 +   1 x25  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0023">
+        <name>
+          <text>HS dim 32   1 x29 -   1 x31  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0006">
+        <name>
+          <text>HS dim 32   1 x4  +   1 x26 -   1 x28 -   1 x29  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0007">
+        <name>
+          <text>HS dim 32  -   1 x11 +   1 x12  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0027">
+        <name>
+          <text>HS dim 32  -   1 x8  +   1 x17  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <arc id="arc-P0001-Tend_update_1_1+" source="place-0001" target="end_update_1_1+"/>
+      <arc id="arc-TUpdate_1_1+-P0001" source="Update_1_1+" target="place-0001"/>
+      <arc id="arc-TRelease_1_1+-P0002" source="Release_1_1+" target="place-0002"/>
+      <arc id="arc-TStart_2_1+-P0002" source="Start_2_1+" target="place-0002"/>
+      <arc id="arc-P0002-TAcquire_2_1+" source="place-0002" target="Acquire_2_1+"/>
+      <arc id="arc-TStart_2_1+-P0003" source="Start_2_1+" target="place-0003"/>
+      <arc id="arc-Tend_update_2_1+-P0003" source="end_update_2_1+" target="place-0003"/>
+      <arc id="arc-P0003-TSendReply_2_1+" source="place-0003" target="SendReply_2_1+"/>
+      <arc id="arc-P0003-TAcquire_2_1+" source="place-0003" target="Acquire_2_1+"/>
+      <arc id="arc-P0004-TAcquire_1_1+" source="place-0004" target="Acquire_1_1+"/>
+      <arc id="arc-TStart_1_1+-P0004" source="Start_1_1+" target="place-0004"/>
+      <arc id="arc-TChange_2_1+-P0004" source="Change_2_1+" target="place-0004"/>
+      <arc id="arc-P0005-TUpdate_2_1+" source="place-0005" target="Update_2_1+"/>
+      <arc id="arc-TSendMsg_2_1+-P0005" source="SendMsg_2_1+" target="place-0005"/>
+      <arc id="arc-TStart_1_2+-P0006" source="Start_1_2+" target="place-0006"/>
+      <arc id="arc-TSendReply_1_2+-P0006" source="SendReply_1_2+" target="place-0006"/>
+      <arc id="arc-P0006-TRelease_2_2+" source="place-0006" target="Release_2_2+"/>
+      <arc id="arc-P0006-TAcquire_1_2+" source="place-0006" target="Acquire_1_2+"/>
+      <arc id="arc-P0007-TRelease_2_1+" source="place-0007" target="Release_2_1+"/>
+      <arc id="arc-TSendReply_1_1+-P0007" source="SendReply_1_1+" target="place-0007"/>
+      <arc id="arc-P0008-TAcquire_2_2+" source="place-0008" target="Acquire_2_2+"/>
+      <arc id="arc-Tend_update_2_2+-P0008" source="end_update_2_2+" target="place-0008"/>
+      <arc id="arc-P0008-TSendReply_2_2+" source="place-0008" target="SendReply_2_2+"/>
+      <arc id="arc-TStart_2_2+-P0008" source="Start_2_2+" target="place-0008"/>
+      <arc id="arc-P0009-TSendMsg_2_1+" source="place-0009" target="SendMsg_2_1+"/>
+      <arc id="arc-TChange_1_1+-P0009" source="Change_1_1+" target="place-0009"/>
+      <arc id="arc-TSendReply_1_2+-P0009" source="SendReply_1_2+" target="place-0009"/>
+      <arc id="arc-P0010-TUpdate_1_1+" source="place-0010" target="Update_1_1+"/>
+      <arc id="arc-TSendMsg_1_1+-P0010" source="SendMsg_1_1+" target="place-0010"/>
+      <arc id="arc-Tend_update_1_1+-P0011" source="end_update_1_1+" target="place-0011"/>
+      <arc id="arc-P0011-TSendReply_1_1+" source="place-0011" target="SendReply_1_1+"/>
+      <arc id="arc-P0012-TUpdate_1_2+" source="place-0012" target="Update_1_2+"/>
+      <arc id="arc-TSendMsg_1_2+-P0012" source="SendMsg_1_2+" target="place-0012"/>
+      <arc id="arc-TUpdate_1_2+-P0013" source="Update_1_2+" target="place-0013"/>
+      <arc id="arc-TStart_1_2+-P0013" source="Start_1_2+" target="place-0013"/>
+      <arc id="arc-P0013-Tend_update_1_2+" source="place-0013" target="end_update_1_2+"/>
+      <arc id="arc-P0013-TAcquire_1_2+" source="place-0013" target="Acquire_1_2+"/>
+      <arc id="arc-P0014-TUpdate_2_2+" source="place-0014" target="Update_2_2+"/>
+      <arc id="arc-TSendMsg_2_2+-P0014" source="SendMsg_2_2+" target="place-0014"/>
+      <arc id="arc-TStart_2_1+-P0015" source="Start_2_1+" target="place-0015"/>
+      <arc id="arc-TSendReply_2_1+-P0015" source="SendReply_2_1+" target="place-0015"/>
+      <arc id="arc-P0015-TAcquire_2_1+" source="place-0015" target="Acquire_2_1+"/>
+      <arc id="arc-TStart_1_2+-P0016" source="Start_1_2+" target="place-0016"/>
+      <arc id="arc-TRelease_2_2+-P0016" source="Release_2_2+" target="place-0016"/>
+      <arc id="arc-P0016-TAcquire_1_2+" source="place-0016" target="Acquire_1_2+"/>
+      <arc id="arc-P0017-TRelease_1_1+" source="place-0017" target="Release_1_1+"/>
+      <arc id="arc-P0017-TSendMsg_1_2+" source="place-0017" target="SendMsg_1_2+"/>
+      <arc id="arc-TChange_2_2+-P0017" source="Change_2_2+" target="place-0017"/>
+      <arc id="arc-TSendReply_2_1+-P0017" source="SendReply_2_1+" target="place-0017"/>
+      <arc id="arc-TUpdate_1_2+-P0018" source="Update_1_2+" target="place-0018"/>
+      <arc id="arc-TAcquire_1_1+-P0018" source="Acquire_1_1+" target="place-0018"/>
+      <arc id="arc-P0018-TChange_1_1+" source="place-0018" target="Change_1_1+"/>
+      <arc id="arc-P0018-Tend_update_1_2+" source="place-0018" target="end_update_1_2+"/>
+      <arc id="arc-P0019-TRelease_1_1+" source="place-0019" target="Release_1_1+"/>
+      <arc id="arc-Tend_update_1_2+-P0019" source="end_update_1_2+" target="place-0019"/>
+      <arc id="arc-P0019-TSendReply_1_2+" source="place-0019" target="SendReply_1_2+"/>
+      <arc id="arc-TSendReply_2_1+-P0019" source="SendReply_2_1+" target="place-0019"/>
+      <arc id="arc-P0020-TRelease_1_2+" source="place-0020" target="Release_1_2+"/>
+      <arc id="arc-TSendReply_2_2+-P0020" source="SendReply_2_2+" target="place-0020"/>
+      <arc id="arc-P0020-TChange_2_1+" source="place-0020" target="Change_2_1+"/>
+      <arc id="arc-TAcquire_2_1+-P0020" source="Acquire_2_1+" target="place-0020"/>
+      <arc id="arc-P0021-TAcquire_2_2+" source="place-0021" target="Acquire_2_2+"/>
+      <arc id="arc-TRelease_1_2+-P0021" source="Release_1_2+" target="place-0021"/>
+      <arc id="arc-TStart_2_2+-P0021" source="Start_2_2+" target="place-0021"/>
+      <arc id="arc-P0022-TRelease_1_1+" source="place-0022" target="Release_1_1+"/>
+      <arc id="arc-TSendReply_1_2+-P0022" source="SendReply_1_2+" target="place-0022"/>
+      <arc id="arc-TSendReply_2_1+-P0022" source="SendReply_2_1+" target="place-0022"/>
+      <arc id="arc-P0022-TRelease_2_2+" source="place-0022" target="Release_2_2+"/>
+      <arc id="arc-TAcquire_1_2+-P0023" source="Acquire_1_2+" target="place-0023"/>
+      <arc id="arc-P0023-TChange_1_2+" source="place-0023" target="Change_1_2+"/>
+      <arc id="arc-TUpdate_2_1+-P0024" source="Update_2_1+" target="place-0024"/>
+      <arc id="arc-P0024-Tend_update_2_1+" source="place-0024" target="end_update_2_1+"/>
+      <arc id="arc-TRelease_2_1+-P0025" source="Release_2_1+" target="place-0025"/>
+      <arc id="arc-P0025-TAcquire_1_1+" source="place-0025" target="Acquire_1_1+"/>
+      <arc id="arc-TStart_1_1+-P0025" source="Start_1_1+" target="place-0025"/>
+      <arc id="arc-P0026-TSendMsg_2_2+" source="place-0026" target="SendMsg_2_2+"/>
+      <arc id="arc-TChange_1_2+-P0026" source="Change_1_2+" target="place-0026"/>
+      <arc id="arc-P0027-Tend_update_2_2+" source="place-0027" target="end_update_2_2+"/>
+      <arc id="arc-TUpdate_2_2+-P0027" source="Update_2_2+" target="place-0027"/>
+      <arc id="arc-TAcquire_2_2+-P0028" source="Acquire_2_2+" target="place-0028"/>
+      <arc id="arc-P0028-TRelease_1_1+" source="place-0028" target="Release_1_1+"/>
+      <arc id="arc-P0028-TChange_2_2+" source="place-0028" target="Change_2_2+"/>
+      <arc id="arc-TSendReply_2_1+-P0028" source="SendReply_2_1+" target="place-0028"/>
+      <arc id="arc-P0029-TSendMsg_1_1+" source="SendMsg_1_1+" target="place-0029"/>
+      <arc id="arc-P0029-TSendMsg_1_1+" source="place-0029" target="SendMsg_1_1+"/>
+      <arc id="arc-P0030-TStart_2_2+" source="Start_2_2+" target="place-0030"/>
+      <arc id="arc-P0030-TStart_2_2+" source="place-0030" target="Start_2_2+"/>
+      <arc id="arc-P0031-TStart_1_1+" source="Start_1_1+" target="place-0031"/>
+      <arc id="arc-P0031-TStart_1_1+" source="place-0031" target="Start_1_1+"/>
+      <arc id="arc-P0032-TStart_1_2+" source="Start_1_2+" target="place-0032"/>
+      <arc id="arc-P0032-TStart_1_2+" source="place-0032" target="Start_1_2+"/>
+      <arc id="arc-P0033-TStart_2_1+" source="Start_2_1+" target="place-0033"/>
+      <arc id="arc-P0033-TStart_2_1+" source="place-0033" target="Start_2_1+"/>
+    </page>
+  </net>
+</pnml>

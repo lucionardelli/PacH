@@ -1,0 +1,17 @@
+
+Statistic of confDimBlocking.pnml: with negative traces from 
+
+    benchmark       ->  No SMT Simplification
+    positive        ->  confDimBlocking.pnml
+    dimension       ->  11
+    traces          ->  0
+    events          ->  0
+    negative        ->  
+    complexity      ->  315
+    effectiveness   ->  1.0
+    exec_time       ->  2016-02-17 18:16:48.198330
+    overall_time    ->  7.86781311035e-06
+    details
+        parse_traces    ->  0
+        convexHull      ->  0
+        simplify        ->  7.86781311035e-06

@@ -1,0 +1,17 @@
+
+Statistic of incident.pnml: with negative traces from 
+
+    benchmark       ->  No SMT Simplification
+    positive        ->  incident.pnml
+    dimension       ->  18
+    traces          ->  0
+    events          ->  0
+    negative        ->  
+    complexity      ->  276
+    effectiveness   ->  1.0
+    exec_time       ->  2016-02-17 18:18:56.774542
+    overall_time    ->  2.59876251221e-05
+    details
+        parse_traces    ->  0
+        convexHull      ->  0
+        simplify        ->  2.59876251221e-05

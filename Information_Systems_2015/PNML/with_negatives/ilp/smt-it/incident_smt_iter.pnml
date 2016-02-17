@@ -1,0 +1,562 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="incident_smt_iter.pnml" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <name>
+      <text>incident_smt_iter.pnml</text>
+    </name>
+    <page id="page">
+      <transition id="e11">
+        <name>
+          <text>e11</text>
+        </name>
+      </transition>
+      <transition id="e10">
+        <name>
+          <text>e10</text>
+        </name>
+      </transition>
+      <transition id="e13">
+        <name>
+          <text>e13</text>
+        </name>
+      </transition>
+      <transition id="e12">
+        <name>
+          <text>e12</text>
+        </name>
+      </transition>
+      <transition id="e15">
+        <name>
+          <text>e15</text>
+        </name>
+      </transition>
+      <transition id="e14">
+        <name>
+          <text>e14</text>
+        </name>
+      </transition>
+      <transition id="e17">
+        <name>
+          <text>e17</text>
+        </name>
+      </transition>
+      <transition id="e16">
+        <name>
+          <text>e16</text>
+        </name>
+      </transition>
+      <transition id="e9">
+        <name>
+          <text>e9</text>
+        </name>
+      </transition>
+      <transition id="e8">
+        <name>
+          <text>e8</text>
+        </name>
+      </transition>
+      <transition id="e5">
+        <name>
+          <text>e5</text>
+        </name>
+      </transition>
+      <transition id="e4">
+        <name>
+          <text>e4</text>
+        </name>
+      </transition>
+      <transition id="e7">
+        <name>
+          <text>e7</text>
+        </name>
+      </transition>
+      <transition id="e6">
+        <name>
+          <text>e6</text>
+        </name>
+      </transition>
+      <transition id="e1">
+        <name>
+          <text>e1</text>
+        </name>
+      </transition>
+      <transition id="e0">
+        <name>
+          <text>e0</text>
+        </name>
+      </transition>
+      <transition id="e3">
+        <name>
+          <text>e3</text>
+        </name>
+      </transition>
+      <transition id="e2">
+        <name>
+          <text>e2</text>
+        </name>
+      </transition>
+      <place id="place-0040">
+        <name>
+          <text>Dummy place 0010</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0041">
+        <name>
+          <text>Dummy place 0011</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0042">
+        <name>
+          <text>Dummy place 0012</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0043">
+        <name>
+          <text>Dummy place 0013</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0044">
+        <name>
+          <text>Dummy place 0014</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0024">
+        <name>
+          <text>HS dim 18  -   1 x2  +   1 x13  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0046">
+        <name>
+          <text>Dummy place 0016</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0025">
+        <name>
+          <text>HS dim 18  -   1 x2  +   1 x13  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0022">
+        <name>
+          <text>HS dim 18  -   1 x2  +   1 x13  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0005">
+        <name>
+          <text>HS dim 18  -   1 x2  +   1 x13  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0020">
+        <name>
+          <text>HS dim 18  -   1 x2  +   1 x13  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0021">
+        <name>
+          <text>HS dim 18  -   1 x2  +   1 x13  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0026">
+        <name>
+          <text>HS dim 18  -   1 x2  +   1 x13  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0001">
+        <name>
+          <text>HS dim 18  -   1 x2  +   1 x13  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0002">
+        <name>
+          <text>HS dim 18  -   1 x2  +   1 x13  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0003">
+        <name>
+          <text>HS dim 18  -   1 x2  +   1 x13  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0028">
+        <name>
+          <text>HS dim 18  -   1 x2  +   1 x13  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0029">
+        <name>
+          <text>HS dim 18  -   1 x2  +   1 x13  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0008">
+        <name>
+          <text>HS dim 18  -   1 x2  +   1 x13  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0009">
+        <name>
+          <text>HS dim 18  -   1 x2  +   1 x13  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0045">
+        <name>
+          <text>Dummy place 0015</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0019">
+        <name>
+          <text>HS dim 18  -   1 x2  +   1 x13  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0018">
+        <name>
+          <text>HS dim 18  -   1 x2  +   1 x13  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0013">
+        <name>
+          <text>HS dim 18  -   1 x2  +   1 x13  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0012">
+        <name>
+          <text>HS dim 18  -   1 x2  +   1 x13  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0011">
+        <name>
+          <text>HS dim 18  -   1 x2  +   1 x13  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0010">
+        <name>
+          <text>HS dim 18  -   1 x2  +   1 x13  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0017">
+        <name>
+          <text>HS dim 18  -   1 x13  +   1 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0016">
+        <name>
+          <text>HS dim 18  -   1 x2  +   1 x13  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0015">
+        <name>
+          <text>HS dim 18  -   1 x2  +   1 x13  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0014">
+        <name>
+          <text>HS dim 18  -   1 x2  +   1 x13  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0031">
+        <name>
+          <text>Dummy place 0001</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0030">
+        <name>
+          <text>HS dim 18  -   1 x2  +   1 x13  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0033">
+        <name>
+          <text>Dummy place 0003</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0032">
+        <name>
+          <text>Dummy place 0002</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0035">
+        <name>
+          <text>Dummy place 0005</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0034">
+        <name>
+          <text>Dummy place 0004</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0037">
+        <name>
+          <text>Dummy place 0007</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0036">
+        <name>
+          <text>Dummy place 0006</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0039">
+        <name>
+          <text>Dummy place 0009</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0038">
+        <name>
+          <text>Dummy place 0008</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0004">
+        <name>
+          <text>HS dim 18  -   1 x2  +   1 x13  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0023">
+        <name>
+          <text>HS dim 18  -   1 x2  +   1 x13  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0006">
+        <name>
+          <text>HS dim 18  -   1 x2  +   1 x13  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0007">
+        <name>
+          <text>HS dim 18  -   1 x2  +   1 x13  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0027">
+        <name>
+          <text>HS dim 18   1 x2  +   1 x6  +   1 x8  +   1 x11 +   1 x14 -   1 x15  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <arc id="arc-P0001-Te10" source="place-0001" target="e10"/>
+      <arc id="arc-Te0-P0001" source="e0" target="place-0001"/>
+      <arc id="arc-P0002-Te10" source="place-0002" target="e10"/>
+      <arc id="arc-Te0-P0002" source="e0" target="place-0002"/>
+      <arc id="arc-P0003-Te10" source="place-0003" target="e10"/>
+      <arc id="arc-Te0-P0003" source="e0" target="place-0003"/>
+      <arc id="arc-P0004-Te10" source="place-0004" target="e10"/>
+      <arc id="arc-Te0-P0004" source="e0" target="place-0004"/>
+      <arc id="arc-P0005-Te10" source="place-0005" target="e10"/>
+      <arc id="arc-Te0-P0005" source="e0" target="place-0005"/>
+      <arc id="arc-P0006-Te10" source="place-0006" target="e10"/>
+      <arc id="arc-Te0-P0006" source="e0" target="place-0006"/>
+      <arc id="arc-P0007-Te10" source="place-0007" target="e10"/>
+      <arc id="arc-Te0-P0007" source="e0" target="place-0007"/>
+      <arc id="arc-P0008-Te10" source="place-0008" target="e10"/>
+      <arc id="arc-Te0-P0008" source="e0" target="place-0008"/>
+      <arc id="arc-P0009-Te10" source="place-0009" target="e10"/>
+      <arc id="arc-Te0-P0009" source="e0" target="place-0009"/>
+      <arc id="arc-P0010-Te10" source="place-0010" target="e10"/>
+      <arc id="arc-Te0-P0010" source="e0" target="place-0010"/>
+      <arc id="arc-P0011-Te10" source="place-0011" target="e10"/>
+      <arc id="arc-Te0-P0011" source="e0" target="place-0011"/>
+      <arc id="arc-P0012-Te10" source="place-0012" target="e10"/>
+      <arc id="arc-Te0-P0012" source="e0" target="place-0012"/>
+      <arc id="arc-P0013-Te10" source="place-0013" target="e10"/>
+      <arc id="arc-Te0-P0013" source="e0" target="place-0013"/>
+      <arc id="arc-P0014-Te10" source="place-0014" target="e10"/>
+      <arc id="arc-Te0-P0014" source="e0" target="place-0014"/>
+      <arc id="arc-P0015-Te10" source="place-0015" target="e10"/>
+      <arc id="arc-Te0-P0015" source="e0" target="place-0015"/>
+      <arc id="arc-P0016-Te10" source="place-0016" target="e10"/>
+      <arc id="arc-Te0-P0016" source="e0" target="place-0016"/>
+      <arc id="arc-P0017-Te0" source="place-0017" target="e0"/>
+      <arc id="arc-P0018-Te10" source="place-0018" target="e10"/>
+      <arc id="arc-Te0-P0018" source="e0" target="place-0018"/>
+      <arc id="arc-P0019-Te10" source="place-0019" target="e10"/>
+      <arc id="arc-Te0-P0019" source="e0" target="place-0019"/>
+      <arc id="arc-P0020-Te10" source="place-0020" target="e10"/>
+      <arc id="arc-Te0-P0020" source="e0" target="place-0020"/>
+      <arc id="arc-P0021-Te10" source="place-0021" target="e10"/>
+      <arc id="arc-Te0-P0021" source="e0" target="place-0021"/>
+      <arc id="arc-P0022-Te10" source="place-0022" target="e10"/>
+      <arc id="arc-Te0-P0022" source="e0" target="place-0022"/>
+      <arc id="arc-P0023-Te10" source="place-0023" target="e10"/>
+      <arc id="arc-Te0-P0023" source="e0" target="place-0023"/>
+      <arc id="arc-P0024-Te10" source="place-0024" target="e10"/>
+      <arc id="arc-Te0-P0024" source="e0" target="place-0024"/>
+      <arc id="arc-P0025-Te10" source="place-0025" target="e10"/>
+      <arc id="arc-Te0-P0025" source="e0" target="place-0025"/>
+      <arc id="arc-P0026-Te10" source="place-0026" target="e10"/>
+      <arc id="arc-Te0-P0026" source="e0" target="place-0026"/>
+      <arc id="arc-Te10-P0027" source="e10" target="place-0027"/>
+      <arc id="arc-Te3-P0027" source="e3" target="place-0027"/>
+      <arc id="arc-Te6-P0027" source="e6" target="place-0027"/>
+      <arc id="arc-Te14-P0027" source="e14" target="place-0027"/>
+      <arc id="arc-Te13-P0027" source="e13" target="place-0027"/>
+      <arc id="arc-P0027-Te4" source="place-0027" target="e4"/>
+      <arc id="arc-P0028-Te10" source="place-0028" target="e10"/>
+      <arc id="arc-Te0-P0028" source="e0" target="place-0028"/>
+      <arc id="arc-P0029-Te10" source="place-0029" target="e10"/>
+      <arc id="arc-Te0-P0029" source="e0" target="place-0029"/>
+      <arc id="arc-P0030-Te10" source="place-0030" target="e10"/>
+      <arc id="arc-Te0-P0030" source="e0" target="place-0030"/>
+      <arc id="arc-P0031-Te2" source="e2" target="place-0031"/>
+      <arc id="arc-P0031-Te2" source="place-0031" target="e2"/>
+      <arc id="arc-P0032-Te16" source="e16" target="place-0032"/>
+      <arc id="arc-P0032-Te16" source="place-0032" target="e16"/>
+      <arc id="arc-P0033-Te12" source="e12" target="place-0033"/>
+      <arc id="arc-P0033-Te12" source="place-0033" target="e12"/>
+      <arc id="arc-P0034-Te5" source="e5" target="place-0034"/>
+      <arc id="arc-P0034-Te5" source="place-0034" target="e5"/>
+      <arc id="arc-P0035-Te9" source="e9" target="place-0035"/>
+      <arc id="arc-P0035-Te9" source="place-0035" target="e9"/>
+      <arc id="arc-P0036-Te3" source="e3" target="place-0036"/>
+      <arc id="arc-P0036-Te3" source="place-0036" target="e3"/>
+      <arc id="arc-P0037-Te15" source="e15" target="place-0037"/>
+      <arc id="arc-P0037-Te15" source="place-0037" target="e15"/>
+      <arc id="arc-P0038-Te6" source="e6" target="place-0038"/>
+      <arc id="arc-P0038-Te6" source="place-0038" target="e6"/>
+      <arc id="arc-P0039-Te11" source="e11" target="place-0039"/>
+      <arc id="arc-P0039-Te11" source="place-0039" target="e11"/>
+      <arc id="arc-P0040-Te1" source="e1" target="place-0040"/>
+      <arc id="arc-P0040-Te1" source="place-0040" target="e1"/>
+      <arc id="arc-P0041-Te14" source="e14" target="place-0041"/>
+      <arc id="arc-P0041-Te14" source="place-0041" target="e14"/>
+      <arc id="arc-P0042-Te7" source="e7" target="place-0042"/>
+      <arc id="arc-P0042-Te7" source="place-0042" target="e7"/>
+      <arc id="arc-P0043-Te13" source="e13" target="place-0043"/>
+      <arc id="arc-P0043-Te13" source="place-0043" target="e13"/>
+      <arc id="arc-T15-P0044" source="e4" target="place-0044"/>
+      <arc id="arc-P0045-Te17" source="e17" target="place-0045"/>
+      <arc id="arc-P0045-Te17" source="place-0045" target="e17"/>
+      <arc id="arc-P0046-Te8" source="e8" target="place-0046"/>
+      <arc id="arc-P0046-Te8" source="place-0046" target="e8"/>
+    </page>
+  </net>
+</pnml>

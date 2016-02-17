@@ -1,0 +1,649 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="telecom_smt_matrix.pnml" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <name>
+      <text>telecom_smt_matrix.pnml</text>
+    </name>
+    <page id="page">
+      <transition id="BOss_internal_mobile">
+        <name>
+          <text>BOss internal mobile</text>
+        </name>
+      </transition>
+      <transition id="cc_CFU">
+        <name>
+          <text>cc CFU</text>
+        </name>
+      </transition>
+      <transition id="BOss_opvolging_vip">
+        <name>
+          <text>BOss opvolging vip</text>
+        </name>
+      </transition>
+      <transition id="BOss">
+        <name>
+          <text>BOss</text>
+        </name>
+      </transition>
+      <transition id="BOss_internal_int">
+        <name>
+          <text>BOss internal int</text>
+        </name>
+      </transition>
+      <transition id="BOss_internal_invoicing">
+        <name>
+          <text>BOss internal invoicing</text>
+        </name>
+      </transition>
+      <transition id="BOss_internal_idtv">
+        <name>
+          <text>BOss internal idtv</text>
+        </name>
+      </transition>
+      <transition id="BOss_opvolging_ISO_IBO">
+        <name>
+          <text>BOss opvolging ISO_IBO</text>
+        </name>
+      </transition>
+      <transition id="BOss_AVS_AOD">
+        <name>
+          <text>BOss AVS AOD</text>
+        </name>
+      </transition>
+      <transition id="BOss_internal_int_NEW">
+        <name>
+          <text>BOss internal int NEW</text>
+        </name>
+      </transition>
+      <transition id="CC_Outbound">
+        <name>
+          <text>CC Outbound</text>
+        </name>
+      </transition>
+      <transition id="BOss_actie_op_datum">
+        <name>
+          <text>BOss actie op datum</text>
+        </name>
+      </transition>
+      <transition id="cc_actie_op_datum">
+        <name>
+          <text>cc actie op datum</text>
+        </name>
+      </transition>
+      <transition id="BOss_CATCHUP_INT">
+        <name>
+          <text>BOss CATCHUP INT</text>
+        </name>
+      </transition>
+      <transition id="BOss_followup_idtv">
+        <name>
+          <text>BOss followup idtv</text>
+        </name>
+      </transition>
+      <transition id="BOss_AVS_REACT">
+        <name>
+          <text>BOss AVS REACT</text>
+        </name>
+      </transition>
+      <transition id="ArtificialEndTask">
+        <name>
+          <text>ArtificialEndTask</text>
+        </name>
+      </transition>
+      <transition id="BOss_CAS_AOD">
+        <name>
+          <text>BOss CAS AOD</text>
+        </name>
+      </transition>
+      <transition id="BOss_internal_tel">
+        <name>
+          <text>BOss internal tel</text>
+        </name>
+      </transition>
+      <transition id="cc_written_care">
+        <name>
+          <text>cc written care</text>
+        </name>
+      </transition>
+      <transition id="BOss_invoicing_CATCHUP">
+        <name>
+          <text>BOss invoicing CATCHUP</text>
+        </name>
+      </transition>
+      <transition id="BnC_bp_op_datum">
+        <name>
+          <text>BnC bp op datum</text>
+        </name>
+      </transition>
+      <transition id="BOss_externe_info_nodig">
+        <name>
+          <text>BOss externe info nodig</text>
+        </name>
+      </transition>
+      <transition id="BILLING">
+        <name>
+          <text>BILLING</text>
+        </name>
+      </transition>
+      <transition id="BOss_internal_cust_locat">
+        <name>
+          <text>BOss internal cust locat</text>
+        </name>
+      </transition>
+      <transition id="ArtificialStartTask">
+        <name>
+          <text>ArtificialStartTask</text>
+        </name>
+      </transition>
+      <transition id="NA_Verkav_en_Groepsbouw">
+        <name>
+          <text>NA Verkav en Groepsbouw</text>
+        </name>
+      </transition>
+      <transition id="Onsite_repair">
+        <name>
+          <text>Onsite repair</text>
+        </name>
+      </transition>
+      <transition id="BOss_internal_wipbin">
+        <name>
+          <text>BOss internal wipbin</text>
+        </name>
+      </transition>
+      <transition id="CC_CONTACT_CENTER">
+        <name>
+          <text>CC CONTACT CENTER</text>
+        </name>
+      </transition>
+      <transition id="BOss_internal_Mobile">
+        <name>
+          <text>BOss internal Mobile</text>
+        </name>
+      </transition>
+      <transition id="BOss_followup_thd">
+        <name>
+          <text>BOss followup thd</text>
+        </name>
+      </transition>
+      <transition id="BOss_CATCHUP_Mobile">
+        <name>
+          <text>BOss CATCHUP Mobile</text>
+        </name>
+      </transition>
+      <transition id="BnC_PAYMENTS">
+        <name>
+          <text>BnC PAYMENTS</text>
+        </name>
+      </transition>
+      <transition id="BOss_internal_VIP">
+        <name>
+          <text>BOss internal VIP</text>
+        </name>
+      </transition>
+      <transition id="BOss_internal_AVSnA">
+        <name>
+          <text>BOss internal AVSnA</text>
+        </name>
+      </transition>
+      <transition id="BOss_internal_iDTV">
+        <name>
+          <text>BOss internal iDTV</text>
+        </name>
+      </transition>
+      <transition id="BOss_followup_idtv_engin">
+        <name>
+          <text>BOss followup idtv engin</text>
+        </name>
+      </transition>
+      <transition id="Parent_Child">
+        <name>
+          <text>Parent_Child</text>
+        </name>
+      </transition>
+      <transition id="cc_externe_info_nodig">
+        <name>
+          <text>cc externe info nodig</text>
+        </name>
+      </transition>
+      <transition id="BnC_BAD_PAYERS">
+        <name>
+          <text>BnC BAD PAYERS</text>
+        </name>
+      </transition>
+      <transition id="bill_in_onderzoek">
+        <name>
+          <text>bill in onderzoek</text>
+        </name>
+      </transition>
+      <place id="place-0040">
+        <name>
+          <text>Dummy place 0039</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0041">
+        <name>
+          <text>Dummy place 0040</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0042">
+        <name>
+          <text>Dummy place 0041</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0043">
+        <name>
+          <text>Dummy place 0042</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0024">
+        <name>
+          <text>Dummy place 0023</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0025">
+        <name>
+          <text>Dummy place 0024</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0022">
+        <name>
+          <text>Dummy place 0021</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0005">
+        <name>
+          <text>Dummy place 0004</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0020">
+        <name>
+          <text>Dummy place 0019</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0021">
+        <name>
+          <text>Dummy place 0020</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0026">
+        <name>
+          <text>Dummy place 0025</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0001">
+        <name>
+          <text>HS dim 42   1 x15 -   1 x22  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0002">
+        <name>
+          <text>Dummy place 0001</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0003">
+        <name>
+          <text>Dummy place 0002</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0028">
+        <name>
+          <text>Dummy place 0027</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0029">
+        <name>
+          <text>Dummy place 0028</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0008">
+        <name>
+          <text>Dummy place 0007</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0009">
+        <name>
+          <text>Dummy place 0008</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0019">
+        <name>
+          <text>Dummy place 0018</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0018">
+        <name>
+          <text>Dummy place 0017</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0013">
+        <name>
+          <text>Dummy place 0012</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0012">
+        <name>
+          <text>Dummy place 0011</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0011">
+        <name>
+          <text>Dummy place 0010</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0010">
+        <name>
+          <text>Dummy place 0009</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0017">
+        <name>
+          <text>Dummy place 0016</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0016">
+        <name>
+          <text>Dummy place 0015</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0015">
+        <name>
+          <text>Dummy place 0014</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0014">
+        <name>
+          <text>Dummy place 0013</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0031">
+        <name>
+          <text>Dummy place 0030</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0030">
+        <name>
+          <text>Dummy place 0029</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0033">
+        <name>
+          <text>Dummy place 0032</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0032">
+        <name>
+          <text>Dummy place 0031</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0035">
+        <name>
+          <text>Dummy place 0034</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0034">
+        <name>
+          <text>Dummy place 0033</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0037">
+        <name>
+          <text>Dummy place 0036</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0036">
+        <name>
+          <text>Dummy place 0035</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0039">
+        <name>
+          <text>Dummy place 0038</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0038">
+        <name>
+          <text>Dummy place 0037</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0004">
+        <name>
+          <text>Dummy place 0003</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0023">
+        <name>
+          <text>Dummy place 0022</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0006">
+        <name>
+          <text>Dummy place 0005</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0007">
+        <name>
+          <text>Dummy place 0006</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0027">
+        <name>
+          <text>Dummy place 0026</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <arc id="arc-TArtificialStartTask-P0001" source="ArtificialStartTask" target="place-0001"/>
+      <arc id="arc-P0001-TArtificialEndTask" source="place-0001" target="ArtificialEndTask"/>
+      <arc id="arc-P0002-TBOss" source="BOss" target="place-0002"/>
+      <arc id="arc-P0002-TBOss" source="place-0002" target="BOss"/>
+      <arc id="arc-P0003-TBOss_internal_Mobile" source="BOss_internal_Mobile" target="place-0003"/>
+      <arc id="arc-P0003-TBOss_internal_Mobile" source="place-0003" target="BOss_internal_Mobile"/>
+      <arc id="arc-P0004-TBILLING" source="BILLING" target="place-0004"/>
+      <arc id="arc-P0004-TBILLING" source="place-0004" target="BILLING"/>
+      <arc id="arc-P0005-TBOss_actie_op_datum" source="BOss_actie_op_datum" target="place-0005"/>
+      <arc id="arc-P0005-TBOss_actie_op_datum" source="place-0005" target="BOss_actie_op_datum"/>
+      <arc id="arc-P0006-TBnC_bp_op_datum" source="BnC_bp_op_datum" target="place-0006"/>
+      <arc id="arc-P0006-TBnC_bp_op_datum" source="place-0006" target="BnC_bp_op_datum"/>
+      <arc id="arc-P0007-TBOss_internal_int" source="BOss_internal_int" target="place-0007"/>
+      <arc id="arc-P0007-TBOss_internal_int" source="place-0007" target="BOss_internal_int"/>
+      <arc id="arc-P0008-TBOss_CATCHUP_INT" source="BOss_CATCHUP_INT" target="place-0008"/>
+      <arc id="arc-P0008-TBOss_CATCHUP_INT" source="place-0008" target="BOss_CATCHUP_INT"/>
+      <arc id="arc-P0009-TBOss_AVS_REACT" source="BOss_AVS_REACT" target="place-0009"/>
+      <arc id="arc-P0009-TBOss_AVS_REACT" source="place-0009" target="BOss_AVS_REACT"/>
+      <arc id="arc-P0010-TNA_Verkav_en_Groepsbouw" source="NA_Verkav_en_Groepsbouw" target="place-0010"/>
+      <arc id="arc-P0010-TNA_Verkav_en_Groepsbouw" source="place-0010" target="NA_Verkav_en_Groepsbouw"/>
+      <arc id="arc-P0011-TBOss_CAS_AOD" source="BOss_CAS_AOD" target="place-0011"/>
+      <arc id="arc-P0011-TBOss_CAS_AOD" source="place-0011" target="BOss_CAS_AOD"/>
+      <arc id="arc-P0012-TBOss_followup_thd" source="BOss_followup_thd" target="place-0012"/>
+      <arc id="arc-P0012-TBOss_followup_thd" source="place-0012" target="BOss_followup_thd"/>
+      <arc id="arc-P0013-Tcc_written_care" source="cc_written_care" target="place-0013"/>
+      <arc id="arc-P0013-Tcc_written_care" source="place-0013" target="cc_written_care"/>
+      <arc id="arc-P0014-TCC_CONTACT_CENTER" source="CC_CONTACT_CENTER" target="place-0014"/>
+      <arc id="arc-P0014-TCC_CONTACT_CENTER" source="place-0014" target="CC_CONTACT_CENTER"/>
+      <arc id="arc-P0015-TBOss_invoicing_CATCHUP" source="BOss_invoicing_CATCHUP" target="place-0015"/>
+      <arc id="arc-P0015-TBOss_invoicing_CATCHUP" source="place-0015" target="BOss_invoicing_CATCHUP"/>
+      <arc id="arc-P0016-TBOss_internal_cust_locat" source="BOss_internal_cust_locat" target="place-0016"/>
+      <arc id="arc-P0016-TBOss_internal_cust_locat" source="place-0016" target="BOss_internal_cust_locat"/>
+      <arc id="arc-P0017-TArtificialStartTask" source="ArtificialStartTask" target="place-0017"/>
+      <arc id="arc-P0017-TArtificialStartTask" source="place-0017" target="ArtificialStartTask"/>
+      <arc id="arc-P0018-TBOss_internal_iDTV" source="BOss_internal_iDTV" target="place-0018"/>
+      <arc id="arc-P0018-TBOss_internal_iDTV" source="place-0018" target="BOss_internal_iDTV"/>
+      <arc id="arc-P0019-Tcc_actie_op_datum" source="cc_actie_op_datum" target="place-0019"/>
+      <arc id="arc-P0019-Tcc_actie_op_datum" source="place-0019" target="cc_actie_op_datum"/>
+      <arc id="arc-P0020-TOnsite_repair" source="Onsite_repair" target="place-0020"/>
+      <arc id="arc-P0020-TOnsite_repair" source="place-0020" target="Onsite_repair"/>
+      <arc id="arc-P0021-TBOss_internal_int_NEW" source="BOss_internal_int_NEW" target="place-0021"/>
+      <arc id="arc-P0021-TBOss_internal_int_NEW" source="place-0021" target="BOss_internal_int_NEW"/>
+      <arc id="arc-P0022-TBnC_BAD_PAYERS" source="BnC_BAD_PAYERS" target="place-0022"/>
+      <arc id="arc-P0022-TBnC_BAD_PAYERS" source="place-0022" target="BnC_BAD_PAYERS"/>
+      <arc id="arc-P0023-TBOss_internal_mobile" source="BOss_internal_mobile" target="place-0023"/>
+      <arc id="arc-P0023-TBOss_internal_mobile" source="place-0023" target="BOss_internal_mobile"/>
+      <arc id="arc-T22-P0024" source="ArtificialEndTask" target="place-0024"/>
+      <arc id="arc-P0025-Tbill_in_onderzoek" source="bill_in_onderzoek" target="place-0025"/>
+      <arc id="arc-P0025-Tbill_in_onderzoek" source="place-0025" target="bill_in_onderzoek"/>
+      <arc id="arc-P0026-TBOss_AVS_AOD" source="BOss_AVS_AOD" target="place-0026"/>
+      <arc id="arc-P0026-TBOss_AVS_AOD" source="place-0026" target="BOss_AVS_AOD"/>
+      <arc id="arc-P0027-TBOss_internal_wipbin" source="BOss_internal_wipbin" target="place-0027"/>
+      <arc id="arc-P0027-TBOss_internal_wipbin" source="place-0027" target="BOss_internal_wipbin"/>
+      <arc id="arc-P0028-TBOss_internal_invoicing" source="BOss_internal_invoicing" target="place-0028"/>
+      <arc id="arc-P0028-TBOss_internal_invoicing" source="place-0028" target="BOss_internal_invoicing"/>
+      <arc id="arc-P0029-TBOss_opvolging_vip" source="BOss_opvolging_vip" target="place-0029"/>
+      <arc id="arc-P0029-TBOss_opvolging_vip" source="place-0029" target="BOss_opvolging_vip"/>
+      <arc id="arc-P0030-TCC_Outbound" source="CC_Outbound" target="place-0030"/>
+      <arc id="arc-P0030-TCC_Outbound" source="place-0030" target="CC_Outbound"/>
+      <arc id="arc-P0031-TParent_Child" source="Parent_Child" target="place-0031"/>
+      <arc id="arc-P0031-TParent_Child" source="place-0031" target="Parent_Child"/>
+      <arc id="arc-P0032-TBOss_externe_info_nodig" source="BOss_externe_info_nodig" target="place-0032"/>
+      <arc id="arc-P0032-TBOss_externe_info_nodig" source="place-0032" target="BOss_externe_info_nodig"/>
+      <arc id="arc-P0033-TBOss_opvolging_ISO_IBO" source="BOss_opvolging_ISO_IBO" target="place-0033"/>
+      <arc id="arc-P0033-TBOss_opvolging_ISO_IBO" source="place-0033" target="BOss_opvolging_ISO_IBO"/>
+      <arc id="arc-P0034-TBOss_followup_idtv_engin" source="BOss_followup_idtv_engin" target="place-0034"/>
+      <arc id="arc-P0034-TBOss_followup_idtv_engin" source="place-0034" target="BOss_followup_idtv_engin"/>
+      <arc id="arc-P0035-Tcc_externe_info_nodig" source="cc_externe_info_nodig" target="place-0035"/>
+      <arc id="arc-P0035-Tcc_externe_info_nodig" source="place-0035" target="cc_externe_info_nodig"/>
+      <arc id="arc-P0036-TBOss_internal_tel" source="BOss_internal_tel" target="place-0036"/>
+      <arc id="arc-P0036-TBOss_internal_tel" source="place-0036" target="BOss_internal_tel"/>
+      <arc id="arc-P0037-TBOss_internal_AVSnA" source="BOss_internal_AVSnA" target="place-0037"/>
+      <arc id="arc-P0037-TBOss_internal_AVSnA" source="place-0037" target="BOss_internal_AVSnA"/>
+      <arc id="arc-P0038-Tcc_CFU" source="cc_CFU" target="place-0038"/>
+      <arc id="arc-P0038-Tcc_CFU" source="place-0038" target="cc_CFU"/>
+      <arc id="arc-P0039-TBOss_internal_VIP" source="BOss_internal_VIP" target="place-0039"/>
+      <arc id="arc-P0039-TBOss_internal_VIP" source="place-0039" target="BOss_internal_VIP"/>
+      <arc id="arc-P0040-TBOss_internal_idtv" source="BOss_internal_idtv" target="place-0040"/>
+      <arc id="arc-P0040-TBOss_internal_idtv" source="place-0040" target="BOss_internal_idtv"/>
+      <arc id="arc-P0041-TBOss_CATCHUP_Mobile" source="BOss_CATCHUP_Mobile" target="place-0041"/>
+      <arc id="arc-P0041-TBOss_CATCHUP_Mobile" source="place-0041" target="BOss_CATCHUP_Mobile"/>
+      <arc id="arc-P0042-TBOss_followup_idtv" source="BOss_followup_idtv" target="place-0042"/>
+      <arc id="arc-P0042-TBOss_followup_idtv" source="place-0042" target="BOss_followup_idtv"/>
+      <arc id="arc-P0043-TBnC_PAYMENTS" source="BnC_PAYMENTS" target="place-0043"/>
+      <arc id="arc-P0043-TBnC_PAYMENTS" source="place-0043" target="BnC_PAYMENTS"/>
+    </page>
+  </net>
+</pnml>

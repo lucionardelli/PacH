@@ -1,0 +1,17 @@
+
+Statistic of cycles5_2.pnml: with negative traces from 
+
+    benchmark       ->  No SMT Simplification
+    positive        ->  cycles5_2.pnml
+    dimension       ->  20
+    traces          ->  0
+    events          ->  0
+    negative        ->  
+    complexity      ->  30
+    effectiveness   ->  1.0
+    exec_time       ->  2016-02-17 16:28:37.904685
+    overall_time    ->  5.96046447754e-06
+    details
+        parse_traces    ->  0
+        convexHull      ->  0
+        simplify        ->  5.96046447754e-06

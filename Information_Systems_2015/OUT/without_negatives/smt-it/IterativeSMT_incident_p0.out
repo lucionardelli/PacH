@@ -1,0 +1,18 @@
+
+Statistic of incident.xes: with negative traces from 
+
+    benchmark       ->  Iterative SMT Simplification
+    positive        ->  incident.xes
+    dimension       ->  18
+    traces          ->  1000
+    events          ->  4931
+    negative        ->  
+    complexity      ->  332
+    effectiveness   ->  0.768518518519
+    exec_time       ->  2016-02-17 16:10:40.027517
+    overall_time    ->  10.8771355152
+    details
+        parse_traces    ->  0.0990748405457
+        do_projection   ->  0.0821368694305
+        convexHull      ->  0.0101149082184
+        shift&rotate    ->  10.685808897

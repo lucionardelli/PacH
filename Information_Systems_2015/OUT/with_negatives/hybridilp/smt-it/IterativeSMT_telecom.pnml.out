@@ -1,0 +1,17 @@
+
+Statistic of telecom.pnml: with negative traces from 
+
+    benchmark       ->  Iterative SMT Simplification
+    positive        ->  telecom.pnml
+    dimension       ->  42
+    traces          ->  0
+    events          ->  0
+    negative        ->  
+    complexity      ->  1644
+    effectiveness   ->  1.0
+    exec_time       ->  2016-02-17 18:20:15.068052
+    overall_time    ->  21.3295240402
+    details
+        parse_traces    ->  0
+        convexHull      ->  0
+        shift&rotate    ->  21.3295240402

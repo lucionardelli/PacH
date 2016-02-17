@@ -1,0 +1,18 @@
+
+Statistic of t32.xes: with negative traces from 
+
+    benchmark       ->  Iterative SMT Simplification
+    positive        ->  t32.xes
+    dimension       ->  33
+    traces          ->  100
+    events          ->  3766
+    negative        ->  
+    complexity      ->  1491
+    effectiveness   ->  0.669811320755
+    exec_time       ->  2016-02-17 16:16:19.037845
+    overall_time    ->  34.0664708614
+    details
+        parse_traces    ->  0.0859758853912
+        do_projection   ->  0.526196956635
+        convexHull      ->  0.0245890617371
+        shift&rotate    ->  33.4297089577

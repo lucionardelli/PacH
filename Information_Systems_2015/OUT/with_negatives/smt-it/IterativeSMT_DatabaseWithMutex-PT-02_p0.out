@@ -1,0 +1,19 @@
+
+Statistic of DatabaseWithMutex-PT-02.xes: with negative traces from DatabaseWithMutex-PT-02.xes
+
+    benchmark       ->  Iterative SMT Simplification
+    positive        ->  DatabaseWithMutex-PT-02.xes
+    dimension       ->  32
+    traces          ->  500
+    events          ->  8204
+    negative        ->  DatabaseWithMutex-PT-02.xes
+    complexity      ->  85
+    effectiveness   ->  1.0
+    exec_time       ->  2016-02-17 10:39:16.936219
+    overall_time    ->  1621.48091102
+    details
+        parse_traces    ->  0.192073106766
+        parse_negatives ->  0.23687505722
+        do_projection   ->  0.128709077835
+        convexHull      ->  0.00419592857361
+        shift&rotate    ->  1620.91905785

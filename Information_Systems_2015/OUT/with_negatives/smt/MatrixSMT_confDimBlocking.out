@@ -1,0 +1,18 @@
+
+Statistic of confDimBlocking.xes: with negative traces from confDimBlocking.xes
+
+    benchmark       ->  Matrix SMT Simplification
+    positive        ->  confDimBlocking.xes
+    dimension       ->  11
+    traces          ->  500
+    events          ->  3725
+    negative        ->  confDimBlocking.xes
+    complexity      ->  33
+    effectiveness   ->  1.0
+    exec_time       ->  2016-02-17 03:29:30.267216
+    overall_time    ->  155.981899261
+    details
+        parse_traces    ->  0.0933320522308
+        parse_negatives ->  0.141790151596
+        convexHull      ->  0.0142350196838
+        shift&rotate    ->  155.732542038

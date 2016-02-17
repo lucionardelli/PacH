@@ -1,0 +1,18 @@
+
+Statistic of DatabaseWithMutex-PT-02.xes: with negative traces from 
+
+    benchmark       ->  Matrix SMT Simplification
+    positive        ->  DatabaseWithMutex-PT-02.xes
+    dimension       ->  32
+    traces          ->  500
+    events          ->  8204
+    negative        ->  
+    complexity      ->  85
+    effectiveness   ->  1.0
+    exec_time       ->  2016-02-17 16:16:14.059122
+    overall_time    ->  4.15648174286
+    details
+        parse_traces    ->  0.153992891312
+        do_projection   ->  0.117872953415
+        convexHull      ->  0.0046169757843
+        shift&rotate    ->  3.87999892235

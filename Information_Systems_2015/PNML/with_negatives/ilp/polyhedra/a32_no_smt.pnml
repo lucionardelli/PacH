@@ -1,0 +1,1257 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pnml>
+  <net id="a32_no_smt.pnml" type="http://www.pnml.org/version-2009/grammar/ptnet">
+    <name>
+      <text>a32_no_smt.pnml</text>
+    </name>
+    <page id="page">
+      <transition id="h9">
+        <name>
+          <text>h9</text>
+        </name>
+      </transition>
+      <transition id="k10">
+        <name>
+          <text>k10</text>
+        </name>
+      </transition>
+      <transition id="s3">
+        <name>
+          <text>s3</text>
+        </name>
+      </transition>
+      <transition id="s2">
+        <name>
+          <text>s2</text>
+        </name>
+      </transition>
+      <transition id="s1">
+        <name>
+          <text>s1</text>
+        </name>
+      </transition>
+      <transition id="E">
+        <name>
+          <text>E</text>
+        </name>
+      </transition>
+      <transition id="uv4">
+        <name>
+          <text>uv4</text>
+        </name>
+      </transition>
+      <transition id="S">
+        <name>
+          <text>S</text>
+        </name>
+      </transition>
+      <transition id="a">
+        <name>
+          <text>a</text>
+        </name>
+      </transition>
+      <transition id="r5">
+        <name>
+          <text>r5</text>
+        </name>
+      </transition>
+      <transition id="c">
+        <name>
+          <text>c</text>
+        </name>
+      </transition>
+      <transition id="b">
+        <name>
+          <text>b</text>
+        </name>
+      </transition>
+      <transition id="e">
+        <name>
+          <text>e</text>
+        </name>
+      </transition>
+      <transition id="d">
+        <name>
+          <text>d</text>
+        </name>
+      </transition>
+      <transition id="g">
+        <name>
+          <text>g</text>
+        </name>
+      </transition>
+      <transition id="f">
+        <name>
+          <text>f</text>
+        </name>
+      </transition>
+      <transition id="i">
+        <name>
+          <text>i</text>
+        </name>
+      </transition>
+      <transition id="h">
+        <name>
+          <text>h</text>
+        </name>
+      </transition>
+      <transition id="k">
+        <name>
+          <text>k</text>
+        </name>
+      </transition>
+      <transition id="j">
+        <name>
+          <text>j</text>
+        </name>
+      </transition>
+      <transition id="m">
+        <name>
+          <text>m</text>
+        </name>
+      </transition>
+      <transition id="o">
+        <name>
+          <text>o</text>
+        </name>
+      </transition>
+      <transition id="n">
+        <name>
+          <text>n</text>
+        </name>
+      </transition>
+      <transition id="n8">
+        <name>
+          <text>n8</text>
+        </name>
+      </transition>
+      <transition id="p">
+        <name>
+          <text>p</text>
+        </name>
+      </transition>
+      <transition id="s">
+        <name>
+          <text>s</text>
+        </name>
+      </transition>
+      <transition id="r">
+        <name>
+          <text>r</text>
+        </name>
+      </transition>
+      <transition id="u">
+        <name>
+          <text>u</text>
+        </name>
+      </transition>
+      <transition id="t">
+        <name>
+          <text>t</text>
+        </name>
+      </transition>
+      <transition id="v">
+        <name>
+          <text>v</text>
+        </name>
+      </transition>
+      <transition id="n6">
+        <name>
+          <text>n6</text>
+        </name>
+      </transition>
+      <transition id="n7">
+        <name>
+          <text>n7</text>
+        </name>
+      </transition>
+      <place id="place-0022">
+        <name>
+          <text>HS dim 32  -   1 x4  -   1 x20 +   1 x27 +   1 x28 +   1 x31  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0023">
+        <name>
+          <text>HS dim 32   1 x2  +   1 x19 -   1 x21 -   1 x30  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0020">
+        <name>
+          <text>HS dim 32   1 x1  -   1 x10 +   1 x16 -   1 x20 +   1 x25  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0021">
+        <name>
+          <text>HS dim 32  -   1 x8  +   1 x15  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0026">
+        <name>
+          <text>HS dim 32  -   1 x15  +   1 &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>1</text>
+        </initialMarking>
+      </place>
+      <place id="place-0027">
+        <name>
+          <text>HS dim 32  -   1 x2  +   1 x5  +   1 x8  -   1 x9  +   1 x10 -   1 x14 +   1 x21  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0024">
+        <name>
+          <text>HS dim 32   1 x3  -   1 x13 -   1 x16 -   1 x23 +   1 x30  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0025">
+        <name>
+          <text>HS dim 32  -   1 x6  +   1 x11 -   1 x19 +   1 x28  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0028">
+        <name>
+          <text>HS dim 32   1 x2  -   1 x5  -   1 x7  +   1 x26  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0029">
+        <name>
+          <text>HS dim 32   1 x2  +   1 x3  -   1 x7  -   1 x16  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0031">
+        <name>
+          <text>HS dim 32   1 x5  -   1 x6  -   1 x9  +   1 x10 +   1 x11 -   1 x14 +   1 x21  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0030">
+        <name>
+          <text>HS dim 32   1 x1  -   1 x13 -   1 x20 -   1 x23 +   1 x30  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0033">
+        <name>
+          <text>HS dim 32   1 x7  -   1 x12 +   1 x18 -   1 x31  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0032">
+        <name>
+          <text>HS dim 32  -   1 x1  +   1 x7  -   1 x10 +   1 x16 +   1 x25  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0035">
+        <name>
+          <text>HS dim 32   1 x1  +   1 x9  -   1 x20 -   1 x22  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0034">
+        <name>
+          <text>HS dim 32   1 x2  -   1 x7  +   1 x19 -   1 x21  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0037">
+        <name>
+          <text>HS dim 32  -   1 x1  +   1 x7  +   1 x9  -   1 x22  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0036">
+        <name>
+          <text>HS dim 32   1 x3  -   1 x6  -   1 x16 +   1 x20  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0039">
+        <name>
+          <text>HS dim 32  -   1 x3  -   1 x13 +   1 x17 -   1 x23 -   1 x25 +   1 x30  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0038">
+        <name>
+          <text>HS dim 32   1 x5  -   1 x9  +   1 x10 -   1 x14 -   1 x20 +   1 x21 +   1 x31  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0004">
+        <name>
+          <text>HS dim 32  -   1 x4  +   1 x6  -   1 x22 +   1 x27 +   1 x28  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0005">
+        <name>
+          <text>HS dim 32   1 x4  -   1 x11 +   1 x13 +   1 x23 -   1 x27 -   1 x29  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0006">
+        <name>
+          <text>HS dim 32   1 x2  -   1 x6  -   1 x7  +   1 x11  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0007">
+        <name>
+          <text>HS dim 32  -   1 x2  +   1 x8  -   1 x12 +   1 x18  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0001">
+        <name>
+          <text>HS dim 32   1 x5  -   1 x9  +   1 x10 -   1 x13 -   1 x14 +   1 x21 -   1 x23 +   1 x30  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0002">
+        <name>
+          <text>HS dim 32   1 x1  -   1 x4  -   1 x20 +   1 x27 +   1 x28  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0003">
+        <name>
+          <text>HS dim 32  -   1 x0  -   1 x2  +   1 x8  +   1 x12  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0008">
+        <name>
+          <text>HS dim 32  -   1 x2  +   1 x8  -   1 x10 +   1 x16 +   1 x25  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0009">
+        <name>
+          <text>HS dim 32  -   1 x13 +   1 x14 -   1 x17 -   1 x18 -   1 x23 +   1 x24 -   1 x28 +   1 x30  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0084">
+        <name>
+          <text>HS dim 32   1 x1  -   1 x12 +   1 x18 -   1 x20  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0085">
+        <name>
+          <text>HS dim 32  -   1 x10 -   1 x13 +   1 x16 -   1 x23 +   1 x25 +   1 x30  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0086">
+        <name>
+          <text>Dummy place 0001</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0080">
+        <name>
+          <text>HS dim 32   1 x7  -   1 x11 +   1 x13 +   1 x23 -   1 x31  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0081">
+        <name>
+          <text>HS dim 32  -   1 x1  +   1 x7  -   1 x11 +   1 x13 +   1 x23  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0082">
+        <name>
+          <text>HS dim 32   1 x2  +   1 x9  -   1 x22 -   1 x30  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0083">
+        <name>
+          <text>HS dim 32  -   1 x2  -   1 x4  +   1 x8  +   1 x27 +   1 x28  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0019">
+        <name>
+          <text>HS dim 32  -   1 x5  +   1 x7  +   1 x26 -   1 x31  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0018">
+        <name>
+          <text>HS dim 32   1 x2  -   1 x7  -   1 x11 +   1 x13 +   1 x23  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0013">
+        <name>
+          <text>HS dim 32  -   1 x4  -   1 x6  +   1 x20 +   1 x27 +   1 x28  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0012">
+        <name>
+          <text>HS dim 32  -   1 x2  +   1 x8  -   1 x21 +   1 x29  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0011">
+        <name>
+          <text>HS dim 32   1 x2  +   1 x5  -   1 x9  +   1 x10 -   1 x14 +   1 x21 -   1 x30  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0010">
+        <name>
+          <text>HS dim 32  -   1 x3  -   1 x6  +   1 x11 +   1 x17 -   1 x25  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0017">
+        <name>
+          <text>HS dim 32  -   1 x2  -   1 x5  +   1 x8  +   1 x26  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0016">
+        <name>
+          <text>HS dim 32   1 x4  -   1 x20 -   1 x27 -   1 x29 +   1 x31  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0015">
+        <name>
+          <text>HS dim 32  -   1 x6  +   1 x14 -   1 x17 -   1 x18 +   1 x20 +   1 x24 -   1 x28  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0014">
+        <name>
+          <text>HS dim 32  -   1 x11 -   1 x12 +   1 x13 +   1 x18 +   1 x23  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0068">
+        <name>
+          <text>HS dim 32   1 x12 -   1 x26  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0069">
+        <name>
+          <text>HS dim 32  -   1 x6  +   1 x11 -   1 x21 +   1 x29  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0066">
+        <name>
+          <text>HS dim 32  -   1 x2  +   1 x3  +   1 x8  -   1 x16  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0067">
+        <name>
+          <text>HS dim 32   1 x2  -   1 x7  -   1 x12 +   1 x18  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0064">
+        <name>
+          <text>HS dim 32  -   1 x6  +   1 x11 -   1 x12 +   1 x18  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0065">
+        <name>
+          <text>HS dim 32   1 x3  +   1 x6  -   1 x16 -   1 x22  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0062">
+        <name>
+          <text>HS dim 32  -   1 x6  +   1 x20 -   1 x21 +   1 x29  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0063">
+        <name>
+          <text>HS dim 32   1 x6  -   1 x21 -   1 x22 +   1 x29  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0060">
+        <name>
+          <text>HS dim 32  -   1 x11 +   1 x13 -   1 x19 +   1 x23 +   1 x28  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0061">
+        <name>
+          <text>HS dim 32   1 x8  -   1 x20 -   1 x24 +   1 x31  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0079">
+        <name>
+          <text>HS dim 32  -   1 x5  +   1 x6  -   1 x22 +   1 x26  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0078">
+        <name>
+          <text>HS dim 32  -   1 x6  +   1 x8  +   1 x20 -   1 x24  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0075">
+        <name>
+          <text>HS dim 32   1 x8  -   1 x11 +   1 x13 +   1 x23 -   1 x24  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0074">
+        <name>
+          <text>HS dim 32   1 x0  -   1 x1  -   1 x5  +   1 x7   &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0077">
+        <name>
+          <text>HS dim 32   1 x2  -   1 x4  -   1 x7  +   1 x27 +   1 x28  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0076">
+        <name>
+          <text>HS dim 32   1 x2  -   1 x7  +   1 x9  -   1 x22  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0071">
+        <name>
+          <text>HS dim 32   1 x8  -   1 x13 -   1 x23 -   1 x24 +   1 x30  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0070">
+        <name>
+          <text>HS dim 32  -   1 x0  +   1 x2  -   1 x7  +   1 x12  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0073">
+        <name>
+          <text>HS dim 32   1 x2  -   1 x4  +   1 x27 +   1 x28 -   1 x30  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0072">
+        <name>
+          <text>HS dim 32   1 x0  -   1 x5  -   1 x6  +   1 x20  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0040">
+        <name>
+          <text>HS dim 32  -   1 x6  -   1 x12 +   1 x18 +   1 x20  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0041">
+        <name>
+          <text>HS dim 32  -   1 x6  +   1 x8  +   1 x11 -   1 x24  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0042">
+        <name>
+          <text>HS dim 32   1 x6  -   1 x12 +   1 x18 -   1 x22  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0043">
+        <name>
+          <text>HS dim 32   1 x5  -   1 x9  +   1 x10 -   1 x11 +   1 x13 -   1 x14 +   1 x21 +   1 x23  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0044">
+        <name>
+          <text>HS dim 32   1 x1  -   1 x20 -   1 x21 +   1 x29  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0045">
+        <name>
+          <text>HS dim 32  -   1 x13 -   1 x21 -   1 x23 +   1 x29 +   1 x30  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0046">
+        <name>
+          <text>HS dim 32   1 x2  -   1 x12 +   1 x18 -   1 x30  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0047">
+        <name>
+          <text>HS dim 32  -   1 x12 +   1 x18 -   1 x20 +   1 x31  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0048">
+        <name>
+          <text>HS dim 32   1 x7  +   1 x9  -   1 x22 -   1 x31  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0049">
+        <name>
+          <text>HS dim 32   1 x2  -   1 x10 +   1 x16 +   1 x25 -   1 x30  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0057">
+        <name>
+          <text>HS dim 32  -   1 x11 +   1 x13 -   1 x21 +   1 x23 +   1 x29  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0056">
+        <name>
+          <text>HS dim 32   1 x5  +   1 x6  -   1 x9  +   1 x10 -   1 x14 +   1 x21 -   1 x22  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0055">
+        <name>
+          <text>HS dim 32  -   1 x6  +   1 x9  +   1 x20 -   1 x22  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0054">
+        <name>
+          <text>HS dim 32   1 x1  +   1 x14 -   1 x17 -   1 x18 -   1 x20 +   1 x24 -   1 x28  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0053">
+        <name>
+          <text>HS dim 32  -   1 x6  -   1 x13 +   1 x20 -   1 x23 +   1 x30  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0052">
+        <name>
+          <text>HS dim 32   1 x2  +   1 x3  -   1 x16 -   1 x30  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0051">
+        <name>
+          <text>HS dim 32   1 x0  -   1 x2  -   1 x5  +   1 x8   &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0050">
+        <name>
+          <text>HS dim 32  -   1 x1  +   1 x7  -   1 x21 +   1 x29  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0059">
+        <name>
+          <text>HS dim 32   1 x9  -   1 x11 +   1 x13 -   1 x22 +   1 x23  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <place id="place-0058">
+        <name>
+          <text>HS dim 32   1 x0  +   1 x2  -   1 x5  -   1 x30  &gt;= 0</text>
+        </name>
+        <initialMarking>
+          <text>0</text>
+        </initialMarking>
+      </place>
+      <arc id="arc-To-P0001" source="o" target="place-0001"/>
+      <arc id="arc-P0001-Tk10" source="place-0001" target="k10"/>
+      <arc id="arc-Tj-P0001" source="j" target="place-0001"/>
+      <arc id="arc-P0001-Tu" source="place-0001" target="u"/>
+      <arc id="arc-P0001-Tm" source="place-0001" target="m"/>
+      <arc id="arc-Tk-P0001" source="k" target="place-0001"/>
+      <arc id="arc-P0001-Tv" source="place-0001" target="v"/>
+      <arc id="arc-Tt-P0001" source="t" target="place-0001"/>
+      <arc id="arc-Ts1-P0002" source="s1" target="place-0002"/>
+      <arc id="arc-P0002-Tg" source="place-0002" target="g"/>
+      <arc id="arc-P0002-Ts3" source="place-0002" target="s3"/>
+      <arc id="arc-Th9-P0002" source="h9" target="place-0002"/>
+      <arc id="arc-Tf-P0002" source="f" target="place-0002"/>
+      <arc id="arc-P0003-Tn8" source="place-0003" target="n8"/>
+      <arc id="arc-P0003-Tr" source="place-0003" target="r"/>
+      <arc id="arc-Tp-P0003" source="p" target="place-0003"/>
+      <arc id="arc-Tn6-P0003" source="n6" target="place-0003"/>
+      <arc id="arc-P0004-Tg" source="place-0004" target="g"/>
+      <arc id="arc-Tr5-P0004" source="r5" target="place-0004"/>
+      <arc id="arc-P0004-TE" source="place-0004" target="E"/>
+      <arc id="arc-Th9-P0004" source="h9" target="place-0004"/>
+      <arc id="arc-Tf-P0004" source="f" target="place-0004"/>
+      <arc id="arc-Tg-P0005" source="g" target="place-0005"/>
+      <arc id="arc-P0005-Tuv4" source="place-0005" target="uv4"/>
+      <arc id="arc-Tu-P0005" source="u" target="place-0005"/>
+      <arc id="arc-Tv-P0005" source="v" target="place-0005"/>
+      <arc id="arc-P0005-Th9" source="place-0005" target="h9"/>
+      <arc id="arc-P0005-Ti" source="place-0005" target="i"/>
+      <arc id="arc-Tr-P0006" source="r" target="place-0006"/>
+      <arc id="arc-P0006-Tr5" source="place-0006" target="r5"/>
+      <arc id="arc-P0006-Ts" source="place-0006" target="s"/>
+      <arc id="arc-Tuv4-P0006" source="uv4" target="place-0006"/>
+      <arc id="arc-P0007-Tr" source="place-0007" target="r"/>
+      <arc id="arc-Tp-P0007" source="p" target="place-0007"/>
+      <arc id="arc-P0007-Tn6" source="place-0007" target="n6"/>
+      <arc id="arc-Tn-P0007" source="n" target="place-0007"/>
+      <arc id="arc-P0008-Tr" source="place-0008" target="r"/>
+      <arc id="arc-Tp-P0008" source="p" target="place-0008"/>
+      <arc id="arc-P0008-Tj" source="place-0008" target="j"/>
+      <arc id="arc-Te-P0008" source="e" target="place-0008"/>
+      <arc id="arc-Td-P0008" source="d" target="place-0008"/>
+      <arc id="arc-P0009-Tu" source="place-0009" target="u"/>
+      <arc id="arc-Tm-P0009" source="m" target="place-0009"/>
+      <arc id="arc-P0009-Tb" source="place-0009" target="b"/>
+      <arc id="arc-P0009-Tn" source="place-0009" target="n"/>
+      <arc id="arc-P0009-Tv" source="place-0009" target="v"/>
+      <arc id="arc-Ta-P0009" source="a" target="place-0009"/>
+      <arc id="arc-P0009-Tf" source="place-0009" target="f"/>
+      <arc id="arc-Tt-P0009" source="t" target="place-0009"/>
+      <arc id="arc-P0010-Tc" source="place-0010" target="c"/>
+      <arc id="arc-P0010-Tr5" source="place-0010" target="r5"/>
+      <arc id="arc-Tuv4-P0010" source="uv4" target="place-0010"/>
+      <arc id="arc-Tb-P0010" source="b" target="place-0010"/>
+      <arc id="arc-P0010-Td" source="place-0010" target="d"/>
+      <arc id="arc-Tr-P0011" source="r" target="place-0011"/>
+      <arc id="arc-To-P0011" source="o" target="place-0011"/>
+      <arc id="arc-P0011-Tk10" source="place-0011" target="k10"/>
+      <arc id="arc-Tj-P0011" source="j" target="place-0011"/>
+      <arc id="arc-P0011-Tm" source="place-0011" target="m"/>
+      <arc id="arc-Tk-P0011" source="k" target="place-0011"/>
+      <arc id="arc-P0011-Tt" source="place-0011" target="t"/>
+      <arc id="arc-P0012-Tr" source="place-0012" target="r"/>
+      <arc id="arc-Tp-P0012" source="p" target="place-0012"/>
+      <arc id="arc-P0012-Tk" source="place-0012" target="k"/>
+      <arc id="arc-Ti-P0012" source="i" target="place-0012"/>
+      <arc id="arc-P0013-Tg" source="place-0013" target="g"/>
+      <arc id="arc-P0013-Tr5" source="place-0013" target="r5"/>
+      <arc id="arc-Ts3-P0013" source="s3" target="place-0013"/>
+      <arc id="arc-Th9-P0013" source="h9" target="place-0013"/>
+      <arc id="arc-Tf-P0013" source="f" target="place-0013"/>
+      <arc id="arc-P0014-Tuv4" source="place-0014" target="uv4"/>
+      <arc id="arc-P0014-Tn6" source="place-0014" target="n6"/>
+      <arc id="arc-Tu-P0014" source="u" target="place-0014"/>
+      <arc id="arc-Tn-P0014" source="n" target="place-0014"/>
+      <arc id="arc-Tv-P0014" source="v" target="place-0014"/>
+      <arc id="arc-P0015-Tr5" source="place-0015" target="r5"/>
+      <arc id="arc-Tm-P0015" source="m" target="place-0015"/>
+      <arc id="arc-P0015-Tb" source="place-0015" target="b"/>
+      <arc id="arc-P0015-Tn" source="place-0015" target="n"/>
+      <arc id="arc-Ts3-P0015" source="s3" target="place-0015"/>
+      <arc id="arc-Ta-P0015" source="a" target="place-0015"/>
+      <arc id="arc-P0015-Tf" source="place-0015" target="f"/>
+      <arc id="arc-Tg-P0016" source="g" target="place-0016"/>
+      <arc id="arc-P0016-Ts3" source="place-0016" target="s3"/>
+      <arc id="arc-P0016-Th9" source="place-0016" target="h9"/>
+      <arc id="arc-P0016-Ti" source="place-0016" target="i"/>
+      <arc id="arc-Ts2-P0016" source="s2" target="place-0016"/>
+      <arc id="arc-P0017-Tr" source="place-0017" target="r"/>
+      <arc id="arc-P0017-To" source="place-0017" target="o"/>
+      <arc id="arc-Tp-P0017" source="p" target="place-0017"/>
+      <arc id="arc-Tn7-P0017" source="n7" target="place-0017"/>
+      <arc id="arc-Tr-P0018" source="r" target="place-0018"/>
+      <arc id="arc-P0018-Ts" source="place-0018" target="s"/>
+      <arc id="arc-P0018-Tuv4" source="place-0018" target="uv4"/>
+      <arc id="arc-Tu-P0018" source="u" target="place-0018"/>
+      <arc id="arc-Tv-P0018" source="v" target="place-0018"/>
+      <arc id="arc-P0019-To" source="place-0019" target="o"/>
+      <arc id="arc-Ts-P0019" source="s" target="place-0019"/>
+      <arc id="arc-Tn7-P0019" source="n7" target="place-0019"/>
+      <arc id="arc-P0019-Ts2" source="place-0019" target="s2"/>
+      <arc id="arc-Ts1-P0020" source="s1" target="place-0020"/>
+      <arc id="arc-P0020-Tj" source="place-0020" target="j"/>
+      <arc id="arc-Te-P0020" source="e" target="place-0020"/>
+      <arc id="arc-P0020-Ts3" source="place-0020" target="s3"/>
+      <arc id="arc-Td-P0020" source="d" target="place-0020"/>
+      <arc id="arc-P0021-Tp" source="place-0021" target="p"/>
+      <arc id="arc-TS-P0021" source="S" target="place-0021"/>
+      <arc id="arc-P0022-Tg" source="place-0022" target="g"/>
+      <arc id="arc-P0022-Ts3" source="place-0022" target="s3"/>
+      <arc id="arc-Th9-P0022" source="h9" target="place-0022"/>
+      <arc id="arc-Tf-P0022" source="f" target="place-0022"/>
+      <arc id="arc-Ts2-P0022" source="s2" target="place-0022"/>
+      <arc id="arc-Tr-P0023" source="r" target="place-0023"/>
+      <arc id="arc-Th-P0023" source="h" target="place-0023"/>
+      <arc id="arc-P0023-Tk" source="place-0023" target="k"/>
+      <arc id="arc-P0023-Tt" source="place-0023" target="t"/>
+      <arc id="arc-Tc-P0024" source="c" target="place-0024"/>
+      <arc id="arc-P0024-Tu" source="place-0024" target="u"/>
+      <arc id="arc-P0024-Te" source="place-0024" target="e"/>
+      <arc id="arc-P0024-Tv" source="place-0024" target="v"/>
+      <arc id="arc-Tt-P0024" source="t" target="place-0024"/>
+      <arc id="arc-P0025-Tr5" source="place-0025" target="r5"/>
+      <arc id="arc-Tuv4-P0025" source="uv4" target="place-0025"/>
+      <arc id="arc-P0025-Th" source="place-0025" target="h"/>
+      <arc id="arc-Tf-P0025" source="f" target="place-0025"/>
+      <arc id="arc-P0026-TS" source="place-0026" target="S"/>
+      <arc id="arc-P0027-Tr" source="place-0027" target="r"/>
+      <arc id="arc-To-P0027" source="o" target="place-0027"/>
+      <arc id="arc-Tp-P0027" source="p" target="place-0027"/>
+      <arc id="arc-P0027-Tk10" source="place-0027" target="k10"/>
+      <arc id="arc-Tj-P0027" source="j" target="place-0027"/>
+      <arc id="arc-P0027-Tm" source="place-0027" target="m"/>
+      <arc id="arc-Tk-P0027" source="k" target="place-0027"/>
+      <arc id="arc-Tr-P0028" source="r" target="place-0028"/>
+      <arc id="arc-P0028-To" source="place-0028" target="o"/>
+      <arc id="arc-P0028-Ts" source="place-0028" target="s"/>
+      <arc id="arc-Tn7-P0028" source="n7" target="place-0028"/>
+      <arc id="arc-Tr-P0029" source="r" target="place-0029"/>
+      <arc id="arc-Tc-P0029" source="c" target="place-0029"/>
+      <arc id="arc-P0029-Ts" source="place-0029" target="s"/>
+      <arc id="arc-P0029-Te" source="place-0029" target="e"/>
+      <arc id="arc-Ts1-P0030" source="s1" target="place-0030"/>
+      <arc id="arc-P0030-Tu" source="place-0030" target="u"/>
+      <arc id="arc-P0030-Ts3" source="place-0030" target="s3"/>
+      <arc id="arc-P0030-Tv" source="place-0030" target="v"/>
+      <arc id="arc-Tt-P0030" source="t" target="place-0030"/>
+      <arc id="arc-To-P0031" source="o" target="place-0031"/>
+      <arc id="arc-P0031-Tr5" source="place-0031" target="r5"/>
+      <arc id="arc-P0031-Tk10" source="place-0031" target="k10"/>
+      <arc id="arc-Tj-P0031" source="j" target="place-0031"/>
+      <arc id="arc-Tuv4-P0031" source="uv4" target="place-0031"/>
+      <arc id="arc-P0031-Tm" source="place-0031" target="m"/>
+      <arc id="arc-Tk-P0031" source="k" target="place-0031"/>
+      <arc id="arc-P0032-Ts1" source="place-0032" target="s1"/>
+      <arc id="arc-Ts-P0032" source="s" target="place-0032"/>
+      <arc id="arc-P0032-Tj" source="place-0032" target="j"/>
+      <arc id="arc-Te-P0032" source="e" target="place-0032"/>
+      <arc id="arc-Td-P0032" source="d" target="place-0032"/>
+      <arc id="arc-Ts-P0033" source="s" target="place-0033"/>
+      <arc id="arc-P0033-Tn6" source="place-0033" target="n6"/>
+      <arc id="arc-Tn-P0033" source="n" target="place-0033"/>
+      <arc id="arc-P0033-Ts2" source="place-0033" target="s2"/>
+      <arc id="arc-Tr-P0034" source="r" target="place-0034"/>
+      <arc id="arc-P0034-Ts" source="place-0034" target="s"/>
+      <arc id="arc-Th-P0034" source="h" target="place-0034"/>
+      <arc id="arc-P0034-Tk" source="place-0034" target="k"/>
+      <arc id="arc-Ts1-P0035" source="s1" target="place-0035"/>
+      <arc id="arc-Tk10-P0035" source="k10" target="place-0035"/>
+      <arc id="arc-P0035-Ts3" source="place-0035" target="s3"/>
+      <arc id="arc-P0035-TE" source="place-0035" target="E"/>
+      <arc id="arc-Tc-P0036" source="c" target="place-0036"/>
+      <arc id="arc-P0036-Tr5" source="place-0036" target="r5"/>
+      <arc id="arc-P0036-Te" source="place-0036" target="e"/>
+      <arc id="arc-Ts3-P0036" source="s3" target="place-0036"/>
+      <arc id="arc-P0037-Ts1" source="place-0037" target="s1"/>
+      <arc id="arc-Ts-P0037" source="s" target="place-0037"/>
+      <arc id="arc-Tk10-P0037" source="k10" target="place-0037"/>
+      <arc id="arc-P0037-TE" source="place-0037" target="E"/>
+      <arc id="arc-To-P0038" source="o" target="place-0038"/>
+      <arc id="arc-P0038-Tk10" source="place-0038" target="k10"/>
+      <arc id="arc-Tj-P0038" source="j" target="place-0038"/>
+      <arc id="arc-P0038-Tm" source="place-0038" target="m"/>
+      <arc id="arc-P0038-Ts3" source="place-0038" target="s3"/>
+      <arc id="arc-Tk-P0038" source="k" target="place-0038"/>
+      <arc id="arc-Ts2-P0038" source="s2" target="place-0038"/>
+      <arc id="arc-P0039-Tc" source="place-0039" target="c"/>
+      <arc id="arc-P0039-Tu" source="place-0039" target="u"/>
+      <arc id="arc-Tb-P0039" source="b" target="place-0039"/>
+      <arc id="arc-P0039-Tv" source="place-0039" target="v"/>
+      <arc id="arc-P0039-Td" source="place-0039" target="d"/>
+      <arc id="arc-Tt-P0039" source="t" target="place-0039"/>
+      <arc id="arc-P0040-Tr5" source="place-0040" target="r5"/>
+      <arc id="arc-P0040-Tn6" source="place-0040" target="n6"/>
+      <arc id="arc-Tn-P0040" source="n" target="place-0040"/>
+      <arc id="arc-Ts3-P0040" source="s3" target="place-0040"/>
+      <arc id="arc-P0041-Tr5" source="place-0041" target="r5"/>
+      <arc id="arc-Tp-P0041" source="p" target="place-0041"/>
+      <arc id="arc-Tuv4-P0041" source="uv4" target="place-0041"/>
+      <arc id="arc-P0041-Ta" source="place-0041" target="a"/>
+      <arc id="arc-Tr5-P0042" source="r5" target="place-0042"/>
+      <arc id="arc-P0042-Tn6" source="place-0042" target="n6"/>
+      <arc id="arc-Tn-P0042" source="n" target="place-0042"/>
+      <arc id="arc-P0042-TE" source="place-0042" target="E"/>
+      <arc id="arc-To-P0043" source="o" target="place-0043"/>
+      <arc id="arc-P0043-Tk10" source="place-0043" target="k10"/>
+      <arc id="arc-Tj-P0043" source="j" target="place-0043"/>
+      <arc id="arc-P0043-Tuv4" source="place-0043" target="uv4"/>
+      <arc id="arc-Tu-P0043" source="u" target="place-0043"/>
+      <arc id="arc-P0043-Tm" source="place-0043" target="m"/>
+      <arc id="arc-Tk-P0043" source="k" target="place-0043"/>
+      <arc id="arc-Tv-P0043" source="v" target="place-0043"/>
+      <arc id="arc-Ts1-P0044" source="s1" target="place-0044"/>
+      <arc id="arc-P0044-Ts3" source="place-0044" target="s3"/>
+      <arc id="arc-P0044-Tk" source="place-0044" target="k"/>
+      <arc id="arc-Ti-P0044" source="i" target="place-0044"/>
+      <arc id="arc-P0045-Tu" source="place-0045" target="u"/>
+      <arc id="arc-P0045-Tk" source="place-0045" target="k"/>
+      <arc id="arc-P0045-Tv" source="place-0045" target="v"/>
+      <arc id="arc-Ti-P0045" source="i" target="place-0045"/>
+      <arc id="arc-Tt-P0045" source="t" target="place-0045"/>
+      <arc id="arc-Tr-P0046" source="r" target="place-0046"/>
+      <arc id="arc-P0046-Tn6" source="place-0046" target="n6"/>
+      <arc id="arc-Tn-P0046" source="n" target="place-0046"/>
+      <arc id="arc-P0046-Tt" source="place-0046" target="t"/>
+      <arc id="arc-P0047-Tn6" source="place-0047" target="n6"/>
+      <arc id="arc-Tn-P0047" source="n" target="place-0047"/>
+      <arc id="arc-P0047-Ts3" source="place-0047" target="s3"/>
+      <arc id="arc-Ts2-P0047" source="s2" target="place-0047"/>
+      <arc id="arc-Ts-P0048" source="s" target="place-0048"/>
+      <arc id="arc-Tk10-P0048" source="k10" target="place-0048"/>
+      <arc id="arc-P0048-TE" source="place-0048" target="E"/>
+      <arc id="arc-P0048-Ts2" source="place-0048" target="s2"/>
+      <arc id="arc-Tr-P0049" source="r" target="place-0049"/>
+      <arc id="arc-P0049-Tj" source="place-0049" target="j"/>
+      <arc id="arc-Te-P0049" source="e" target="place-0049"/>
+      <arc id="arc-Td-P0049" source="d" target="place-0049"/>
+      <arc id="arc-P0049-Tt" source="place-0049" target="t"/>
+      <arc id="arc-P0050-Ts1" source="place-0050" target="s1"/>
+      <arc id="arc-Ts-P0050" source="s" target="place-0050"/>
+      <arc id="arc-P0050-Tk" source="place-0050" target="k"/>
+      <arc id="arc-Ti-P0050" source="i" target="place-0050"/>
+      <arc id="arc-Tn8-P0051" source="n8" target="place-0051"/>
+      <arc id="arc-P0051-Tr" source="place-0051" target="r"/>
+      <arc id="arc-P0051-To" source="place-0051" target="o"/>
+      <arc id="arc-Tp-P0051" source="p" target="place-0051"/>
+      <arc id="arc-Tr-P0052" source="r" target="place-0052"/>
+      <arc id="arc-Tc-P0052" source="c" target="place-0052"/>
+      <arc id="arc-P0052-Te" source="place-0052" target="e"/>
+      <arc id="arc-P0052-Tt" source="place-0052" target="t"/>
+      <arc id="arc-P0053-Tr5" source="place-0053" target="r5"/>
+      <arc id="arc-P0053-Tu" source="place-0053" target="u"/>
+      <arc id="arc-Ts3-P0053" source="s3" target="place-0053"/>
+      <arc id="arc-P0053-Tv" source="place-0053" target="v"/>
+      <arc id="arc-Tt-P0053" source="t" target="place-0053"/>
+      <arc id="arc-Ts1-P0054" source="s1" target="place-0054"/>
+      <arc id="arc-Tm-P0054" source="m" target="place-0054"/>
+      <arc id="arc-P0054-Tb" source="place-0054" target="b"/>
+      <arc id="arc-P0054-Tn" source="place-0054" target="n"/>
+      <arc id="arc-P0054-Ts3" source="place-0054" target="s3"/>
+      <arc id="arc-Ta-P0054" source="a" target="place-0054"/>
+      <arc id="arc-P0054-Tf" source="place-0054" target="f"/>
+      <arc id="arc-P0055-Tr5" source="place-0055" target="r5"/>
+      <arc id="arc-Tk10-P0055" source="k10" target="place-0055"/>
+      <arc id="arc-Ts3-P0055" source="s3" target="place-0055"/>
+      <arc id="arc-P0055-TE" source="place-0055" target="E"/>
+      <arc id="arc-To-P0056" source="o" target="place-0056"/>
+      <arc id="arc-Tr5-P0056" source="r5" target="place-0056"/>
+      <arc id="arc-P0056-Tk10" source="place-0056" target="k10"/>
+      <arc id="arc-Tj-P0056" source="j" target="place-0056"/>
+      <arc id="arc-P0056-Tm" source="place-0056" target="m"/>
+      <arc id="arc-Tk-P0056" source="k" target="place-0056"/>
+      <arc id="arc-P0056-TE" source="place-0056" target="E"/>
+      <arc id="arc-P0057-Tuv4" source="place-0057" target="uv4"/>
+      <arc id="arc-Tu-P0057" source="u" target="place-0057"/>
+      <arc id="arc-P0057-Tk" source="place-0057" target="k"/>
+      <arc id="arc-Tv-P0057" source="v" target="place-0057"/>
+      <arc id="arc-Ti-P0057" source="i" target="place-0057"/>
+      <arc id="arc-Tn8-P0058" source="n8" target="place-0058"/>
+      <arc id="arc-Tr-P0058" source="r" target="place-0058"/>
+      <arc id="arc-P0058-To" source="place-0058" target="o"/>
+      <arc id="arc-P0058-Tt" source="place-0058" target="t"/>
+      <arc id="arc-Tk10-P0059" source="k10" target="place-0059"/>
+      <arc id="arc-P0059-Tuv4" source="place-0059" target="uv4"/>
+      <arc id="arc-Tu-P0059" source="u" target="place-0059"/>
+      <arc id="arc-P0059-TE" source="place-0059" target="E"/>
+      <arc id="arc-Tv-P0059" source="v" target="place-0059"/>
+      <arc id="arc-P0060-Tuv4" source="place-0060" target="uv4"/>
+      <arc id="arc-Tu-P0060" source="u" target="place-0060"/>
+      <arc id="arc-P0060-Th" source="place-0060" target="h"/>
+      <arc id="arc-Tv-P0060" source="v" target="place-0060"/>
+      <arc id="arc-Tf-P0060" source="f" target="place-0060"/>
+      <arc id="arc-Tp-P0061" source="p" target="place-0061"/>
+      <arc id="arc-P0061-Ts3" source="place-0061" target="s3"/>
+      <arc id="arc-P0061-Ta" source="place-0061" target="a"/>
+      <arc id="arc-Ts2-P0061" source="s2" target="place-0061"/>
+      <arc id="arc-P0062-Tr5" source="place-0062" target="r5"/>
+      <arc id="arc-Ts3-P0062" source="s3" target="place-0062"/>
+      <arc id="arc-P0062-Tk" source="place-0062" target="k"/>
+      <arc id="arc-Ti-P0062" source="i" target="place-0062"/>
+      <arc id="arc-Tr5-P0063" source="r5" target="place-0063"/>
+      <arc id="arc-P0063-Tk" source="place-0063" target="k"/>
+      <arc id="arc-P0063-TE" source="place-0063" target="E"/>
+      <arc id="arc-Ti-P0063" source="i" target="place-0063"/>
+      <arc id="arc-P0064-Tr5" source="place-0064" target="r5"/>
+      <arc id="arc-Tuv4-P0064" source="uv4" target="place-0064"/>
+      <arc id="arc-P0064-Tn6" source="place-0064" target="n6"/>
+      <arc id="arc-Tn-P0064" source="n" target="place-0064"/>
+      <arc id="arc-Tc-P0065" source="c" target="place-0065"/>
+      <arc id="arc-Tr5-P0065" source="r5" target="place-0065"/>
+      <arc id="arc-P0065-Te" source="place-0065" target="e"/>
+      <arc id="arc-P0065-TE" source="place-0065" target="E"/>
+      <arc id="arc-P0066-Tr" source="place-0066" target="r"/>
+      <arc id="arc-Tc-P0066" source="c" target="place-0066"/>
+      <arc id="arc-Tp-P0066" source="p" target="place-0066"/>
+      <arc id="arc-P0066-Te" source="place-0066" target="e"/>
+      <arc id="arc-Tr-P0067" source="r" target="place-0067"/>
+      <arc id="arc-P0067-Ts" source="place-0067" target="s"/>
+      <arc id="arc-P0067-Tn6" source="place-0067" target="n6"/>
+      <arc id="arc-Tn-P0067" source="n" target="place-0067"/>
+      <arc id="arc-Tn6-P0068" source="n6" target="place-0068"/>
+      <arc id="arc-P0068-Tn7" source="place-0068" target="n7"/>
+      <arc id="arc-P0069-Tr5" source="place-0069" target="r5"/>
+      <arc id="arc-Tuv4-P0069" source="uv4" target="place-0069"/>
+      <arc id="arc-P0069-Tk" source="place-0069" target="k"/>
+      <arc id="arc-Ti-P0069" source="i" target="place-0069"/>
+      <arc id="arc-P0070-Tn8" source="place-0070" target="n8"/>
+      <arc id="arc-Tr-P0070" source="r" target="place-0070"/>
+      <arc id="arc-P0070-Ts" source="place-0070" target="s"/>
+      <arc id="arc-Tn6-P0070" source="n6" target="place-0070"/>
+      <arc id="arc-Tp-P0071" source="p" target="place-0071"/>
+      <arc id="arc-P0071-Tu" source="place-0071" target="u"/>
+      <arc id="arc-P0071-Tv" source="place-0071" target="v"/>
+      <arc id="arc-P0071-Ta" source="place-0071" target="a"/>
+      <arc id="arc-Tt-P0071" source="t" target="place-0071"/>
+      <arc id="arc-Tn8-P0072" source="n8" target="place-0072"/>
+      <arc id="arc-P0072-To" source="place-0072" target="o"/>
+      <arc id="arc-P0072-Tr5" source="place-0072" target="r5"/>
+      <arc id="arc-Ts3-P0072" source="s3" target="place-0072"/>
+      <arc id="arc-Tr-P0073" source="r" target="place-0073"/>
+      <arc id="arc-P0073-Tg" source="place-0073" target="g"/>
+      <arc id="arc-Th9-P0073" source="h9" target="place-0073"/>
+      <arc id="arc-Tf-P0073" source="f" target="place-0073"/>
+      <arc id="arc-P0073-Tt" source="place-0073" target="t"/>
+      <arc id="arc-Tn8-P0074" source="n8" target="place-0074"/>
+      <arc id="arc-P0074-Ts1" source="place-0074" target="s1"/>
+      <arc id="arc-P0074-To" source="place-0074" target="o"/>
+      <arc id="arc-Ts-P0074" source="s" target="place-0074"/>
+      <arc id="arc-Tp-P0075" source="p" target="place-0075"/>
+      <arc id="arc-P0075-Tuv4" source="place-0075" target="uv4"/>
+      <arc id="arc-Tu-P0075" source="u" target="place-0075"/>
+      <arc id="arc-Tv-P0075" source="v" target="place-0075"/>
+      <arc id="arc-P0075-Ta" source="place-0075" target="a"/>
+      <arc id="arc-Tr-P0076" source="r" target="place-0076"/>
+      <arc id="arc-P0076-Ts" source="place-0076" target="s"/>
+      <arc id="arc-Tk10-P0076" source="k10" target="place-0076"/>
+      <arc id="arc-P0076-TE" source="place-0076" target="E"/>
+      <arc id="arc-Tr-P0077" source="r" target="place-0077"/>
+      <arc id="arc-P0077-Tg" source="place-0077" target="g"/>
+      <arc id="arc-P0077-Ts" source="place-0077" target="s"/>
+      <arc id="arc-Th9-P0077" source="h9" target="place-0077"/>
+      <arc id="arc-Tf-P0077" source="f" target="place-0077"/>
+      <arc id="arc-P0078-Tr5" source="place-0078" target="r5"/>
+      <arc id="arc-Tp-P0078" source="p" target="place-0078"/>
+      <arc id="arc-Ts3-P0078" source="s3" target="place-0078"/>
+      <arc id="arc-P0078-Ta" source="place-0078" target="a"/>
+      <arc id="arc-P0079-To" source="place-0079" target="o"/>
+      <arc id="arc-Tr5-P0079" source="r5" target="place-0079"/>
+      <arc id="arc-P0079-TE" source="place-0079" target="E"/>
+      <arc id="arc-Tn7-P0079" source="n7" target="place-0079"/>
+      <arc id="arc-Ts-P0080" source="s" target="place-0080"/>
+      <arc id="arc-P0080-Tuv4" source="place-0080" target="uv4"/>
+      <arc id="arc-Tu-P0080" source="u" target="place-0080"/>
+      <arc id="arc-Tv-P0080" source="v" target="place-0080"/>
+      <arc id="arc-P0080-Ts2" source="place-0080" target="s2"/>
+      <arc id="arc-P0081-Ts1" source="place-0081" target="s1"/>
+      <arc id="arc-Ts-P0081" source="s" target="place-0081"/>
+      <arc id="arc-P0081-Tuv4" source="place-0081" target="uv4"/>
+      <arc id="arc-Tu-P0081" source="u" target="place-0081"/>
+      <arc id="arc-Tv-P0081" source="v" target="place-0081"/>
+      <arc id="arc-Tr-P0082" source="r" target="place-0082"/>
+      <arc id="arc-Tk10-P0082" source="k10" target="place-0082"/>
+      <arc id="arc-P0082-TE" source="place-0082" target="E"/>
+      <arc id="arc-P0082-Tt" source="place-0082" target="t"/>
+      <arc id="arc-P0083-Tr" source="place-0083" target="r"/>
+      <arc id="arc-P0083-Tg" source="place-0083" target="g"/>
+      <arc id="arc-Tp-P0083" source="p" target="place-0083"/>
+      <arc id="arc-Th9-P0083" source="h9" target="place-0083"/>
+      <arc id="arc-Tf-P0083" source="f" target="place-0083"/>
+      <arc id="arc-Ts1-P0084" source="s1" target="place-0084"/>
+      <arc id="arc-P0084-Tn6" source="place-0084" target="n6"/>
+      <arc id="arc-Tn-P0084" source="n" target="place-0084"/>
+      <arc id="arc-P0084-Ts3" source="place-0084" target="s3"/>
+      <arc id="arc-P0085-Tj" source="place-0085" target="j"/>
+      <arc id="arc-P0085-Tu" source="place-0085" target="u"/>
+      <arc id="arc-Te-P0085" source="e" target="place-0085"/>
+      <arc id="arc-P0085-Tv" source="place-0085" target="v"/>
+      <arc id="arc-Td-P0085" source="d" target="place-0085"/>
+      <arc id="arc-Tt-P0085" source="t" target="place-0085"/>
+      <arc id="arc-T22-P0086" source="E" target="place-0086"/>
+    </page>
+  </net>
+</pnml>

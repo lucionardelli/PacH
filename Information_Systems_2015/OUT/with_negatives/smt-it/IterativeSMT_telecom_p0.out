@@ -1,0 +1,19 @@
+
+Statistic of telecom.xes: with negative traces from telecom.xes
+
+    benchmark       ->  Iterative SMT Simplification
+    positive        ->  telecom.xes
+    dimension       ->  42
+    traces          ->  17812
+    events          ->  83286
+    negative        ->  telecom.xes
+    complexity      ->  977
+    effectiveness   ->  1.0
+    exec_time       ->  2016-02-17 15:17:16.013964
+    overall_time    ->  1530.49074483
+    details
+        parse_traces    ->  2.67159199715
+        parse_negatives ->  4.4222099781
+        do_projection   ->  0.318876981735
+        convexHull      ->  0.0158998966217
+        shift&rotate    ->  1523.06216598

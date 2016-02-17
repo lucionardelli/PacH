@@ -1,0 +1,17 @@
+
+Statistic of svn.pnml: with negative traces from 
+
+    benchmark       ->  No SMT Simplification
+    positive        ->  svn.pnml
+    dimension       ->  13
+    traces          ->  0
+    events          ->  0
+    negative        ->  
+    complexity      ->  34
+    effectiveness   ->  1.0
+    exec_time       ->  2016-02-17 16:29:18.270642
+    overall_time    ->  5.00679016113e-06
+    details
+        parse_traces    ->  0
+        convexHull      ->  0
+        simplify        ->  5.00679016113e-06

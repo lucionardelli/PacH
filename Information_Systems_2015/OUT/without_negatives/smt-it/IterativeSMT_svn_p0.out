@@ -1,0 +1,18 @@
+
+Statistic of svn.xes: with negative traces from 
+
+    benchmark       ->  Iterative SMT Simplification
+    positive        ->  svn.xes
+    dimension       ->  13
+    traces          ->  765
+    events          ->  7959
+    negative        ->  
+    complexity      ->  2465
+    effectiveness   ->  0.739352129574
+    exec_time       ->  2016-02-17 16:10:54.768174
+    overall_time    ->  14.808011055
+    details
+        parse_traces    ->  0.152913808823
+        do_projection   ->  0.193416118622
+        convexHull      ->  0.00419497489929
+        shift&rotate    ->  14.4574861526

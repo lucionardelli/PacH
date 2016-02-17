@@ -1,0 +1,17 @@
+
+Statistic of svn.pnml: with negative traces from 
+
+    benchmark       ->  Matrix SMT Simplification
+    positive        ->  svn.pnml
+    dimension       ->  13
+    traces          ->  0
+    events          ->  0
+    negative        ->  
+    complexity      ->  2
+    effectiveness   ->  0.0588235294118
+    exec_time       ->  2016-02-17 16:31:16.784111
+    overall_time    ->  0.371792078018
+    details
+        parse_traces    ->  0
+        convexHull      ->  0
+        shift&rotate    ->  0.371792078018
