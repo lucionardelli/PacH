@@ -221,7 +221,8 @@ class Qhull(object):
                     tmpqhull = Qhull(set())
                     tmpqhull.facets = list(set(facets)-set([facet]))
                     simplify = True
-                    for npoint in self.neg_points:
+                    for nidx, npoint in enumerate(self.neg_points):
+                        logger.info('Trying npoint #%s'%nidx)
                         if npoint in tmpqhull:
                             simplify = False
                             break
@@ -247,8 +248,8 @@ class Qhull(object):
         solver.set("timeout", timeout)
         solver.set("zero_accuracy",10)
 
-        diff_sol = False
-        non_trivial = False
+        diff_sol = z3.Or(False)
+        non_trivial = z3.Or(False)
         A1 = True
         A2 = True
         for p_id, place in enumerate(self.facets):

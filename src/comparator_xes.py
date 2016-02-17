@@ -48,6 +48,8 @@ class ComparatorXes(object):
         self.pach.qhull = qhull
         self.pach.smt_matrix = False
         self.pach.smt_iter = False
+        # Force initial complexity for effectiveness calculation
+        self.pach.initial_complexity = self.comparator.no_smt_initial_complexity
         self.pach.generate_output_file()
         logger.info('Generated output for NO SMT simplification')
         qhull = self.comparator.qhull_smt_iter
@@ -55,6 +57,8 @@ class ComparatorXes(object):
         self.pach.qhull = qhull
         self.pach.smt_matrix = False
         self.pach.smt_iter = True
+        # Force initial complexity for effectiveness calculation
+        self.pach.initial_complexity = self.comparator.iter_initial_complexity
         self.pach.generate_output_file()
         logger.info('Generated output for Iterative SMT simplification')
         qhull = self.comparator.qhull_smt_matrix
@@ -62,6 +66,8 @@ class ComparatorXes(object):
         self.pach.qhull = qhull
         self.pach.smt_matrix = True
         self.pach.smt_iter = False
+        # Force initial complexity for effectiveness calculation
+        self.pach.initial_complexity = self.comparator.matrix_initial_complexity
         self.pach.generate_output_file()
         logger.info('Generated output for Matrix SMT simplification')
         return True

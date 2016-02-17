@@ -12,12 +12,15 @@ class Comparator(object):
         # Hull for NO SMT
         self.max_coef = max_coef
         self.qhull_no_smt = no_smt_qhull
+        self.no_smt_initial_complexity = no_smt_qhull.complexity()
         # Hull for SMT iterative simp
         self.timeout_smt_iter = smt_timeout_iter
         self.qhull_smt_iter =  iter_qhull
+        self.iter_initial_complexity = iter_qhull.complexity()
         # Hull for SMT matrix simp
         self.timeout_smt_matrix = smt_timeout_matrix
         self.qhull_smt_matrix = matrix_qhull
+        self.matrix_initial_complexity = matrix_qhull.complexity()
         assert no_smt_qhull.dim == iter_qhull.dim == matrix_qhull.dim,\
                 'The 3 hulls must have the same dimention'
         self.dim = self.qhull_no_smt.dim
@@ -97,6 +100,8 @@ class Comparator(object):
         pach.qhull = qhull
         pach.smt_matrix = False
         pach.smt_iter = False
+        # Force initial complexity for effectiveness calculation
+        pach.initial_complexity = self.no_smt_initial_complexity
         pach.generate_output_file()
         logger.info('Generated output for NO SMT simplification')
         qhull = self.qhull_smt_iter
@@ -104,6 +109,8 @@ class Comparator(object):
         pach.qhull = qhull
         pach.smt_matrix = False
         pach.smt_iter = True
+        # Force initial complexity for effectiveness calculation
+        pach.initial_complexity = self.iter_initial_complexity
         pach.generate_output_file()
         logger.info('Generated output for Iterative SMT simplification')
         qhull = self.qhull_smt_matrix
@@ -111,6 +118,8 @@ class Comparator(object):
         pach.qhull = qhull
         pach.smt_matrix = True
         pach.smt_iter = False
+        # Force initial complexity for effectiveness calculation
+        pach.initial_complexity = self.matrix_initial_complexity
         pach.generate_output_file()
         logger.info('Generated output for Matrix SMT simplification')
         return True

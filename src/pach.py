@@ -85,6 +85,7 @@ class PacH(object):
             pp_nfile = os.path.basename(nfilename)
         else:
             pp_nfile = ''
+        self.initial_complexity = False
         self.output = { 'positive': pp_file,
                 'negative': pp_nfile,
                 'time': '%s'%datetime.now(),
@@ -92,6 +93,7 @@ class PacH(object):
                 'traces': 0,
                 'events': 0,
                 'complexity': 0,
+                'effectiveness': 0,
                 'benchmark': '',
                 'parse_traces': 0,
                 'compute_hiperspaces': 0,
@@ -202,6 +204,7 @@ class PacH(object):
         if not self._qhull:
             self._qhull = self.get_qhull(self.pv_array)
             self._qhull.prepare_negatives()
+            self.initial_complexity = self._qhull.complexity
         return self._qhull
 
     @qhull.setter
@@ -440,6 +443,7 @@ Statistic of {positive}: with negative traces from {negative}
     events          ->  {events}
     negative        ->  {negative}
     complexity      ->  {complexity}
+    effectiveness   ->  {effectiveness}
     exec_time       ->  {time}
     overall_time    ->  {overall_time}
     details
@@ -478,6 +482,7 @@ Statistic of {positive}: with negative traces from {negative}
         self.output['traces'] = len(self.pv_traces)
         self.output['events'] = sum(sum(trace[-1]) for idc,trace in self.pv_traces.items())
         self.output['complexity'] = self.complexity
+        self.output['effectiveness'] = self.initial_complexity and float(self.complexity) / self.initial_complexity or '-'
         self.output['benchmark'] = benchmark
         self.output['overall_time'] = overall
         def flatten(dictionary):

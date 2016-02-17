@@ -26,7 +26,8 @@ class ComparatorPnml(object):
         self.pach = PacH(filename,nfilename=nfilename)
         self.pach.event_dictionary = parser.event_dictionary
         self.pach.reversed_dictionary = rotate_dict(parser.event_dictionary)
-        self.pach.parse_negatives()
+        if nfilename:
+            self.pach.parse_negatives()
 
         qhull = self.net.get_qhull()
         # Hull for NO SMT
