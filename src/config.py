@@ -28,6 +28,7 @@ KMEANS = 5
 # Configuration file valid options
 CONFIGS = {
     'filename': 'Location of .xes file with traces or .pnml file with Petri net model',
+    'positive_log': 'When parsing from PNML, a xes file can of positive log can be used for sanity check the parsed model',
     'nfilename': 'Negative traces file location',
     'samp_num': 'Number of samples to take (Default no sample, use all elements)',
     'samp_size': 'Number of elementes to take on each sample (No default)',

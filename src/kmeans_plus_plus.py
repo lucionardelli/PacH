@@ -47,6 +47,8 @@ class KMeans(object):
         K = self.K
         self.init_centers()
         self.oldmu = random.sample(X, K)
+        # Assign all points in X to clusters at least once
+        self._cluster_points()
         while not self._has_converged():
             self.oldmu = self.mu
             # Assign all points in X to clusters

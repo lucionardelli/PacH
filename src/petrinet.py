@@ -129,6 +129,8 @@ class PetriNet(object):
             hs = Halfspace(facet['normal'], facet['offset'], integer_vals=False)
             logger.debug('Adding facet %s',hs)
             facets.append(hs)
+        # Remove duplicate facets
+        facets = list(set(facets))
         qhull.dim = dim
         qhull.facets = facets
         return qhull

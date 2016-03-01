@@ -204,7 +204,7 @@ class PacH(object):
         if not self._qhull:
             self._qhull = self.get_qhull(self.pv_array)
             self._qhull.prepare_negatives()
-            self.initial_complexity = self._qhull.complexity
+            self.initial_complexity = self._qhull.complexity()
         return self._qhull
 
     @qhull.setter
@@ -482,7 +482,10 @@ Statistic of {positive}: with negative traces from {negative}
         self.output['traces'] = len(self.pv_traces)
         self.output['events'] = sum(sum(trace[-1]) for idc,trace in self.pv_traces.items())
         self.output['complexity'] = self.complexity
-        self.output['effectiveness'] = self.initial_complexity and float(self.complexity) / self.initial_complexity or '-'
+        if self.initial_complexity:
+            self.output['effectiveness'] = 1 - (float(self.complexity) / self.initial_complexity)
+        else:
+            self.output['effectiveness'] = '-'
         self.output['benchmark'] = benchmark
         self.output['overall_time'] = overall
         def flatten(dictionary):
