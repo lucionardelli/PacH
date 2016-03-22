@@ -30,7 +30,10 @@ class PnmlParser(object):
         # Iteramos sobre todas las trazas
 
         net_node = self.root.find('{*}net')
-        net_name = net_node.find('{*}name/{*}text').text
+        try:
+        	net_name = net_node.find('{*}name/{*}text').text
+        except:
+        	net_name = 'unknown'
         net_id = net_node.get('id')
 
         net = PetriNet(net_id=net_id,name=net_name,filename=self.filename)
@@ -49,8 +52,8 @@ class PnmlParser(object):
         dim = 0
         for tr_node in net_node.iter('{*}transition'):
             dim += 1
-            tr_id = tr_node.get('id')
-            label = tr_node.find('{*}name/{*}text').text
+            tr_id = tr_node.get('id') # !! take care !!
+            label = tr_node.find('{*}name/{*}text').text.replace('+complete', '') # !! take care !!
             if label not in self.event_dictionary:
                 self.event_dictionary[label] = len(self.event_dictionary)
             tr = Transition(net, tr_id, label=label)
@@ -63,7 +66,7 @@ class PnmlParser(object):
             from_id = arc_node.get('source')
             to_id = arc_node.get('target')
             try:
-                value = int(arc_node.find('{*}value/{*}text').text)
+                value = int(arc_node.find('{*}inscription/{*}text').text)
             except:
                 # Arcs whith value 1 does not specify value
                 value = 1

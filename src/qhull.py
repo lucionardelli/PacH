@@ -81,12 +81,14 @@ class Qhull(object):
 
     @stopwatch
     def prepare_negatives(self):
-        positive_points = len(self.points)
         actual_neg_points = []
+        removed = 0
+        print 'prepare_negatives starts',len(self.neg_points)
         for npoint in self.neg_points:
             if npoint not in self:
                 actual_neg_points.append(npoint)
-                positive_points -= 1
+                removed += 1
+        if removed: print 'prepare_negatives removed',removed
         self.neg_points = actual_neg_points
 
     def union(self, facets):
@@ -120,7 +122,8 @@ class Qhull(object):
         positions = []
         for point in points:
             if len(point) != self.dim:
-                raise ValueError("Convex Hulls and points must live in the same"\
+            	print len(point), "vs", self.dim
+            	raise ValueError("Convex Hulls and points must live in the same"\
                         " dimension!")
             if point in self:
                 inside.append(point)
@@ -212,24 +215,24 @@ class Qhull(object):
         popped = 0
         if len(self.neg_points):
             for idx,facet in enumerate(self.facets):
-                # If the max coef is inside the expected
-                # we don't try to remove it
-                if max_coef and len([x for x in facet.normal + [facet.offset]\
-                        if abs(x) > max_coef]) > 0:
-                    # Create a dummy hull to temporaly store the facets
-                    # of the original hull except for the candidate to be deleted
+                flen = len([x for x in facet.normal + [facet.offset] if abs(x) > max_coef])
+                logger.info('Trying facet %s %s' % (idx,facet))
+                logger.info('MC and FLEN is %s %s' % (max_coef,flen))
+                if True: ######max_coef and flen > 0:
+                    logger.info('Check ok')
                     tmpqhull = Qhull(set())
                     tmpqhull.facets = list(set(facets)-set([facet]))
                     simplify = True
                     for nidx, npoint in enumerate(self.neg_points):
-                        logger.info('Trying npoint #%s'%nidx)
                         if npoint in tmpqhull:
                             simplify = False
+                            logger.info('Failed due to '+str(nidx))
                             break
                     if simplify:
                         facets.pop(idx - popped)
                         popped += 1
             logger.info('Popped %d facets using negative info',popped)
+        else: print "NOSMT no negative points around hull!"
         self.facets = facets
 
     def complexity(self):
@@ -252,6 +255,9 @@ class Qhull(object):
         non_trivial = z3.Or(False)
         A1 = True
         A2 = True
+        pos_x = True
+        variables = []
+            
         for p_id, place in enumerate(self.facets):
             b = place.offset
             smt_b = z3.Int("b%s"%(p_id))
@@ -275,9 +281,14 @@ class Qhull(object):
                 some_consume = False
             h1 = b
             h2 = smt_b
-            variables = []
+            # NEW:
+            if sum(abs(x) for x in place.normal) == 0: continue
             for t_id, val in enumerate(place.normal):
-                smt_val = z3.Int("a%s-%s"%(p_id,t_id))
+                # NEW:
+            	if not val:
+                	solver.add(z3.Int("a%s-%s"%(p_id,t_id)) == 0)
+                	continue
+            	smt_val = z3.Int("a%s-%s"%(p_id,t_id))
                 x = z3.Int("x%s"%(t_id))
                 variables.append(x)
                 pos_x = z3.And(pos_x, x >= 0)
@@ -302,22 +313,27 @@ class Qhull(object):
                 solver.add(z3.simplify(some_produce))
             A1 = z3.And(A1, h1 <= 0)
             A2 = z3.And(A2, h2 <= 0)
-        solver.add(z3.simplify(non_trivial))
-        solver.add(z3.simplify(diff_sol))
+        
+        if not len(list(self.neg_points)):    
+        	solver.add(z3.simplify(non_trivial))
+        	
+        if str(z3.simplify(diff_sol)) != False: solver.add(z3.simplify(diff_sol))
         solver.add(z3.simplify(z3.ForAll(variables, z3.Implies(z3.And(pos_x, A1), A2))))
+        
         # non negative point shouldn't be a solution
-        #for np in list(self.neg_points)[:min(100,len(self.neg_points))]:
         for np in list(self.neg_points):
-            smt_np = False
             for p_id, place in enumerate(self.facets):
-                ineq_np = place.offset
+                smt_np = False
+            	ineq_np = place.offset
                 for t_id, val in enumerate(place.normal):
                     if np[t_id]:
                         z3_var = z3.Int("a%s-%s"%(p_id,t_id))
                         ineq_np = ineq_np + z3_var * np[t_id]
-                smt_np = z3.simplify(z3.Or(smt_np, ineq_np > 0))
-            solver.add(smt_np)
+            	smt_np = z3.simplify(z3.Or(smt_np, ineq_np > 0))
+            	if str(smt_np) != 'False': solver.add(smt_np)
         sol = solver.check()
+        
+        if sol == z3.unknown: print sol
         if sol == z3.unsat or sol == z3.unknown:
             ret = False
         else:
@@ -334,23 +350,24 @@ class Qhull(object):
                 for t_id, val in enumerate(place.normal):
                     smt_val = z3.Int("a%s-%s"%(p_id,t_id))
                     normal.append(int(str(sol[smt_val] or 0)))
-                if sum(abs(x) for x in normal) != 0:
+                if True or sum(abs(x) for x in normal) != 0:
                     f = Halfspace(normal, b, integer_vals=False)
                     if not f in facets:
                         facets.append(f)
             self.facets = facets
 
     @stopwatch
-    def smt_hull_simplify(self,timeout=0):
+    def smt_hull_simplify(self,timeout=300):
         sol = self.smt_solution(timeout)
         while sol:
             self.smt_simplify(sol)
             sol = self.smt_solution(timeout)
 
     @stopwatch
-    def smt_facet_simplify(self,timeout=0):
-        for facet in self.facets:
-            facet.smt_facet_simplify(neg_points=self.neg_points,timeout=timeout)
+    def smt_facet_simplify(self,timeout=300):
+        for faceti in range(len(self.facets)):
+            if faceti < 10 or faceti % 100 == 0: print faceti,'/',len(self.facets)
+            self.facets[faceti].smt_facet_simplify(neg_points=self.neg_points,timeout=timeout)
 
 if __name__ == '__main__':
     import sys, traceback,pdb

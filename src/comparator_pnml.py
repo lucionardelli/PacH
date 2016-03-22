@@ -30,14 +30,13 @@ class ComparatorPnml(object):
         if nfilename:
             self.pach.parse_negatives()
 
-        qhull = self.net.get_qhull(neg_points=self.pach.npv_set)
-        qhull.prepare_negatives()
+        qhull = self.net.get_qhull()
         # Hull for NO SMT
         qhull_no_smt = copy.deepcopy(qhull)
         # Hull for SMT iterative simp
         qhull_smt_iter = copy.deepcopy(qhull)
         # Hull for SMT matrix simp
-        qhull_smt_matrix = qhull
+        qhull_smt_matrix = copy.deepcopy(qhull)
 
         self.comparator = Comparator(qhull_no_smt, qhull_smt_iter, qhull_smt_matrix,
                 max_coef, smt_timeout_iter, smt_timeout_matrix)
@@ -54,7 +53,7 @@ class ComparatorPnml(object):
 
     def generate_outputs(self):
         # For every benchmark, generate the output
-        return self.comparator.generate_outputs(pach=self.pach)
+        return self.comparator.generate_outputs(filename=self.filename)
 
     def check_hull(self):
         if self.positive_log:

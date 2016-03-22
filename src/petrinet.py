@@ -62,12 +62,19 @@ class PetriNet(object):
             place_init_mark_text.text = str(pl.marking)
 
         for arc in self.arcs:
-            arc_node = etree.SubElement(page, 'arc', id=arc.id,
-                    source=arc.source.id, target=arc.destination.id)
+            if arc.source is None or arc.destination is None:
+                print " --- INVALID ARC ENCOUNTERED! ",arc.id,arc.source,arc.destination
+                continue
+            arc_node = etree.SubElement(page, 'arc', id=arc.id, source=arc.source.id, target=arc.destination.id)
             if arc.value > 1:
-                arc_value = etree.SubElement(arc_node, 'value')
-                arc_value_text = etree.SubElement(arc_value, 'text')
-                arc_value_text.text = str(arc.value)
+                #arc_value = etree.SubElement(arc_node, 'value')
+                #arc_value_text = etree.SubElement(arc_value, 'text')
+                #arc_value_text.text = str(arc.value)
+                arc_inscription = etree.SubElement(arc_node, 'inscription')
+                #arc_inscription_value = etree.SubElement(arc_inscription, 'value')
+                #arc_inscription_value.text = str(arc.value)
+                arc_inscription_text = etree.SubElement(arc_inscription, 'text')
+                arc_inscription_text.text = str(arc.value)
         tree = etree.ElementTree(element=pnml)
         tree.write(filename or self.filename, encoding="utf-8",
                 xml_declaration=True, method="xml", pretty_print=True)

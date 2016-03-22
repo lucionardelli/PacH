@@ -13,7 +13,7 @@ TOLERANCE =0.0001
 
 LOG_CONFIG = {
     'level': logging.DEBUG,
-    'filename': '/var/log/pach/pach.log',
+    'filename': 'pach.log',
     'filemode': 'a',
     'format': '%(asctime)s %(levelname)-8s %(message)s',
     'datefmt': '%a, %d %b %Y %H:%M:%S',

@@ -12,11 +12,14 @@ import numpy as np
 from random import sample
 from datetime import datetime
 import os
+import copy
 
 from custom_exceptions import CannotGetHull, WrongDimension, CannotIntegerify
 from sampling import sampling
 from projection import projection
 from stopwatch_wrapper import stopwatch
+
+import pnml
 
 from config import logger
 
@@ -27,7 +30,7 @@ class PacH(object):
             nfilename=None, max_coef=10,
             smt_matrix=False,
             smt_iter=False,
-            smt_timeout=0,
+            smt_timeout=300,
             sanity_check=False):
         # El archivo de trazas
         logger.info('Positive traces file: %s', filename)
@@ -133,31 +136,36 @@ class PacH(object):
 
     @stopwatch
     def parse_traces(self):
-        if self.verbose:
-            print 'Starting parse\n'
-            start_time = time.time()
         if self.filename.endswith('.xes'):
             parser = XesParser(self.filename)
-        elif self.filename.endswith('.txt'):
-            parser = AdHocParser(self.filename)
+            parser.parikhs_vector()
+            self.event_dictionary = parser.event_dictionary
+            self.reversed_dictionary = rotate_dict(parser.event_dictionary)
+            self.pv_traces = parser.pv_traces
+            self.pv_set = parser.pv_set
+            self.pv_array = parser.pv_array
+            self.dim = parser.dim
+        elif self.filename.endswith('.pnml'):
+            parser = pnml.PnmlParser(self.filename)
+            parser.parse()
+            self.parsed_petrinet = parser.petrinet
+            self.event_dictionary = parser.event_dictionary
+            self.reversed_dictionary = rotate_dict(parser.event_dictionary)
+            self.dim = parser.dim
+            return
         else:
             logger.error("Error in file %s extension. Only '.xes' and '.txt'"\
                     " are allowed!",(self.filename or ''))
             raise Exception("Error in file %s extension. Only '.xes' and '.txt'"\
                     " are allowed!"%(self.filename or ''))
-        parser.parikhs_vector()
-        self.event_dictionary = parser.event_dictionary
-        self.reversed_dictionary = rotate_dict(parser.event_dictionary)
-        self.pv_traces = parser.pv_traces
-        self.pv_set = parser.pv_set
-        self.pv_array = parser.pv_array
-        self.dim = parser.dim
-        if self.verbose:
-            print 'Parse done\n'
-            elapsed_time = time.time() - start_time
-            print '# RESULTADO  obtenido en: ', elapsed_time
-            print '#'*40+'\n'
-
+                    
+    def _check_hull(self):
+        basename = os.path.basename(self.filename.replace('.xes', '').replace('.pnml', ''))
+        log_file = '/home/seppe/Desktop/2015-Information-Systems/Experiments/logs/' + basename + '.xes'
+        print " *** Performing check:", log_file
+        res = self.qhull.all_in_file(log_file, event_dictionary=self.event_dictionary)
+        if not res: print "!!!!!!!-- PETRI NET MIGHT HAVE BEEN PARSED INCORRECTLY --!!!!!!!"
+        
     def parse(self):
         self.parse_traces()
         if self.nfilename:
@@ -230,9 +238,6 @@ class PacH(object):
     def no_smt_simplify(self):
         if self.nfilename and not self.smt_matrix and not self.smt_iter:
             logger.debug('Starting to simplify model from negative points')
-            if self.verbose:
-                print 'Starting to simplify model from negative points\n'
-                start_time = time.time()
             old_len = len(self.facets)
             self.qhull.no_smt_simplify(max_coef=self.max_coef)
             removed = old_len - len(self.facets)
@@ -240,32 +245,11 @@ class PacH(object):
                 logger.debug('We removed %d facets without allowing negative points',removed)
             else:
                 logger.debug("Couldn't simplify model without adding negative points")
-            if self.verbose:
-                elapsed_time = time.time() - start_time
-                print 'Ended simplify from negative points\n'
-                print '# RESULTADO  obtenido en: ', elapsed_time
-                if removed:
-                    print 'We removed %d facets without allowing negative points' % removed
-                else:
-                    print "Couldn't simplify model without adding negative points"
-                print '#'*40+'\n'
 
     def model(self, points=None):
-        if self.verbose:
-            print 'Starting modeling\n'
-            start_time = time.time()
         # The actual work is done when accesing self.facets
         facets = self.facets
-        if self.verbose:
-            print "Ended with MCH with ",len(facets)," halfspaces"
-            print 'This are them:\n'
-            for facet in facets:print facet
         logger.info("Ended with MCH with %s halfspaces",len(facets))
-        if self.verbose:
-            elapsed_time = time.time() - start_time
-            print 'Modeling done\n'
-            print '# RESULTADO  obtenido en: ', elapsed_time
-            print '#'*40+'\n'
 
     def smt_simplify(self):
         if self.smt_matrix:
@@ -282,7 +266,18 @@ class PacH(object):
         logger.debug('Starting parsing')
         self.parse()
         logger.debug('Starting modeling')
-        self.model()
+        if self.filename.endswith('.pnml'):
+            self._qhull = copy.deepcopy(self.parsed_petrinet.get_qhull(neg_points=list(self.npv_set)))
+            #self._qhull = copy.deepcopy(self.parsed_petrinet.get_qhull())
+			#self._qhull.compute_hiperspaces()
+            self._qhull.prepare_negatives()
+            self.initial_complexity = self._qhull.complexity()
+            self.dim = self._qhull.dim
+            print "Initial:",self.initial_complexity
+            #self._check_hull()
+        else:
+            self._qhull = None
+            self.model()
         # Remove unnecesary facets wrt neg traces (if any)
         self.no_smt_simplify()
         # Remove unnecesary facets wrt neg traces
@@ -454,9 +449,9 @@ Statistic of {positive}: with negative traces from {negative}
         if self.samp_num > 1:
             output +="""\n        do_sampling     ->  {do_sampling}"""
             overall += times.get('do_sampling')
-        if self.proj_size is not None:
+        if self.proj_size is not None and times.get('do_projection') is not None:
             output +="""\n        do_projection   ->  {do_projection}"""
-            overall += times.get('do_projection')
+            overall += times.get('do_projection') if times.get('do_projection') is not None else 0
         output +="""\n        convexHull      ->  {compute_hiperspaces}"""
 
         if self.smt_matrix:

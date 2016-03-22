@@ -90,11 +90,10 @@ class Comparator(object):
         self.neg_simp_smt_matrix()
         return self.complexity()
 
-    def generate_outputs(self, filename='', pach=None):
+    def generate_outputs(self, filename=''):
         filename = filename or 'Generated automagically'
-        if not pach:
-            pach = PacH(filename,nfilename=nfilename)
-            pach.dim = self.dim
+        pach = PacH(filename)
+        pach.dim = self.dim
         # For every benchmark, generate the output
         qhull = self.qhull_no_smt
         pach.output.get('times',{}).update(qhull.output.get('times',{}))
