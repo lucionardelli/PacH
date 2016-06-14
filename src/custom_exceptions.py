@@ -10,12 +10,6 @@ class IncorrectOutput(Exception):
 class WrongDimension(Exception):
     pass
 
-class CannotGetClusters(Exception):
-    pass
-
-class CannotProject(Exception):
-    pass
-
 class CannotIntegerify(Exception):
     pass
 

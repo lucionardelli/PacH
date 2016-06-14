@@ -23,14 +23,17 @@ class ComparatorPnml(object):
         self.positive_log = positive_log
 
         # Helper pach. Doesn't actually compute hull
-        self.pach = PacH(filename,nfilename=nfilename)
+        self.pach = PacH(filename, nfilename=nfilename)
         self.pach.event_dictionary = parser.event_dictionary
         self.pach.dim = self.dim
         self.pach.reversed_dictionary = rotate_dict(parser.event_dictionary)
         if nfilename:
             self.pach.parse_negatives()
 
-        qhull = self.net.get_qhull()
+        #qhull = self.net.get_qhull()
+# TODO WTF!?
+        qhull = self.net.get_qhull(neg_points=self.pach.npv_set)
+        qhull.prepare_negatives()
         # Hull for NO SMT
         qhull_no_smt = copy.deepcopy(qhull)
         # Hull for SMT iterative simp
@@ -65,7 +68,8 @@ if __name__ == '__main__':
     from mains import pnml_comparator_main
     try:
         pnml_comparator_main()
-    except:
+    except Exception, err:
+        logger.error('Error: %s' % err, exc_info=True)
         type, value, tb = sys.exc_info()
         traceback.print_exc()
         #pdb.post_mortem(tb)

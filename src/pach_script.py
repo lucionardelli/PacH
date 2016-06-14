@@ -50,6 +50,7 @@ def main(*args, **kwargs):
                 print 'Error: ', err.message
             else:
                 print 'Error: ', err
+            logger.error('Error: %s' % err, exc_info=True)
             raise err
         return ret
 

@@ -1,7 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8
+
 from qhull import Qhull
-from parser import XesParser, AdHocParser
+#from smt_hull import SMTHull as Qhull
+from parser import XesParser
+from text_parser import AdHocParser
+from pnml import PnmlParser
 from negative_parser import NegativeParser
 from corrmatrix import CorrMatrix
 from halfspace import Halfspace
@@ -17,14 +21,15 @@ import copy
 from custom_exceptions import CannotGetHull, WrongDimension, CannotIntegerify
 from sampling import sampling
 from projection import projection
-from stopwatch_wrapper import stopwatch
+from stopwatch import StopWatchObj
+
 
 import pnml
 
 from config import logger
 
-class PacH(object):
-    def __init__(self, filename, verbose=False,
+class PacH(StopWatchObj):
+    def __init__(self, filename,
             samp_num=1, samp_size=None,
             proj_size=None, proj_connected=True,
             nfilename=None, max_coef=10,
@@ -32,13 +37,13 @@ class PacH(object):
             smt_iter=False,
             smt_timeout=300,
             sanity_check=False):
+        super(PacH,self).__init__()
         # El archivo de trazas
         logger.info('Positive traces file: %s', filename)
         self.filename = filename
         # El archivo de trazas negativas (if any)
         self.nfilename = nfilename
         logger.info('Negative traces file: %s', nfilename)
-        self.verbose = verbose
         # Referentes a las trazas
         self.pv_traces = {}
         self.pv_set = set()
@@ -89,12 +94,13 @@ class PacH(object):
         else:
             pp_nfile = ''
         self.initial_complexity = False
-        self.output = { 'positive': pp_file,
+        self.output = {'positive': pp_file,
                 'negative': pp_nfile,
                 'time': '%s'%datetime.now(),
                 'dimension': 0,
                 'traces': 0,
                 'events': 0,
+                'initial_complexity': 0,
                 'complexity': 0,
                 'effectiveness': 0,
                 'benchmark': '',
@@ -103,16 +109,13 @@ class PacH(object):
                 'overall_time': 0,
                 'times': {}}
 
-    @stopwatch
+    @StopWatchObj.stopwatch
     def parse_negatives(self):
         if not self.nfilename:
             logger.error('No se ha especificado un archivo '\
                     'de trazas negativas!')
             raise Exception('No se ha especificado un archivo '\
                     'de trazas negativas!')
-        if self.verbose:
-            print 'Starting parse of negative traces\n'
-            start_time = time.time()
         if self.nfilename.endswith('.xes'):
             parser = NegativeParser(self.nfilename,
                     required_dimension=self.dim,
@@ -128,44 +131,32 @@ class PacH(object):
         self.npv_traces = parser.pv_traces
         self.npv_set = parser.pv_set
         self.npv_array = parser.pv_array
-        if self.verbose:
-            print 'Parse of negative traces done\n'
-            elapsed_time = time.time() - start_time
-            print '# RESULTADO  obtenido en: ', elapsed_time
-            print '#'*40+'\n'
 
-    @stopwatch
+    @StopWatchObj.stopwatch
     def parse_traces(self):
         if self.filename.endswith('.xes'):
             parser = XesParser(self.filename)
+        elif self.filename.endswith('.txt'):
+            parser = AdHocParser(self.filename)
+        elif self.filename.endswith('.pnml'):
+            parser = PnmlParser(self.filename)
+        else:
+            logger.error("Error in file %s extension. Only '.xes', '.pnml' and '.txt'"\
+                    " are allowed!",(self.filename or ''))
+            raise Exception("Error in file %s extension. Only '.xes', '.pnml' and '.txt'"\
+                    " are allowed!"%(self.filename or ''))
+        parser.parse()
+        self.event_dictionary = parser.event_dictionary
+        self.reversed_dictionary = rotate_dict(parser.event_dictionary)
+        if self.filename.endswith('.pnml'):
+            self.parsed_petrinet = parser.petrinet
+        else:
             parser.parikhs_vector()
-            self.event_dictionary = parser.event_dictionary
-            self.reversed_dictionary = rotate_dict(parser.event_dictionary)
             self.pv_traces = parser.pv_traces
             self.pv_set = parser.pv_set
             self.pv_array = parser.pv_array
-            self.dim = parser.dim
-        elif self.filename.endswith('.pnml'):
-            parser = pnml.PnmlParser(self.filename)
-            parser.parse()
-            self.parsed_petrinet = parser.petrinet
-            self.event_dictionary = parser.event_dictionary
-            self.reversed_dictionary = rotate_dict(parser.event_dictionary)
-            self.dim = parser.dim
-            return
-        else:
-            logger.error("Error in file %s extension. Only '.xes' and '.txt'"\
-                    " are allowed!",(self.filename or ''))
-            raise Exception("Error in file %s extension. Only '.xes' and '.txt'"\
-                    " are allowed!"%(self.filename or ''))
-                    
-    def _check_hull(self):
-        basename = os.path.basename(self.filename.replace('.xes', '').replace('.pnml', ''))
-        log_file = '/home/seppe/Desktop/2015-Information-Systems/Experiments/logs/' + basename + '.xes'
-        print " *** Performing check:", log_file
-        res = self.qhull.all_in_file(log_file, event_dictionary=self.event_dictionary)
-        if not res: print "!!!!!!!-- PETRI NET MIGHT HAVE BEEN PARSED INCORRECTLY --!!!!!!!"
-        
+        self.dim = parser.dim
+
     def parse(self):
         self.parse_traces()
         if self.nfilename:
@@ -210,31 +201,40 @@ class PacH(object):
     @property
     def qhull(self):
         if not self._qhull:
-            self._qhull = self.get_qhull(self.pv_array)
+            if self.filename.endswith('.pnml'):
+                self._qhull = self.parsed_petrinet.get_qhull(neg_points=self.npv_set)
+                self.dim = self._qhull.dim
+            else:
+                self._qhull = self.get_qhull(self.pv_array)
             self._qhull.prepare_negatives()
             self.initial_complexity = self._qhull.complexity()
         return self._qhull
 
+
     @qhull.setter
     def qhull(self, qhull):
         self._qhull = qhull
+        self.initial_complexity = self._qhull.complexity()
         return self._qhull
 
     @property
     def facets(self):
         return self.qhull.facets
 
-    @stopwatch
+    @StopWatchObj.stopwatch
     @sampling
     @projection
     def get_qhull(self, points):
-        points = set(map(tuple, points))
-        qhull = Qhull(points, neg_points=list(self.npv_set))
-        qhull.compute_hiperspaces()
+        if self.filename.endswith('.pnml'):
+            qhull = self.parsed_petrinet.get_qhull(neg_points=self.npv_set)
+        else:
+            points = set(map(tuple, points))
+            qhull = Qhull(points, neg_points=self.npv_set)
+            qhull.compute_hiperspaces()
         self.output['times'].update(qhull.output.get('times',{}))
         return qhull
 
-    @stopwatch
+    @StopWatchObj.stopwatch
     def no_smt_simplify(self):
         if self.nfilename and not self.smt_matrix and not self.smt_iter:
             logger.debug('Starting to simplify model from negative points')
@@ -284,10 +284,8 @@ class PacH(object):
         # Apply smt_simplify.
         # Options are on the hull level, on every facet or none
         self.smt_simplify()
-        complexity = self.complexity
-        self.output['complexity'] = complexity
         self.generate_output_file()
-        return complexity
+        return self.complexity
 
     def get_def_pnml_name(self, extension='pnml'):
         # Tomo el archivo de entrada y le quito la extensión '.xes' si la tiene
@@ -305,14 +303,13 @@ class PacH(object):
         def_name = '%s.%s'%(def_name+opts,extension)
         return def_name
 
-    @stopwatch
+    @StopWatchObj.stopwatch
     def generate_pnml(self, filename=None):
-        if not filename:
-            filename = self.get_def_pnml_name()
+        filename = filename or self.get_def_pnml_name()
         net_name = os.path.basename(filename)
         net_id = net_name.replace(' ','_').lower()
 
-        net = PetriNet(net_id=net_id,name=net_name,filename=filename)
+        net = PetriNet(net_id=net_id,name=net_name)
         # Comenzamos con los Places (i.e. un place por cada inecuación)
         nbr_places = 0
         places_list = []
@@ -420,7 +417,7 @@ class PacH(object):
                 # especie de "/dev/null" donde tirar los markings generados
                 arc_id = 'arc-T%s-P%04d'%(tr_id,pl_id)
                 Arc(net, arc_id, transition_id,place_id, 1)
-        net.save()
+        net.save(filename=filename)
         logger.info('Generated the PNML %s', filename)
         return True
 
@@ -437,6 +434,7 @@ Statistic of {positive}: with negative traces from {negative}
     traces          ->  {traces}
     events          ->  {events}
     negative        ->  {negative}
+    initial_complexity      ->  {initial_complexity}
     complexity      ->  {complexity}
     effectiveness   ->  {effectiveness}
     exec_time       ->  {time}
@@ -445,30 +443,30 @@ Statistic of {positive}: with negative traces from {negative}
         parse_traces    ->  {parse_traces}"""
         if self.nfilename:
             output +="""\n        parse_negatives ->  {parse_negatives}"""
-            overall += times.get('parse_negatives')
+            overall += times.get('parse_negatives',0)
         if self.samp_num > 1:
             output +="""\n        do_sampling     ->  {do_sampling}"""
-            overall += times.get('do_sampling')
-        if self.proj_size is not None and times.get('do_projection') is not None:
+            overall += times.get('do_sampling',0)
+        if self.proj_size is not None and times.get('do_projection'):
             output +="""\n        do_projection   ->  {do_projection}"""
-            overall += times.get('do_projection') if times.get('do_projection') is not None else 0
+            overall += times.get('do_projection',0)
         output +="""\n        convexHull      ->  {compute_hiperspaces}"""
 
         if self.smt_matrix:
             benchmark = 'Matrix SMT Simplification'
             outfile = 'MatrixSMT_' + outfile
             output +="""\n        shift&rotate    ->  {smt_hull_simplify}"""
-            overall += times.get('smt_hull_simplify')
+            overall += times.get('smt_hull_simplify',0)
         elif self.smt_iter:
             benchmark = 'Iterative SMT Simplification'
             outfile = 'IterativeSMT_' + outfile
             output +="""\n        shift&rotate    ->  {smt_facet_simplify}"""
-            overall += times.get('smt_facet_simplify')
+            overall += times.get('smt_facet_simplify',0)
         else:
             benchmark = 'No SMT Simplification'
             outfile = 'NoSMT_' + outfile
             output +="""\n        simplify        ->  {no_smt_simplify}"""
-            overall += times.get('no_smt_simplify')
+            overall += times.get('no_smt_simplify',0)
 
         for k in ('parse_traces', 'compute_hiperspaces'):
             overall += times.get(k,0)
@@ -476,6 +474,7 @@ Statistic of {positive}: with negative traces from {negative}
         self.output['dimension'] = self.dim
         self.output['traces'] = len(self.pv_traces)
         self.output['events'] = sum(sum(trace[-1]) for idc,trace in self.pv_traces.items())
+        self.output['initial_complexity'] = self.initial_complexity or '-'
         self.output['complexity'] = self.complexity
         if self.initial_complexity:
             self.output['effectiveness'] = 1 - (float(self.complexity) / self.initial_complexity)
@@ -500,7 +499,8 @@ if __name__ == '__main__':
     from mains import pach_main
     try:
         pach_main()
-    except:
+    except Exception, err:
+        logger.error('Error: %s' % err, exc_info=True)
         type, value, tb = sys.exc_info()
         traceback.print_exc()
         #pdb.post_mortem(tb)

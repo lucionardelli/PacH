@@ -2,15 +2,14 @@
 # -*- coding: UTF-8
 import numpy as np
 from corrmatrix import CorrMatrix
-#from kmeans import two_means
-from kmeans_plus_plus import two_means
+from kmeans import two_means
 
-from stopwatch_wrapper import stopwatch
+from stopwatch import StopWatchObj
 from config import *
 
 def projection(func):
 
-    @stopwatch
+    @StopWatchObj.stopwatch
     def do_projection(self, points, *args, **kwargs):
         # Calculamos la matrix de correlaciones
         points = np.array(list(points))
@@ -91,7 +90,7 @@ def projection(func):
                     assert qhull.all_in(self.pv_set)
 
                 # Actualizamos la matriz poniendo en 0 los valores usados
-                corr.update(projected)
+                corr.to_zero(projected)
 
                 if not corr.matrix.any():
                     logger.info('The model is all projected, '\
@@ -138,7 +137,7 @@ def projection(func):
                             assert qhull.all_in(self.pv_set)
 
                         # Actualizamos la matriz poniendo en 0 los valores usados
-                        corr2.update(projected)
+                        corr2.to_zero(projected)
                         connections_count += 1
                     except Exception, err:
                         break

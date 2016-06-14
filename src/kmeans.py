@@ -1,62 +1,93 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8
-import numpy as np
 import random
-from custom_exceptions import CannotGetClusters
+import numpy as np
 
 from config import *
 
-def cluster_points(X, mu):
-    clusters  = {}
-    for x in X:
-        bestmukey = min([(i[0], np.linalg.norm(x-mu[i[0]])) \
-                    for i in enumerate(mu)], key=lambda t:t[1])[0]
-        cluster = clusters.setdefault(bestmukey,[])
-        cluster.append(x)
-    return clusters
+class KMeans(object):
+    def __init__(self, K, X):
+        self.K = K
+        self.X = X
+        self.N = len(X)
+        self.mu = None
+        self.clusters = {}
 
-def reevaluate_centers(mu, clusters):
-    newmu = []
-    keys = sorted(clusters.keys())
-    for k in keys:
-        newmu.append(np.mean(clusters[k], axis = 0))
-    return newmu
+    def _cluster_points(self):
+        mu = self.mu
+        clusters  = {}
+        for x in self.X:
+            bestmukey = min([(i[0], np.linalg.norm(x-mu[i[0]])) \
+                             for i in enumerate(mu)], key=lambda t:t[1])[0]
+            try:
+                clusters[bestmukey].append(x)
+            except KeyError:
+                clusters[bestmukey] = [x]
+        self.clusters = clusters
 
-def has_converged(mu, oldmu):
-    return set(mu) == set(oldmu) and len(set(mu)) == len(oldmu)
+    def _reevaluate_centers(self):
+        clusters = self.clusters
+        newmu = []
+        for k in sorted(self.clusters.keys()):
+            newmu.append(np.mean(clusters[k], axis=0))
+        self.mu = newmu
 
-def find_centers(X, K, oldmu=None, mu=None):
-    # X tiene que ser una lista de np.array
-    # K es el número de clusters a generar
-    # Initialize to K random centers
-    if oldmu is None:
-        oldmu = random.sample(X, K)
-    if mu is None:
-        mu = random.sample(X, K)
-    clusters = {}
-    while not has_converged(mu, oldmu):
-        oldmu = mu
-        # Assign all points in X to clusters
-        clusters = cluster_points(X, mu)
-        # Reevaluate centers
-        mu = reevaluate_centers(oldmu, clusters)
-    return(mu, clusters)
+    def _has_converged(self):
+        K = len(self.oldmu)
+        return(set([tuple(a) for a in self.mu]) == \
+               set([tuple(a) for a in self.oldmu])\
+               and len(set([tuple(a) for a in self.mu])) == K)
 
-def two_means(points,max_size=None,min_size=None):
-    points = [abs(x) for x in points]
-    # Como comenzamos con centroides random, puede fallar
-    retries = KMEANS
-    clusters = []
+    def init_centers(self):
+        self.mu = random.sample(X, K)
+
+    def find_centers(self, method='random'):
+        X = self.X
+        K = self.K
+        self.init_centers()
+        self.oldmu = random.sample(X, K)
+        # Assign all points in X to clusters at least once
+        self._cluster_points()
+        while not self._has_converged():
+            self.oldmu = self.mu
+            # Assign all points in X to clusters
+            self._cluster_points()
+            # Reevaluate centers
+            self._reevaluate_centers()
+
+class KPlusPlus(KMeans):
+    def _dist_from_centers(self):
+        cent = self.mu
+        X = self.X
+        D2 = np.array([min([np.linalg.norm(x-c)**2 for c in cent]) for x in X])
+        self.D2 = D2
+
+    def _choose_next_center(self):
+        self.probs = self.D2/self.D2.sum()
+        self.cumprobs = self.probs.cumsum()
+        r = random.random()
+        ind = np.where(self.cumprobs >= r)[0][0]
+        return(self.X[ind])
+
+    def init_centers(self):
+        self.mu = random.sample(self.X, 1)
+        while len(self.mu) < self.K:
+            self._dist_from_centers()
+            self.mu.append(self._choose_next_center())
+
+def two_means(points,max_size=None):
     logger.debug('Points are: %s',points)
-    while len(clusters) == 0 and retries > 0:
-        logger.debug('Try %s of %s for k-means',(KMEANS+1-retries),retries)
-        mu, clusters = find_centers(points, 2)
+    kplusplus = KPlusPlus(2,[np.array([abs(x)]) for x in points])
+    # Initializing randonmly might lead to fails. If so, retry
+    retries = KMEANS
+    while len(kplusplus.clusters) == 0 and retries > 0:
+        kplusplus.init_centers()
+        kplusplus.find_centers()
+        clu0 = kplusplus.clusters.get(0,[])
+        clu0 = [x[0] for x in clu0]
+        clu1 = kplusplus.clusters.get(1,[])
+        clu1 = [x[0] for x in clu1]
         retries -= 1
-    if len(clusters) == 0:
-        logger.error('Cannot get clusters with k-means for points %s',points)
-        raise CannotGetClusters()
-    clu0 = clusters.get(0,[])
-    clu1 = clusters.get(1,[])
     if len(clu1) == 0 or (len(clu0) > 0 and max(clu0) > max(clu1)):
         tmp = clu0
         clu0 = clu1
@@ -65,12 +96,8 @@ def two_means(points,max_size=None,min_size=None):
         clu1.sort()
         clu0 = clu0 + clu1[:len(clu1)-max_size]
         clu1 = clu1[len(clu1)-max_size:]
-    if min_size and len(clu0) and len(clu1) <= min_size:
-        clu0.sort()
-        clu1 = clu0[:-1*len(clu1)-min_size] + clu1
-        clu0 = clu0[len(clu1)-min_size:]
-    logger.info('Length of cluster 0 is: %s',len(clu0))
-    logger.info('Length of cluster 1 is: %s',len(clu1))
     logger.debug('Cluster 0 is: %s',clu0)
     logger.debug('Cluster 1 is: %s',clu1)
+    logger.debug('Length of cluster 0 is: %s',len(clu0))
+    logger.debug('Length of cluster 1 is: %s',len(clu1))
     return clu0, clu1

@@ -38,8 +38,8 @@ class ComparatorXes(object):
         return self.comparator.generate_pnml(filename=self.pach.filename,
                 reversed_dictionary=self.pach.reversed_dictionary)
 
-    def compare(self):
-        return self.comparator.compare()
+    def compare(self,log_file='', event_dictionary={}):
+        return self.comparator.compare(log_file=log_file, event_dictionary=event_dictionary)
 
     def generate_outputs(self):
         # For every benchmark, generate the output
@@ -77,7 +77,8 @@ if __name__ == '__main__':
     from mains import xes_comparator_main
     try:
         xes_comparator_main()
-    except:
+    except Exception, err:
+        logger.error('Error: %s' % err, exc_info=True)
         type, value, tb = sys.exc_info()
         traceback.print_exc()
         #pdb.post_mortem(tb)

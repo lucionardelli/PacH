@@ -10,23 +10,14 @@ class CorrMatrix(object):
         Abstract Domains"
     """
 
-    def __init__(self, pv_array, verbose=False):
-        # Verbose
-        self.verbose = verbose
-        # Standard deviation
+    def __init__(self, pv_array):
         if pv_array is not None:
+            # Standard deviation
             self.std_dev = pv_array.std(axis=0)
             # Mean deviation
             self.mean_dev = pv_array.mean(axis=0)
             # This function actually computes everything
             self._make_corr_matrix(pv_array)
-            if self.verbose:
-                print 'La matriz de CORRelación entontrada es: '
-                print self.matrix
-                print 'Los eigenvalues de la matriz son: '
-                print self.eigenvalues
-                print 'Los eigenvectors de la matriz son: '
-                print self.eigenvector
 
     def __repr__(self):
         return self.__str__()
@@ -38,7 +29,7 @@ class CorrMatrix(object):
         return self.matrix[idx]
 
     def copy(self):
-        matrix = CorrMatrix(None,verbose=self.verbose)
+        matrix = CorrMatrix(None)
         matrix.std_dev = self.std_dev.copy()
         matrix.mean_dev = self.mean_dev.copy()
         matrix.dim = self.dim
@@ -58,18 +49,17 @@ class CorrMatrix(object):
         len_m1 = len(pv_array) -1
         for x_axis in xrange(dim):
             for y_axis in xrange(dim):
-                numerador = aux[x_axis].dot(aux[y_axis])
-                denominador = len_m1 * self.std_dev[x_axis] *\
-                        self.std_dev[y_axis]
-                if denominador == 0:
+                numerator = aux[x_axis].dot(aux[y_axis])
+                denominator = len_m1 * self.std_dev[x_axis] * self.std_dev[y_axis]
+                if denominator == 0:
                     matrix[x_axis][y_axis] = 0
                 else:
-                    matrix[x_axis][y_axis] = np.divide(numerador,denominador)
+                    matrix[x_axis][y_axis] = np.divide(numerator,denominator)
         self.matrix = matrix
         self.eigenvalues, self.eigenvector = np.linalg.eig(matrix)
         return True
 
-    def update(self, positions):
+    def to_zero(self, positions):
         for x in positions:
             self.matrix[:,x] = np.zeros(self.dim)
             self.matrix[x,:] = np.zeros(self.dim)
@@ -87,10 +77,9 @@ class CorrMatrix(object):
                 corr_list = rel.setdefault(point,[])
                 for idx,corr in enumerate(self[point,:]):
                     corr = abs(corr)
-                    if idx in cluster:
-                        corr_list.append(corr)
-                        continue
                     corr_list.append(corr)
+                    if idx in cluster:
+                        continue
                     if max_all < corr:
                         closest = idx
                         max_all = corr

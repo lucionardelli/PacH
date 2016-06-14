@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8
-from custom_exceptions import IncorrectOutput,CannotProject
+from custom_exceptions import IncorrectOutput
 import numpy as np
 
 def chunks(l, n):
@@ -9,13 +9,10 @@ def chunks(l, n):
         yield l[i:i+n]
 
 def rotate_dict(dictionary):
-    ret = {}
-    for k,v in dictionary.items():
-        if v in ret:
-            raise Exception("This dictonary cannot be rotated."
-                    " Map should be 'biyective'")
-        else:
-            ret[v] = k
+    ret = dict((v, k) for k, v in dictionary.iteritems())
+    if len(ret) != len(dictionary):
+        raise Exception("This dictonary cannot be rotated."
+                " Map should be 'biyective'")
     return ret
 
 def check_argv(argv, minimum=1, maximum=1):
@@ -31,7 +28,7 @@ def check_argv(argv, minimum=1, maximum=1):
     return ret and all(map(lambda x: type(x) == type(''), argv))
 
 def almost_equal(f1, f2, tolerance=0.00001):
-    # De esta manera evitamos errores al comparar un número con zero
+    # NOTE Avoid errors comparing with zero
     f1 += 1
     f2 += 1
     return abs(f1 - f2) <= tolerance * max(abs(f1), abs(f2))
@@ -41,7 +38,7 @@ def get_positions(eigenvector, cluster):
         Finds the positions of the elements
         of abs(<cluster>) in the abs(eigenvector)
     """
-    # We ensure that first argument is a list-like
+    # We make sure that first argument is a list-like object
     evect = list(eigenvector)
     ret = []
     for val in cluster:
@@ -59,7 +56,7 @@ def my_round(point):
         negative it returns the floor because this
         This behaviour always "adds" points to a model
     """
-    ret =int(point)
+    ret = int(point)
     if not almost_equal(point,ret):
         ret = point > 0 and int(np.ceil(point)) or int(np.floor(point))
     return ret

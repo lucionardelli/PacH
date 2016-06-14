@@ -6,6 +6,7 @@ from lxml import etree
 import pdb
 
 from qhull import Qhull
+#from smt_hull import SMTHull as Qhull
 from halfspace import Halfspace
 
 from config import logger
@@ -17,11 +18,13 @@ class PetriNet(object):
     self.places: Map of (id, place) of all places of this Petri net
     """
 
-    def __init__(self, net_id='', name='', filename=''):
-        self.name= name or 'Generated automagically with PacH'
-        no_space_name = self.name.replace(' ','_').lower()
-        self.id = net_id or no_space_name
-        self.filename = filename or no_space_name + '.pnml'
+    def __init__(self, net_id='', name=''):
+        self.name= name or net_id or 'Generated automagically with PacH'
+        nosp_name = self.name.replace(' ','_').lower()
+        if nosp_name.endswith('.pnml'):
+            nosp_name = nosp_name[:-5]
+        self.id = net_id or nosp_name
+        self.filename = nosp_name + '.pnml'
         # List or arcs
         self.arcs = []
         # Transitions
@@ -34,6 +37,7 @@ class PetriNet(object):
     def __str__(self):
         return "PetriNet: '{0}' with {1} Transitions, {2} Places and {3} Arcs".format(
                 self.name, len(self.transitions), len(self.places), len(self.arcs))
+
     def __repr__(self):
         return self.__str__()
 
@@ -63,29 +67,25 @@ class PetriNet(object):
 
         for arc in self.arcs:
             if arc.source is None or arc.destination is None:
-                print " --- INVALID ARC ENCOUNTERED! ",arc.id,arc.source,arc.destination
+                logger.error("Invalid ar found: [%s] %s",arc.id,arc)
                 continue
-            arc_node = etree.SubElement(page, 'arc', id=arc.id, source=arc.source.id, target=arc.destination.id)
+            arc_node = etree.SubElement(page, 'arc', id=arc.id,
+                    source=arc.source.id, target=arc.destination.id)
             if arc.value > 1:
-                #arc_value = etree.SubElement(arc_node, 'value')
-                #arc_value_text = etree.SubElement(arc_value, 'text')
-                #arc_value_text.text = str(arc.value)
-                arc_inscription = etree.SubElement(arc_node, 'inscription')
-                #arc_inscription_value = etree.SubElement(arc_inscription, 'value')
-                #arc_inscription_value.text = str(arc.value)
-                arc_inscription_text = etree.SubElement(arc_inscription, 'text')
-                arc_inscription_text.text = str(arc.value)
+                arc_value = etree.SubElement(arc_node, 'inscription')
+                arc_value_text = etree.SubElement(arc_value, 'text')
+                arc_value_text.text = str(arc.value)
         tree = etree.ElementTree(element=pnml)
         tree.write(filename or self.filename, encoding="utf-8",
                 xml_declaration=True, method="xml", pretty_print=True)
-        logger.info('Generated the PNML %s', self.filename)
+        logger.info('Generated the PNML %s', self.name)
 
-    def get_qhull(self, neg_points=[]):
+    def get_qhull(self, neg_points=[], allow_dummy=False):
         """ From a Petrinet, gets it's representationas a Convex Hull
         """
         # Create an empty Convex Hull
         qhull = Qhull(neg_points=neg_points)
-        # La normal por defaul para cada facet
+        # Default normal for every facet
         dim = len(self.transitions)
         tmpl_normal = [0]*dim
         # Each transition corresponds to one dimension
@@ -94,27 +94,27 @@ class PetriNet(object):
         # Each facet corresponds to one place
         # place.id -> {normal->[arc.value], offset->marking}
         facets_dict = {}
-        # Iteramos sobre los arcos
         for arc in self.arcs:
-            # No debería haber arcos nulos
+            # No arc should have zero weight
             if not arc.value:
                 logger.error('We found a zero arc: %s',arc)
-                raise Exception('We found a zero arc: %s',arc)
-            # NOTE recordar que nuestra representación interna de HS es
-            # al revés que el paper (usamos <= 0 en lguar de >= 0)
+                raise Exception('We found a zero arc: %s'%arc)
+            # NOTE internal representation for Half Spaces
+            # is A.x <= 0 instead of A.x >= 0
             if isinstance(arc.source,Transition):
-                # Si el arco sale de una transition el coeficiente es < 0
+                # If the arc starts in a transition, coefficient should be < 0
                 coef = -1*arc.value
                 transition = arc.source
                 place = arc.destination
             else:
-                # Si el arco sale de un place el coeficiente es > 0
+                # If the arc starts in a place, coefficient should be > 0
                 coef = arc.value
                 place = arc.source
                 transition = arc.destination
             x = transitions.setdefault(transition.label,len(transitions))
             facet = facets_dict.setdefault(place.id,{'normal':list(tmpl_normal),
                                                     'in_transitions':[],
+                                                    'in_loop': False,
                                                     'out_transitions':[],
                                                     'offset': -1*place.marking,
                                                     'id':place.id})
@@ -122,10 +122,16 @@ class PetriNet(object):
                 facet['in_transitions'].append(transition.label)
             else:
                 facet['out_transitions'].append(transition.label)
-            if facet['normal'][x]:
-                logger.debug('Coeficient already loaded. Dummy place')
+            # If coefficient for this facet has already been loaded,
+            # It means we are in a loop. And once we go loop, we never go back
+            if (facet['normal'][x] and allow_dummy) or facet['in_loop']:
+                logger.debug('Coeficient already loaded. Loop found for place %s and transition %s! Dummy place?'%(place,transition))
+                facet['in_loop'] = True
                 coef = 0
-            facet['normal'][x] = coef
+            elif facet['normal'][x]:
+                raise Exception('Loop found in place %s and transition %s'%(place,transition))
+            else:
+                facet['normal'][x] = coef
 
         facets = []
         for pl_id, facet in facets_dict.items():

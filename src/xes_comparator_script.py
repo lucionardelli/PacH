@@ -40,7 +40,8 @@ NOTE: Do you have the needed environment variables?
                 pdb.set_trace()
             for filename, arguments in parse_config(config_file):
                 comparator = ComparatorXes(filename, **arguments)
-                complexity = comparator.compare()
+                #comparator.comparator.check_hull(log_file=filename,event_dictionary=comparator.pach.event_dictionary)
+                complexity = comparator.compare(log_file=filename,event_dictionary=comparator.pach.event_dictionary)
                 comparator.generate_pnml()
                 comparator.generate_outputs()
                 if '--verbose' in sys.argv:
@@ -64,6 +65,7 @@ NOTE: Do you have the needed environment variables?
                 print 'Error: ', err.message
             else:
                 print 'Error: ', err
+            logger.error('Error: %s' % err, exc_info=True)
             raise
         return ret
 
@@ -75,6 +77,7 @@ if __name__ == '__main__':
     try:
         main()
     except Exception, err:
+        logger.error('Error: %s' % err, exc_info=True)
         type, value, tb = sys.exc_info()
         traceback.print_exc()
         print err

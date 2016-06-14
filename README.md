@@ -11,7 +11,7 @@
 
  After getting the convex hull, some automatic simplifications are made in order to get a "nicer" model.
  
- As a final step, the resuilting PNML is generated according to the international standard.
+ As a final step, the resulting PNML is generated according to the international standard.
  
 ###Installation
  In order to use it, some requirements are that must be met.
@@ -19,7 +19,7 @@
         
       pip install -r requirements.txt
 
- or see the file `requirements.txt` for an exahustive list or dependencies.
+ or see the file `requirements.txt` for an exhaustive list or dependencies.
 
 ###Contents and Usage
 
@@ -52,18 +52,18 @@ Points can be a list of lists or a file with the list of lists as the first line
 
 #####`pach.py`
 
-A wrape up of the elements necesary for:
+A wrap up of the elements necessary for:
 
   - Parsing
   - Getting the convex hull
   - Applying the automatic simplifications w.r.t. the negative traces
-  -Generation of the Petri Net according to the *Petri Net Makup Language* (PNML http://www.pnml.org/)
-  - Generation of an output file fof performance statistics.
+  -Generation of the Petri Net according to the *Petri Net Markup Language* (PNML http://www.pnml.org/)
+  - Generation of an output file of performance statistics.
 
 **Usage**:
 
     Usage: ./pach.py <LOG_filename> [--debug][--verbose]
-    [--negative <Negative points filename>] [max_coeficient]]
+    [--negative <Negative points filename>] [max_coefficient]]
     [--sampling [<number of samplings>] [<sampling size>]]
     [--projection [<max group size>] [<connected model>]]
     [--smt-matrix [<timeout>]]
@@ -72,27 +72,27 @@ A wrape up of the elements necesary for:
 
 **_Arguments_**:
 
-  - LOG_filename : The file where te positive log is
+  - LOG_filename : The file where the positive log is
   - ` --debug ` : Open a Python Debugger just before calling PacH
   - ` --verbose`: Verbose mode.
   - `--negative`
     - Negative_points_filename> 
-    - `[max_coeficient]`: Optional argument. Only try to remove facets whith at least one coefficient bigger than max_coefficient.
+    - `[max_coefficient]`: Optional argument. Only try to remove facets with at least one coefficient bigger than max_coefficient.
   - `--sampling` : Whether to do sampling or not
     - `number of samplings`:  Number of samples to get
     - `sampling size`: The size of each sample
   - `--projection`: Whether to do projection or not
     - `[max group size]`: Maximum number of dimension in each cluster
     - `[connected model]`: Whether to connect the cluster or not
-  - `--smt-matrix`: Matrix simplification of all the ecuations system at once
+  - `--smt-matrix`: Matrix simplification of all the equations system at once
     - ` [timeout]`: Optional argument to set a timeout for SMT simplification
-  - `--smt-iter`:  SMT simplification to each indiviual facet of the convex hull
+  - `--smt-iter`:  SMT simplification to each individual facet of the convex hull
     - ` [timeout]`: Optional argument to set a timeout for SMT simplification
   - `--sanity-check`: Perform some sanity check after each new hull.
 
 **_Output_**:
 
-  The programm will generate two files.
+  The program will generate two files.
 
   - PNML representation of the simplified convex hull. 
   - A file with a summary and performance details
@@ -115,7 +115,7 @@ A wrape up of the elements necesary for:
         parse_negatives ->  {time parsing negatives}
         do_sampling     ->  {time doing sampling}
         do_projection   ->  {time doing projection}
-        convexHull      ->  {time computing hiperspaces}
+        convexHull      ->  {time computing hyperspaces}
         shift&rotate    ->  {time simplifying hull with SMT} OR {Time simplifying each facet with SMT}
         simplify        ->  {Time spent simplifying without SMT}
 
@@ -129,7 +129,7 @@ Tool to compare all 3 simplifications (Polyhedra, STM-Matrix, SMT-Iterative) w.r
 **Usage**:
 
     Usage: ./comparator_xes.py <LOG filename> [--debug]
-    [--negative <Negative points filename>] [max_coeficient]]
+    [--negative <Negative points filename>] [max_coefficient]]
     [--sampling [<number of samplings>] [<sampling size>]]
     [--projection [<max group size>] [<connected model>]]
     [--smt-matrix [<timeout>]]
@@ -143,9 +143,9 @@ Tool to compare all 3 simplifications (Polyhedra, STM-Matrix, SMT-Iterative) w.r
         proj_size :    Number for maximum dimension to project to (Default no projection, 0 for no limit)
         proj_connected :    Boolean indicating whether to (try to) connect clusters (default: True)
         smt_timeout_matrix :    Timeout for smt solution finding when simplifying all hull at once
-        samp_size :    Number of elementes to take on each sample (No default)
+        samp_size :    Number of elements to take on each sample (No default)
         sanity_check :    Performs sanity check that all traces are inside hull
-        smt_timeout_iter :    Timeout for smt solution finding when simplifying one halfpsace at the time
+        smt_timeout_iter :    Timeout for smt solution finding when simplifying one halfspace at the time
         filename :    Location of .xes file with traces or .pnml file with Petri net model
 
 
@@ -160,7 +160,7 @@ Tool to compare all 3 simplifications (Polyhedra, STM-Matrix, SMT-Iterative) app
 **Usage**:
 
     Usage: ./comparator_pnml.py <PNML filename> [--debug]
-    [--negative <Negative XES points filename>] [max_coeficient]]
+    [--negative <Negative XES points filename>] [max_coefficient]]
     [--smt-matrix [<timeout>]]
     [--smt-iter [<timeout>]]
 
@@ -172,9 +172,9 @@ Tool to compare all 3 simplifications (Polyhedra, STM-Matrix, SMT-Iterative) app
         proj_size :    Number for maximum dimension to project to (Default no projection, 0 for no limit)
         proj_connected :    Boolean indicating whether to (try to) connect clusters (default: True)
         smt_timeout_matrix :    Timeout for smt solution finding when simplifying all hull at once
-        samp_size :    Number of elementes to take on each sample (No default)
+        samp_size :    Number of elements to take on each sample (No default)
         sanity_check :    Performs sanity check that all traces are inside hull
-        smt_timeout_iter :    Timeout for smt solution finding when simplifying one halfpsace at the time
+        smt_timeout_iter :    Timeout for smt solution finding when simplifying one halfspace at the time
         filename :    Location of .xes file with traces or .pnml file with Petri net model
 
 

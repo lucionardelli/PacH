@@ -40,7 +40,6 @@ NOTE: Do you have the needed environment variables?
                 pdb.set_trace()
             for filename, arguments in parse_config(config_file):
                 comparator = ComparatorPnml(filename, **arguments)
-                comparator.check_hull()
                 complexity = comparator.compare()
                 logger.info('%s complexity -> %s',filename,complexity)
                 comparator.generate_pnml()
@@ -65,6 +64,7 @@ NOTE: Do you have the needed environment variables?
                 print 'Error: ', err.message
             else:
                 print 'Error: ', err
+            logger.error('Error: %s' % err, exc_info=True)
             raise err
         return ret
 
@@ -73,7 +73,8 @@ if __name__ == '__main__':
     import sys, traceback, pdb
     try:
         main()
-    except:
+    except Exception, err:
+        logger.error('Error: %s' % err, exc_info=True)
         type, value, tb = sys.exc_info()
         traceback.print_exc()
         #pdb.post_mortem(tb)

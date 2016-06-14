@@ -59,6 +59,9 @@ target/
 # Autoenv
 .env
 
+# Backup files
+*.bak
+
 # La salida del pach.py
 *-complexities.out
 # Script de ayuda ad-hoc
