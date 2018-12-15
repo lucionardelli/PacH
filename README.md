@@ -1,5 +1,5 @@
-# PacH 
-=======
+# PacH
+
 **Lucio Nardelli - _Director_ Hernán Ponce de León**
 
 ### Description
@@ -10,20 +10,20 @@
  We use two different high-level techniques to handle large logs: projection and sampling
 
  After getting the convex hull, some automatic simplifications are made in order to get a "nicer" model.
- 
+
  As a final step, the resulting PNML is generated according to the international standard.
- 
-###Installation
+
+### Installation
  In order to use it, some requirements are that must be met.
  It can be done via Pip:
-        
+
       pip install -r requirements.txt
 
  or see the file `requirements.txt` for an exhaustive list or dependencies.
 
-###Contents and Usage
+### Contents and Usage
 
-#####`parser.py`
+##### `parser.py`
 
 Used for parsing the log file and get the Parikh's vector representation of the traces.
 
@@ -33,7 +33,7 @@ Used for parsing the log file and get the Parikh's vector representation of the 
 
 If `--verbose` is no used, just a summary is printed. Otherwise  a full representation of the traces will we printed to the standard output.
 
-#####`negative_parser.py`
+##### `negative_parser.py`
 
 Similar to the previous, but only the full trace is converted to a Parikh's vector, not the prefixes.
 
@@ -41,7 +41,7 @@ Similar to the previous, but only the full trace is converted to a Parikh's vect
 
     ./negative_parser.py <negative XES LOG filename> [--verbose]
 
-#####`qhull.py`
+##### `qhull.py`
 
 Search, representation and simplification of a Convex Hull.
 Points can be a list of lists or a file with the list of lists as the first line of it.
@@ -50,7 +50,7 @@ Points can be a list of lists or a file with the list of lists as the first line
 
     Usage: ./qhull.py <points> [--debug][--verbose]
 
-#####`pach.py`
+##### `pach.py`
 
 A wrap up of the elements necessary for:
 
@@ -76,7 +76,7 @@ A wrap up of the elements necessary for:
   - ` --debug ` : Open a Python Debugger just before calling PacH
   - ` --verbose`: Verbose mode.
   - `--negative`
-    - Negative_points_filename> 
+    - Negative_points_filename>
     - `[max_coefficient]`: Optional argument. Only try to remove facets with at least one coefficient bigger than max_coefficient.
   - `--sampling` : Whether to do sampling or not
     - `number of samplings`:  Number of samples to get
@@ -94,12 +94,11 @@ A wrap up of the elements necessary for:
 
   The program will generate two files.
 
-  - PNML representation of the simplified convex hull. 
+  - PNML representation of the simplified convex hull.
   - A file with a summary and performance details
     - Example of output file:
 
-`
-
+```
     Statistic of {positive}: with negative traces from {negative}
     benchmark       ->  {benchmark }
     positive        ->  {positive traces file}
@@ -107,7 +106,7 @@ A wrap up of the elements necessary for:
     traces          ->  {positive traces}
     events          ->  {total events found in positive traces}
     negative        ->  {negative traces file}
-    complexity      ->  {complexity of the model}  
+    complexity      ->  {complexity of the model}
     exec_time       ->  {execution time}
     overall_time    ->  {overall time}
     details
@@ -119,9 +118,9 @@ A wrap up of the elements necessary for:
         shift&rotate    ->  {time simplifying hull with SMT} OR {Time simplifying each facet with SMT}
         simplify        ->  {Time spent simplifying without SMT}
 
-`
+```
 
-#####`comparator_xes.py`
+##### `comparator_xes.py`
 
 Tool to compare all 3 simplifications (Polyhedra, STM-Matrix, SMT-Iterative) w.r.t. a unique convex hull representation.
 
@@ -153,7 +152,7 @@ Tool to compare all 3 simplifications (Polyhedra, STM-Matrix, SMT-Iterative) w.r
 
 Analogous to the ones of `pach.py`.
 
-#####`comparator_pnml.py`
+##### `comparator_pnml.py`
 
 Tool to compare all 3 simplifications (Polyhedra, STM-Matrix, SMT-Iterative) applied to ProM/ILPMiner output.
 
